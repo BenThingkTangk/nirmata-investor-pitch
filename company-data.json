@@ -1,0 +1,186 @@
+{
+  "company": "Nirmata Holdings, Inc.",
+  "tagline": "The Nervous System That Powers AI",
+  "subtag": "Every AI brain needs a body. We built the nervous system.",
+  "location": "Orlando, FL",
+  "founded": "Self-Funded, 2024",
+  "valuation": "$10.5B Liquid Valuation",
+  "heroStats": [
+    { "value": 8, "label": "Live Products", "suffix": "" },
+    { "value": 700, "label": "Combined TAM", "prefix": "$", "suffix": "B" },
+    { "value": 100, "label": "Self-Funded", "suffix": "%" },
+    { "value": 100, "label": "Compute Margin", "prefix": "~", "suffix": "%" }
+  ],
+  "round": {
+    "type": "Series A — Strategic Growth Round",
+    "raise": "$25M – $50M",
+    "premoney": "Benchmarked against $10.5B liquid valuation",
+    "useOfProceeds": {
+      "ATOM Platform & Sales": 40,
+      "Antimatter Center": 25,
+      "ClinixAI & Lead Gen GTM": 20,
+      "LLM & Red Team": 15
+    }
+  },
+  "products": [
+    {
+      "name": "AntimatterAI",
+      "type": "MRR",
+      "desc": "AI Design Studio — GenUI, UX, Agentic AI platform. ~100% margin. Per-user SaaS.",
+      "tam": "$50B+",
+      "cagr": "34.2%",
+      "icon": "brain"
+    },
+    {
+      "name": "ClinixAI",
+      "type": "MRR",
+      "desc": "AI Billing Agent — per-claim revenue, automated medical coding & RCM. $45.4B TAM.",
+      "tam": "$45.4B",
+      "cagr": "25.4%",
+      "icon": "heart-pulse"
+    },
+    {
+      "name": "MoleculeAI",
+      "type": "Acquisition",
+      "desc": "Quantum drug discovery — VQE, ADMET profiling. Built to sell to Big Pharma for 8-9 figures.",
+      "tam": "$160B",
+      "cagr": "23.2%",
+      "icon": "atom"
+    },
+    {
+      "name": "Vidzee",
+      "type": "Acquisition",
+      "desc": "AI video software for real estate — automates listing video creation at scale.",
+      "tam": "$185B",
+      "cagr": "16.4%",
+      "icon": "video"
+    },
+    {
+      "name": "ATOM Lead Gen",
+      "type": "MRR",
+      "desc": "AI SDR agent — cold calls, emails, closes with real-time sentiment analysis.",
+      "tam": "$37.5B",
+      "cagr": "28.3%",
+      "icon": "target"
+    },
+    {
+      "name": "ATOM Browser",
+      "type": "Hybrid",
+      "desc": "AI-native browser challenging Chrome — agent capabilities baked in.",
+      "tam": "$76.8B",
+      "cagr": "32.8%",
+      "icon": "globe"
+    },
+    {
+      "name": "Red Team ATOM",
+      "type": "MRR",
+      "desc": "Adversarial AI security testing. SOC2 compliant, post-quantum cryptography.",
+      "tam": "$15.2B",
+      "cagr": "36.7%",
+      "icon": "shield"
+    },
+    {
+      "name": "ATOM LLM",
+      "type": "Hybrid",
+      "desc": "Proprietary LLM trained on deployment data — moat deepens with every customer.",
+      "tam": "$199B",
+      "cagr": "43.8%",
+      "icon": "cpu"
+    }
+  ],
+  "investmentOptions": [
+    {
+      "id": "tokenized",
+      "name": "Tokenized Equity",
+      "tagline": "Fractional, Liquid, Borderless",
+      "description": "Blockchain-secured digital equity tokens representing fractional ownership in Nirmata Holdings. Smart contracts automate distributions, enable 24/7 secondary trading, and provide real-time portfolio transparency.",
+      "minInvest": "$50K",
+      "features": ["24/7 Secondary Liquidity", "Smart Contract Distributions", "Real-Time Portfolio Dash", "Fractional Ownership Units", "Global Investor Access"],
+      "riskLevel": "moderate",
+      "targetReturn": "10-50x",
+      "lockup": "6 months",
+      "color": "#00FFB2"
+    },
+    {
+      "id": "tranche",
+      "name": "Milestone Tranches",
+      "tagline": "De-Risked, Milestone-Gated",
+      "description": "Capital deployed in structured phases tied to validated business milestones. Each tranche unlocks at progressively higher valuations, reducing downside risk while preserving maximum upside for early conviction.",
+      "minInvest": "$250K",
+      "features": ["3-Phase Deployment", "Valuation Step-Ups", "Milestone-Gated Releases", "Board Observer Rights", "Anti-Dilution Protection"],
+      "riskLevel": "low",
+      "targetReturn": "5-25x",
+      "lockup": "12-36 months",
+      "color": "#7B61FF"
+    },
+    {
+      "id": "safe",
+      "name": "SAFE + Warrant",
+      "tagline": "Speed, Simplicity, Upside",
+      "description": "Y Combinator-standard SAFE note with attached warrant coverage. Converts at next priced round with valuation cap protection. Warrant provides additional upside without dilution risk.",
+      "minInvest": "$100K",
+      "features": ["Valuation Cap Protection", "MFN Clause", "Pro-Rata Rights", "Warrant Coverage (20%)", "No Maturity / No Interest"],
+      "riskLevel": "moderate",
+      "targetReturn": "8-40x",
+      "lockup": "Until conversion",
+      "color": "#00D4FF"
+    },
+    {
+      "id": "spv",
+      "name": "SPV Co-Invest",
+      "tagline": "Institutional Grade, Portfolio Exposure",
+      "description": "Special Purpose Vehicle providing concentrated exposure to Nirmata's highest-growth portfolio companies. Quarterly NAV reporting, independent administration, and institutional-grade governance.",
+      "minInvest": "$500K",
+      "features": ["Portfolio Diversification", "Quarterly NAV Reports", "Independent Fund Admin", "Tax-Optimized Structure", "Co-Invest Rights"],
+      "riskLevel": "low",
+      "targetReturn": "6-20x",
+      "lockup": "24 months",
+      "color": "#FF6B35"
+    },
+    {
+      "id": "revenue",
+      "name": "Revenue-Based Financing",
+      "tagline": "Cash Flow Aligned Returns",
+      "description": "Non-dilutive capital with returns tied directly to Nirmata's monthly recurring revenue. Investors receive a percentage of MRR until a return cap is met — aligning incentives with real business performance.",
+      "minInvest": "$100K",
+      "features": ["Non-Dilutive", "Monthly Distributions", "Revenue-Linked Returns", "1.5-3x Return Cap", "No Board Seat Required"],
+      "riskLevel": "low",
+      "targetReturn": "1.5-3x",
+      "lockup": "18-24 months",
+      "color": "#FFD700"
+    },
+    {
+      "id": "convertible",
+      "name": "Convertible Note",
+      "tagline": "Debt Today, Equity Tomorrow",
+      "description": "Interest-bearing debt instrument that converts to preferred equity at the next qualified financing. Includes valuation cap and discount rate for early investor advantage.",
+      "minInvest": "$150K",
+      "features": ["8% Annual Interest", "20% Conversion Discount", "Valuation Cap", "Qualified Financing Trigger", "Maturity Extension Option"],
+      "riskLevel": "low",
+      "targetReturn": "5-15x",
+      "lockup": "18 months",
+      "color": "#E040FB"
+    }
+  ],
+  "revenueArchitecture": {
+    "recurring": { "pct": 55, "label": "Monthly Recurring", "items": ["AntimatterAI SaaS", "ClinixAI Per-Claim", "ATOM Lead Gen", "Red Team Contracts"] },
+    "acquisition": { "pct": 25, "label": "Acquisition & Licensing", "items": ["MoleculeAI → Big Pharma", "Vidzee → PropTech", "IP Licensing"] },
+    "platform": { "pct": 20, "label": "Platform + Compute", "items": ["Nervous System Licensing", "Per-User Compute", "ATOM LLM API", "Akamai ~100% Margin"] }
+  },
+  "exitPaths": [
+    { "name": "IPO", "timeline": "2027-2028", "potential": "$50B+" },
+    { "name": "Strategic Acquisition", "timeline": "2026-2027", "potential": "$15-25B" },
+    { "name": "Portfolio Exits", "timeline": "2026-2028", "potential": "$2-5B" },
+    { "name": "Secondary Sale", "timeline": "Ongoing", "potential": "Market" },
+    { "name": "SaaS Dividend Recap", "timeline": "2027+", "potential": "Recurring" }
+  ],
+  "investorRights": ["Board Observer Seat", "Pro-Rata Rights", "Quarterly Reporting", "Anti-Dilution Protection", "Information Rights", "Major Investor Rights"],
+  "moats": [
+    { "title": "Demand-Driven", "desc": "Every product came from a paying customer request" },
+    { "title": "~100% Compute Margin", "desc": "Akamai Cloud partnership vs 40-60% industry standard" },
+    { "title": "Model Agnostic", "desc": "Plugs into GPT-5, Claude, Grok, Llama, or custom LLMs" },
+    { "title": "100% Self-Funded", "desc": "Zero VC dependency — choosing partners, not begging" },
+    { "title": "ATOM Stack", "desc": "Eliminates 80% of build time — ships in days, not quarters" },
+    { "title": "Network Effect", "desc": "Every deployment makes the ATOM LLM smarter" }
+  ]
+}
