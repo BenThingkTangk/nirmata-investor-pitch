@@ -287,6 +287,78 @@ export async function registerRoutes(
   app: Express
 ): Promise<Server> {
   
+  // Extract readable text from C1 GenUI JSON response
+  function extractTextFromGenUI(raw: string): string {
+    // Strip <content thesys="true"> wrapper if present
+    let cleaned = raw.replace(/<content[^>]*>/g, "").replace(/<\/content>/g, "").trim();
+    // Decode HTML entities
+    cleaned = cleaned.replace(/&quot;/g, '"').replace(/&amp;/g, "&").replace(/&#39;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+    
+    try {
+      const parsed = JSON.parse(cleaned);
+      const text = extractRecursive(parsed);
+      return text || cleaned;
+    } catch {
+      // Try to find JSON object in raw text
+      const m = cleaned.match(/\{[\s\S]*\}/);
+      if (m) {
+        try {
+          const parsed = JSON.parse(m[0]);
+          const text = extractRecursive(parsed);
+          return text || cleaned;
+        } catch { /* fall through */ }
+      }
+      return cleaned;
+    }
+  }
+
+  function extractRecursive(obj: any): string {
+    if (!obj || typeof obj !== "object") return "";
+    const parts: string[] = [];
+
+    // Direct text fields
+    if (obj.textMarkdown) parts.push(obj.textMarkdown);
+    if (obj.text && typeof obj.text === "string") parts.push(obj.text);
+    if (obj.heading && typeof obj.heading === "string") parts.push(`**${obj.heading}**`);
+    if (obj.description && typeof obj.description === "string") parts.push(obj.description);
+    if (obj.trigger && typeof obj.trigger === "string") parts.push(`**${obj.trigger}**`);
+    
+    // Title/subtitle/label/number
+    if (obj.title && typeof obj.title === "string") parts.push(`**${obj.title}**`);
+    if (obj.subtitle && typeof obj.subtitle === "string") parts.push(obj.subtitle);
+    if (obj.number) parts.push(`${obj.number}${obj.label ? " \u2014 " + obj.label : ""}`);
+    else if (obj.label && typeof obj.label === "string" && !obj.title) parts.push(obj.label);
+
+    // Recurse into component/props structure
+    if (obj.component && typeof obj.component === "object" && obj.component.component) {
+      // Top-level wrapper: { component: { component: "Card", props: {...} }, error: null }
+      const t = extractRecursive(obj.component);
+      if (t) parts.push(t);
+    } else if (obj.component && typeof obj.component === "string" && obj.props) {
+      // Component node: { component: "TextContent", props: { textMarkdown: "..." } }
+      const t = extractRecursive(obj.props);
+      if (t) parts.push(t);
+    }
+
+    // Recurse into arrays
+    if (Array.isArray(obj.children)) obj.children.forEach((c: any) => { const t = extractRecursive(c); if (t) parts.push(t); });
+    if (Array.isArray(obj.items)) obj.items.forEach((item: any) => { const t = extractRecursive(item); if (t) parts.push(t); });
+    if (Array.isArray(obj.sections)) obj.sections.forEach((s: any) => { const t = extractRecursive(s); if (t) parts.push(t); });
+    if (Array.isArray(obj.content)) obj.content.forEach((c: any) => { const t = extractRecursive(c); if (t) parts.push(t); });
+
+    // Recurse into lhs/rhs/child
+    if (obj.lhs) { const t = extractRecursive(obj.lhs); if (t) parts.push(t); }
+    if (obj.rhs) { const t = extractRecursive(obj.rhs); if (t) parts.push(t); }
+    if (obj.child && typeof obj.child === "object") { const t = extractRecursive(obj.child); if (t) parts.push(t); }
+
+    // Deduplicate consecutive identical lines
+    const unique: string[] = [];
+    for (const p of parts) {
+      if (unique.length === 0 || unique[unique.length - 1] !== p) unique.push(p);
+    }
+    return unique.filter(Boolean).join("\n\n");
+  }
+
   // C1 Chat API endpoint
   app.post("/api/chat", async (req, res) => {
     try {
@@ -312,33 +384,32 @@ export async function registerRoutes(
       messageStore.addMessage(prompt);
 
       const response = await client.chat.completions.create({
-        model: "c1-nightly",
+        model: "c1/openai/gpt-5/v-20251230",
         messages: messageStore.getOpenAICompatibleMessageList(),
         stream: true,
       });
 
-      res.setHeader("Content-Type", "text/event-stream");
-      res.setHeader("Cache-Control", "no-cache, no-transform");
-      res.setHeader("Connection", "keep-alive");
-
+      // Accumulate full response first, then extract text
       let accumulated = "";
-
       for await (const chunk of response) {
         const content = chunk.choices[0]?.delta?.content;
         if (content) {
           accumulated += content;
-          res.write(content);
         }
       }
 
-      // Store the assistant response
+      // Parse GenUI and extract readable text
+      const plainText = extractTextFromGenUI(accumulated);
+
+      // Store the assistant response (raw for conversation context)
       messageStore.addMessage({
         role: "assistant",
         content: accumulated,
         id: responseId,
       });
 
-      res.end();
+      // Send clean text to frontend
+      res.json({ content: plainText });
     } catch (error: any) {
       console.error("C1 API Error:", error);
       res.status(500).json({ error: error.message || "Failed to get AI response" });

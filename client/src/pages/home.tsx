@@ -210,7 +210,7 @@ const PRODUCTS = [
     description: "Hume EVI empathic voice, OpenAI Realtime, ElevenLabs multi-provider. Real-time sentiment analysis with human-level nuance across enterprise workflows.",
     cost: "$1.5M–$2.5M",
     comparable: "ElevenLabs — $500M at $11B",
-    url: "https://www.antimatterai.com/voice-agents",
+    url: "https://www.antimatterai.com/voice-agent-demo",
   },
   {
     name: "ATOM Agentic (AgenticIQ)",
@@ -235,6 +235,39 @@ const PRODUCTS = [
     url: "https://www.antimatterai.com/atom-intentiq",
   },
   {
+    name: "ATOM SentimentIQ",
+    slug: "emotion-tracking",
+    tagline: "Real-Time Emotion Analytics",
+    icon: Heart,
+    color: "#FF6B9D",
+    description: "Real-time emotion tracking and sentiment analysis engine. Captures micro-expressions, vocal tone, and behavioral signals to deliver human-level emotional intelligence at enterprise scale.",
+    cost: "$1.2M–$2M",
+    comparable: "Affectiva/Smart Eye — $86M+",
+    url: "https://www.antimatterai.com/emotion-tracking-demo",
+  },
+  {
+    name: "ATOM GenUI",
+    slug: "atom-search",
+    tagline: "Generative User Interfaces",
+    icon: Sparkles,
+    color: "#00D4FF",
+    description: "AI-generated dynamic user interfaces that adapt in real-time. Context-aware UI generation that creates bespoke enterprise experiences — no two interactions are the same.",
+    cost: "$2M–$3.5M",
+    comparable: "Vercel v0 — First-mover GenUI",
+    url: "https://www.antimatterai.com/atom/search",
+  },
+  {
+    name: "ATOM SalesIQ",
+    slug: "sales-iq",
+    tagline: "Channel Partner Intelligence",
+    icon: Briefcase,
+    color: "#F59E0B",
+    description: "AI-powered channel partner and sales intelligence platform. Automated partner matching, deal scoring, and pipeline optimization for enterprise go-to-market acceleration.",
+    cost: "$1M–$1.8M",
+    comparable: "Crossbeam — $100M+ raised",
+    url: "https://www.antimatterai.com/resources/channel-partners",
+  },
+  {
     name: "ATOM GIS / Infrastructure Atlas",
     slug: "data-center-map",
     tagline: "Global Infrastructure Intelligence",
@@ -254,7 +287,8 @@ const PRODUCTS = [
     description: "AI-native, quantum-forward browser with post-quantum cryptography. Not a browser with AI bolted on — AI that happens to render the web.",
     cost: "$3M–$5M",
     comparable: "Arc Browser — $550M pre-revenue",
-    url: "https://www.antimatterai.com/atom/search",
+    url: "",
+    ctaLabel: "Get Early Access",
   },
   {
     name: "ATOM Dynamic Matrices",
@@ -265,7 +299,7 @@ const PRODUCTS = [
     description: "Dynamic interactive vendor comparison engine that powers transparent, verifiable competitive intelligence at enterprise scale.",
     cost: "$0.3M–$0.5M",
     comparable: "Gartner — Proprietary data moat",
-    url: "https://www.antimatterai.com/enterprise-ai",
+    url: "https://www.antimatterai.com/resources/vendor-matrix",
   },
   {
     name: "ClinixAI Healthcare",
@@ -276,7 +310,7 @@ const PRODUCTS = [
     description: "78% documentation time reduction. Full X12 RCM claims processing. $4M+ pipeline in 180 days. HIPAA-native with ML denial prediction.",
     cost: "$3.5M–$5.5M",
     comparable: "Abridge — $758M raised; Ambience — $313M",
-    url: "https://www.antimatterai.com/enterprise-ai",
+    url: "https://www.clinixagent.com",
   },
   {
     name: "MoleculeAI / Antiquant",
@@ -287,7 +321,7 @@ const PRODUCTS = [
     description: "Quantum-classical hybrid drug discovery using SMILES notation, XGBoost, and VQE. TAM: $85B+. Democratizing pharmaceutical R&D.",
     cost: "$2.5M–$4M",
     comparable: "XtalPi — $1.6B; Xaira — $1.0B",
-    url: "https://www.antimatterai.com/enterprise-ai",
+    url: "https://antiquant.vercel.app/",
   },
   {
     name: "Vidzee",
@@ -298,7 +332,7 @@ const PRODUCTS = [
     description: "AI-powered real estate intelligence platform. Production deployed. Positioned for rapid scaling on the ATOM infrastructure foundation.",
     cost: "$0.5M–$1M",
     comparable: "Matterport — $1.6B acquisition",
-    url: "https://www.antimatterai.com/enterprise-ai",
+    url: "https://vidzee.vercel.app/",
   },
 ];
 
@@ -331,7 +365,7 @@ const MOAT_LAYERS = [
   { name: "Technical IP", level: "Very High", time: "18–36 months", icon: Code, color: "#00FFB2", desc: "25/25 score, GenUI exclusivity, quantum drug discovery, post-quantum cryptography stack." },
   { name: "Data Network Effects", level: "High", time: "12–24 months", icon: Database, color: "#8587e3", desc: "Customer deployments enrich agent performance. More data → smarter agents → more customers." },
   { name: "Switching Costs", level: "Very High", time: "6–12 months", icon: Lock, color: "#00FFB2", desc: "Deep integrations, custom configurations, trained domain models, and workflow dependencies." },
-  { name: "Partnership Lock-in", level: "High", time: "12–18 months", icon: Briefcase, color: "#8587e3", desc: "Akamai, Stedi, Hume AI, Morrow Sales (gov), Cognizant (SI) exclusive channels." },
+  { name: "Partnership Lock-in", level: "High", time: "12–18 months", icon: Briefcase, color: "#8587e3", desc: "Akamai, Stedi, Hume AI, Thesys.dev (GenUI), arXiv (Research) exclusive channels." },
   { name: "Talent Density", level: "Moderate-High", time: "Ongoing", icon: Brain, color: "#00FFB2", desc: "100+ years combined enterprise AI experience. Knowledge that cannot be easily replicated." },
 ];
 
@@ -359,11 +393,11 @@ const CLINIX_TIERS = [
 ];
 
 const FINANCIAL_PROJECTIONS = [
-  { year: "Y1", revenue: 36.0, ebitda: 4.1, arr: 31.2, gm: 78 },
-  { year: "Y2", revenue: 78.6, ebitda: 24.9, arr: 72.4, gm: 80 },
-  { year: "Y3", revenue: 136.1, ebitda: 57.6, arr: 128.6, gm: 82 },
-  { year: "Y4", revenue: 204.3, ebitda: 97.6, arr: 196.2, gm: 83 },
-  { year: "Y5", revenue: 276.3, ebitda: 146.9, arr: 267.8, gm: 85 },
+  { year: "Y1", revenue: 36.0, ebitda: 4.1, arr: 31.2, gm: 78, cagr: 0 },
+  { year: "Y2", revenue: 78.6, ebitda: 24.9, arr: 72.4, gm: 80, cagr: 118 },
+  { year: "Y3", revenue: 136.1, ebitda: 57.6, arr: 128.6, gm: 82, cagr: 94 },
+  { year: "Y4", revenue: 204.3, ebitda: 97.6, arr: 196.2, gm: 83, cagr: 78 },
+  { year: "Y5", revenue: 276.3, ebitda: 146.9, arr: 267.8, gm: 85, cagr: 66 },
 ];
 
 const RADAR_DATA = [
@@ -381,7 +415,7 @@ const COMP_TABLE = [
   { company: "Cognigy", raised: "$165M", valuation: "$955M", products: "1 product (conversational)" },
   { company: "Abridge", raised: "$758M", valuation: "$2B+", products: "1 product (clinical docs)" },
   { company: "ElevenLabs", raised: "$500M", valuation: "$11B", products: "1 product (voice)" },
-  { company: "AntimatterAI", raised: "$0", valuation: "$50M ask", products: "7+ products (full platform)" },
+  { company: "AntimatterAI", raised: "$0", valuation: "$50M ask", products: "13 products (full platform)" },
 ];
 
 const FUNDS_ALLOCATION = [
@@ -443,8 +477,8 @@ const PARTNERS = [
   { name: "Akamai / Linode", role: "Infrastructure", icon: Globe },
   { name: "Stedi", role: "Healthcare EDI", icon: FileText },
   { name: "Hume AI", role: "Empathic Voice", icon: Mic },
-  { name: "Morrow Sales", role: "Government Channel", icon: Landmark },
-  { name: "Cognizant", role: "SI & Delivery", icon: Building2 },
+  { name: "Thesys.dev", role: "GenUI Platform", icon: Sparkles },
+  { name: "arXiv", role: "Research & Publications", icon: BookOpen },
 ];
 
 /* ══════════════════════════════════════════════════════════════════
@@ -703,7 +737,7 @@ function HeroSection() {
         >
           <StatCounter value={50} prefix="$" suffix="M" label="Valuation" />
           <div className="w-px h-8 bg-white/10 hidden md:block" />
-          <StatCounter value={7} label="Production Products" />
+          <StatCounter value={13} label="Production Products" />
           <div className="w-px h-8 bg-white/10 hidden md:block" />
           <StatCounter value={99} suffix="+" label="Projects Delivered" />
           <div className="w-px h-8 bg-white/10 hidden md:block" />
@@ -906,7 +940,7 @@ function CompanySection() {
     { label: "Client Satisfaction", value: "99%+" },
     { label: "External Capital", value: "$0" },
     { label: "Vendor Score", value: "25/25 (Perfect)" },
-    { label: "Products", value: "7 in Production" },
+    { label: "Products", value: "13 in Production" },
   ];
 
   return (
@@ -1136,7 +1170,7 @@ function ProductsSection() {
             Product <span className="text-[#00FFB2]">Portfolio</span>
           </h2>
           <p className="text-white/50 text-lg max-w-2xl mx-auto font-['Satoshi']">
-            10 products. 7 in production. One integrated nervous system. $13.95M–$22.5M total cost-to-duplicate.
+            13 products. 10 in production. One integrated nervous system. $13.95M–$22.5M total cost-to-duplicate.
           </p>
         </RevealDiv>
 
@@ -1147,7 +1181,13 @@ function ProductsSection() {
                 className="gradient-border-card h-full cursor-pointer group"
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                onClick={() => setSelected(selected === i ? null : i)}
+                onClick={() => {
+                  if (product.url) {
+                    window.open(product.url, "_blank", "noopener,noreferrer");
+                  } else {
+                    setSelected(selected === i ? null : i);
+                  }
+                }}
               >
                 <div className="p-5 rounded-2xl border border-white/10 bg-[#0a0a0a] h-full flex flex-col transition-all group-hover:border-opacity-50"
                   style={{ borderColor: `${product.color}20` }}>
@@ -1156,16 +1196,12 @@ function ProductsSection() {
                       style={{ backgroundColor: `${product.color}15`, border: `1px solid ${product.color}30` }}>
                       <product.icon size={18} style={{ color: product.color }} />
                     </div>
-                    {product.url && (
-                      <a
-                        href={product.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="text-white/30 hover:text-[#00FFB2] transition-colors"
-                      >
-                        <ExternalLink size={14} />
-                      </a>
+                    {product.url ? (
+                      <ExternalLink size={14} className="text-white/30 group-hover:text-[#00FFB2] transition-colors" />
+                    ) : (
+                      <span className="text-[10px] font-['Satoshi'] font-semibold px-2 py-0.5 rounded-full border border-[#00FFB2]/30 text-[#00FFB2]/70">
+                        {(product as any).ctaLabel || "Coming Soon"}
+                      </span>
                     )}
                   </div>
 
@@ -1691,9 +1727,11 @@ function FinancialsSection() {
           </p>
         </RevealDiv>
 
-        {/* Main revenue chart */}
+        {/* Main revenue chart with EBITDA + CAGR toggle */}
         <RevealDiv className="mb-10">
-          <h3 className="font-['Clash_Display'] font-bold text-white text-2xl mb-6 text-center">5-Year Revenue & EBITDA</h3>
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <h3 className="font-['Clash_Display'] font-bold text-white text-2xl">5-Year Revenue & EBITDA</h3>
+          </div>
           <ResponsiveContainer width="100%" height={340}>
             <BarChart data={FINANCIAL_PROJECTIONS} margin={{ top: 10, right: 10, left: -10, bottom: 5 }}>
               <defs>
@@ -1719,6 +1757,53 @@ function FinancialsSection() {
               <Bar name="EBITDA" dataKey="ebitda" fill="url(#ebitdaGrad)" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
+        </RevealDiv>
+
+        {/* CAGR Projections */}
+        <RevealDiv delay={0.05} className="mb-10">
+          <h3 className="font-['Clash_Display'] font-bold text-white text-2xl mb-6 text-center">YoY Revenue CAGR Projections</h3>
+          <ResponsiveContainer width="100%" height={260}>
+            <BarChart data={FINANCIAL_PROJECTIONS.filter(d => d.cagr > 0)} margin={{ top: 10, right: 10, left: -10, bottom: 5 }}>
+              <defs>
+                <linearGradient id="cagrGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stopColor="#FFD700" stopOpacity={0.9} />
+                  <stop offset="95%" stopColor="#FFD700" stopOpacity={0.4} />
+                </linearGradient>
+              </defs>
+              <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
+              <XAxis dataKey="year" tick={{ fill: "rgba(255,255,255,0.5)", fontSize: 12 }} axisLine={false} tickLine={false} />
+              <YAxis tick={{ fill: "rgba(255,255,255,0.4)", fontSize: 11 }} axisLine={false} tickLine={false} tickFormatter={(v) => `${v}%`} />
+              <Tooltip
+                contentStyle={{ background: "#111", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 8, color: "#fff" }}
+                formatter={(v: any) => [`${v}%`, ""]}
+                cursor={{ fill: "rgba(255,255,255,0.03)" }}
+              />
+              <Legend formatter={(v) => <span style={{ color: "rgba(255,255,255,0.6)", fontSize: 12 }}>{v}</span>} />
+              <Bar name="YoY Revenue Growth (CAGR %)" dataKey="cagr" fill="url(#cagrGrad)" radius={[4, 4, 0, 0]}>
+                {FINANCIAL_PROJECTIONS.filter(d => d.cagr > 0).map((_, idx) => (
+                  <Cell key={idx} fill={idx === 0 ? "#FFD700" : idx === 1 ? "#00FFB2" : idx === 2 ? "#8587e3" : "#A855F7"} fillOpacity={0.8} />
+                ))}
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
+          <div className="flex items-center justify-center gap-6 mt-4">
+            <div className="flex items-center gap-2">
+              <div className="w-3 h-3 rounded-sm bg-[#FFD700]" />
+              <span className="text-white/40 text-xs font-['Satoshi']">Y1→Y2: 118% growth</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-3 h-3 rounded-sm bg-[#00FFB2]" />
+              <span className="text-white/40 text-xs font-['Satoshi']">Y2→Y3: 94% growth</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-3 h-3 rounded-sm bg-[#8587e3]" />
+              <span className="text-white/40 text-xs font-['Satoshi']">Y3→Y4: 78% growth</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-3 h-3 rounded-sm bg-[#A855F7]" />
+              <span className="text-white/40 text-xs font-['Satoshi']">Y4→Y5: 66% growth</span>
+            </div>
+          </div>
         </RevealDiv>
 
         {/* ARR trajectory */}
@@ -1826,7 +1911,7 @@ function ValuationSection() {
       midpoint: "$48.6M",
       color: "#00FFB2",
       icon: Layers,
-      desc: "Direct cost to rebuild 7 production products, post-quantum crypto stack, 99+ enterprise deployments, and accumulated know-how.",
+      desc: "Direct cost to rebuild 13 production products, post-quantum crypto stack, 99+ enterprise deployments, and accumulated know-how.",
       items: [
         { label: "ATOM Enterprise Platform", value: "$8–12M" },
         { label: "ATOM Voice + IntentIQ", value: "$5–8M" },
@@ -1844,13 +1929,13 @@ function ValuationSection() {
       midpoint: "$66.7M (conservative)",
       color: "#8587e3",
       icon: BarChart3,
-      desc: "Based on comparable single-product raises. Sierra ($4.5B, 1 product), Cognigy ($178M, 1 product), Kore.ai ($150M, 1 product). AntimatterAI has 7.",
+      desc: "Based on comparable single-product raises. Sierra ($4.5B, 1 product), Cognigy ($178M, 1 product), Kore.ai ($150M, 1 product). AntimatterAI has 13.",
       items: [
         { label: "Sierra AI (1 product)", value: "$10B valuation" },
         { label: "Cognigy (1 product)", value: "$178M raised" },
         { label: "Kore.ai (1 product)", value: "$150M raised" },
         { label: "ElevenLabs (1 product)", value: "$11B valuation" },
-        { label: "AntimatterAI (7 products)", value: "$50M ask" },
+        { label: "AntimatterAI (13 products)", value: "$50M ask" },
         { label: "Discount applied", value: "Pre-revenue" },
       ],
     },
@@ -1961,7 +2046,7 @@ function ValuationSection() {
           </div>
           <div className="mt-4 p-4 rounded-xl border border-[#00FFB2]/15 bg-[#00FFB2]/3">
             <p className="text-[#00FFB2] text-sm font-bold font-['Satoshi']">The asymmetric opportunity:</p>
-            <p className="text-white/60 text-sm font-['Satoshi'] mt-1">Sierra raised at $10B with 1 product. AntimatterAI is asking $50M with 7 products and the only perfect vendor score. That's 0.5% of Sierra's valuation for 7x the product breadth.</p>
+            <p className="text-white/60 text-sm font-['Satoshi'] mt-1">Sierra raised at $10B with 1 product. AntimatterAI is asking $50M with 13 products and the only perfect vendor score. That's 0.5% of Sierra's valuation for 13x the product breadth.</p>
           </div>
         </RevealDiv>
       </div>
