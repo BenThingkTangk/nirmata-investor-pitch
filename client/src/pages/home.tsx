@@ -1563,12 +1563,16 @@ export default function Home() {
           <div className="text-center">
             <button
               onClick={() => setShowMarketResearch(!showMarketResearch)}
-              className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
+              className="group inline-flex items-center gap-3 px-8 py-4 rounded-xl text-base font-semibold border border-[#00FFB2]/30 text-[#00FFB2] hover:bg-[#00FFB2]/10 hover:border-[#00FFB2]/50 hover:shadow-[0_0_30px_rgba(0,255,178,0.15)] transition-all duration-300"
               data-testid="btn-toggle-market-research"
             >
+              <BarChart3 className="w-5 h-5" />
               {showMarketResearch ? "Hide" : "View"} Interactive Market Research
-              <ChevronDown className={`w-4 h-4 transition-transform ${showMarketResearch ? "rotate-180" : ""}`} />
+              <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${showMarketResearch ? "rotate-180" : "group-hover:translate-y-0.5"}`} />
             </button>
+            {!showMarketResearch && (
+              <p className="text-xs text-gray-600 mt-3">$600B+ TAM analysis across enterprise AI, healthcare, and quantum computing</p>
+            )}
           </div>
 
           <AnimatePresence>
@@ -1577,7 +1581,8 @@ export default function Home() {
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
-                className="overflow-hidden mt-8"
+                transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                className="overflow-hidden mt-10"
               >
                 <MarketResearch />
               </motion.div>
