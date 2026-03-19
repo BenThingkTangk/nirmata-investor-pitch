@@ -136,10 +136,19 @@ function QuantumCanvas() {
    ══════════════════════════════════════════════════════════════════ */
 
 function Section({ id, children, className = "" }: { id?: string; children: React.ReactNode; className?: string }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-60px" });
   return (
-    <section id={id} className={`relative py-24 px-4 md:px-8 max-w-7xl mx-auto ${className}`}>
+    <motion.section
+      ref={ref}
+      id={id}
+      initial={{ opacity: 0, y: 40 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      className={`relative py-24 px-4 md:px-8 max-w-7xl mx-auto ${className}`}
+    >
       {children}
-    </section>
+    </motion.section>
   );
 }
 
@@ -235,39 +244,6 @@ const PRODUCTS = [
     url: "https://www.antimatterai.com/atom-intentiq",
   },
   {
-    name: "ATOM SentimentIQ",
-    slug: "emotion-tracking",
-    tagline: "Real-Time Emotion Analytics",
-    icon: Heart,
-    color: "#FF6B9D",
-    description: "Real-time emotion tracking and sentiment analysis engine. Captures micro-expressions, vocal tone, and behavioral signals to deliver human-level emotional intelligence at enterprise scale.",
-    cost: "$1.2M–$2M",
-    comparable: "Affectiva/Smart Eye — $86M+",
-    url: "https://www.antimatterai.com/emotion-tracking-demo",
-  },
-  {
-    name: "ATOM GenUI",
-    slug: "atom-search",
-    tagline: "Generative User Interfaces",
-    icon: Sparkles,
-    color: "#00D4FF",
-    description: "AI-generated dynamic user interfaces that adapt in real-time. Context-aware UI generation that creates bespoke enterprise experiences — no two interactions are the same.",
-    cost: "$2M–$3.5M",
-    comparable: "Vercel v0 — First-mover GenUI",
-    url: "https://www.antimatterai.com/atom/search",
-  },
-  {
-    name: "ATOM SalesIQ",
-    slug: "sales-iq",
-    tagline: "Channel Partner Intelligence",
-    icon: Briefcase,
-    color: "#F59E0B",
-    description: "AI-powered channel partner and sales intelligence platform. Automated partner matching, deal scoring, and pipeline optimization for enterprise go-to-market acceleration.",
-    cost: "$1M–$1.8M",
-    comparable: "Crossbeam — $100M+ raised",
-    url: "https://www.antimatterai.com/resources/channel-partners",
-  },
-  {
     name: "ATOM GIS / Infrastructure Atlas",
     slug: "data-center-map",
     tagline: "Global Infrastructure Intelligence",
@@ -329,7 +305,7 @@ const PRODUCTS = [
     tagline: "AI Real Estate Intelligence",
     icon: Video,
     color: "#F59E0B",
-    description: "AI-powered real estate intelligence platform. Production deployed. Positioned for rapid scaling on the ATOM infrastructure foundation.",
+    description: "AI-powered real estate intelligence tool designed to facilitate fast property sales through intelligent matching, visual AI analysis, and automated workflows.",
     cost: "$0.5M–$1M",
     comparable: "Matterport — $1.6B acquisition",
     url: "https://vidzee.vercel.app/",
@@ -351,14 +327,15 @@ type VendorStatus = "yes" | "no" | "partial";
 const VENDOR_DATA: Record<string, VendorStatus[]> = {
   "ATOM":       ["yes","yes","yes","yes","yes","yes","yes","yes"],
   "Sierra":     ["no","no","no","partial","partial","no","no","no"],
-  "Cognigy":    ["no","no","partial","partial","partial","no","no","no"],
-  "Kore.ai":    ["partial","no","partial","partial","partial","no","no","no"],
   "Microsoft":  ["no","no","partial","no","partial","no","no","no"],
-  "Google":     ["no","no","partial","no","partial","no","no","no"],
+  "Google":     ["no","no","partial","no","partial","no","partial","no"],
+  "Cognigy":    ["no","no","partial","partial","partial","no","no","no"],
+  "Amazon":     ["no","no","partial","no","partial","no","partial","no"],
+  "Kore.ai":    ["partial","no","partial","partial","partial","no","no","no"],
 };
 
 const VENDOR_SCORES: Record<string, number> = {
-  "ATOM": 25, "Sierra": 11, "Cognigy": 14, "Kore.ai": 15, "Microsoft": 12, "Google": 11,
+  "ATOM": 25, "Sierra": 19, "Microsoft": 17, "Google": 16, "Cognigy": 16, "Amazon": 15, "Kore.ai": 14,
 };
 
 const MOAT_LAYERS = [
@@ -412,10 +389,11 @@ const RADAR_DATA = [
 
 const COMP_TABLE = [
   { company: "Sierra AI", raised: "$635M", valuation: "$10B", products: "1 product (CX)" },
-  { company: "Cognigy", raised: "$165M", valuation: "$955M", products: "1 product (conversational)" },
-  { company: "Abridge", raised: "$758M", valuation: "$2B+", products: "1 product (clinical docs)" },
+  { company: "Harvey AI", raised: "$3B", valuation: "$3B (Series D 2025)", products: "1 product (legal AI)" },
   { company: "ElevenLabs", raised: "$500M", valuation: "$11B", products: "1 product (voice)" },
-  { company: "AntimatterAI", raised: "$0", valuation: "$50M ask", products: "13 products (full platform)" },
+  { company: "Abridge", raised: "$758M", valuation: "$2B+", products: "1 product (clinical docs)" },
+  { company: "Cognigy", raised: "$165M", valuation: "$955M", products: "1 product (conversational)" },
+  { company: "AntimatterAI", raised: "$0", valuation: "$60M pitch", products: "10 products (full platform)" },
 ];
 
 const FUNDS_ALLOCATION = [
@@ -478,8 +456,45 @@ const PARTNERS = [
   { name: "Stedi", role: "Healthcare EDI", icon: FileText },
   { name: "Hume AI", role: "Empathic Voice", icon: Mic },
   { name: "Thesys.dev", role: "GenUI Platform", icon: Sparkles },
+  { name: "F1 Teams", role: "Motorsport AI", icon: Activity },
   { name: "arXiv", role: "Research & Publications", icon: BookOpen },
 ];
+
+/* ══════════════════════════════════════════════════════════════════
+   TYPING ANIMATION
+   ══════════════════════════════════════════════════════════════════ */
+
+function TypeWriter({ text, delay = 0, speed = 40 }: { text: string; delay?: number; speed?: number }) {
+  const [displayed, setDisplayed] = useState("");
+  const [started, setStarted] = useState(false);
+  const [done, setDone] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setStarted(true), delay);
+    return () => clearTimeout(timer);
+  }, [delay]);
+
+  useEffect(() => {
+    if (!started) return;
+    let i = 0;
+    const interval = setInterval(() => {
+      i++;
+      setDisplayed(text.slice(0, i));
+      if (i >= text.length) {
+        setDone(true);
+        clearInterval(interval);
+      }
+    }, speed);
+    return () => clearInterval(interval);
+  }, [started, text, speed]);
+
+  return (
+    <span>
+      {displayed}
+      {!done && started && <span className="typing-cursor" />}
+    </span>
+  );
+}
 
 /* ══════════════════════════════════════════════════════════════════
    STAT COUNTER COMPONENT
@@ -489,13 +504,14 @@ function StatCounter({ value, prefix = "", suffix = "", label }: { value: number
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
   const count = useCountUp(value, 2000, inView);
+  const isDone = count === value && inView;
 
   return (
     <div ref={ref} className="text-center">
-      <div className="text-3xl md:text-4xl font-bold text-[#00FFB2] font-['Clash_Display']">
+      <div className={`text-4xl md:text-5xl font-bold text-[#00FFB2] font-['Clash_Display'] transition-transform ${isDone ? 'counter-done-pulse' : ''}`}>
         {prefix}{count}{suffix}
       </div>
-      <div className="text-xs text-white/50 mt-1 font-['Satoshi'] uppercase tracking-widest">{label}</div>
+      <div className="text-xs text-white/50 mt-1.5 font-['Satoshi'] uppercase tracking-widest">{label}</div>
     </div>
   );
 }
@@ -674,6 +690,9 @@ function HeroSection() {
       {/* Quantum particle background */}
       <QuantumCanvas />
 
+      {/* Animated gradient mesh */}
+      <div className="hero-gradient-mesh" />
+
       {/* Radial gradient overlay */}
       <div className="absolute inset-0 bg-gradient-radial from-[#00FFB2]/5 via-transparent to-black/60" style={{ zIndex: 2 }} />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black" style={{ zIndex: 2 }} />
@@ -715,7 +734,7 @@ function HeroSection() {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="text-white/70 text-xl md:text-2xl font-['Satoshi'] mb-2"
         >
-          The Nervous System of Enterprise AI
+          <TypeWriter text="The Nervous System of Enterprise AI" delay={800} speed={45} />
         </motion.p>
 
         {/* Raise line */}
@@ -725,7 +744,7 @@ function HeroSection() {
           transition={{ delay: 0.75 }}
           className="text-[#8587e3] text-base md:text-lg font-['Satoshi'] font-semibold mb-10"
         >
-          Series A &nbsp;·&nbsp; $10M–$20M Raise &nbsp;·&nbsp; $50M Pre-Money Valuation
+          Series A &nbsp;·&nbsp; $10M–$20M Raise &nbsp;·&nbsp; $60M Pre-Money Valuation
         </motion.p>
 
         {/* Stats bar */}
@@ -733,11 +752,11 @@ function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9 }}
-          className="inline-flex flex-wrap items-center justify-center gap-6 md:gap-10 px-6 md:px-12 py-6 rounded-2xl border border-[#00FFB2]/20 bg-black/40 backdrop-blur-sm mb-10"
+          className="inline-flex flex-wrap items-center justify-center gap-6 md:gap-10 px-6 md:px-12 py-8 rounded-2xl border border-[#00FFB2]/20 bg-black/50 backdrop-blur-md mb-10"
         >
-          <StatCounter value={50} prefix="$" suffix="M" label="Valuation" />
+          <StatCounter value={60} prefix="$" suffix="M" label="Valuation" />
           <div className="w-px h-8 bg-white/10 hidden md:block" />
-          <StatCounter value={13} label="Production Products" />
+          <StatCounter value={10} label="Products in Portfolio" />
           <div className="w-px h-8 bg-white/10 hidden md:block" />
           <StatCounter value={99} suffix="+" label="Projects Delivered" />
           <div className="w-px h-8 bg-white/10 hidden md:block" />
@@ -768,14 +787,14 @@ function HeroSection() {
         >
           <button
             onClick={() => document.getElementById("investment")?.scrollIntoView({ behavior: "smooth" })}
-            className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#00FFB2] text-black font-bold rounded-xl hover:bg-[#00FFB2]/90 transition-all transform hover:scale-105 font-['Satoshi']"
+            className="cta-glow-pulse inline-flex items-center gap-2 px-7 py-3.5 bg-[#00FFB2] text-black font-bold rounded-xl hover:bg-[#00FFB2]/90 transition-all transform hover:scale-105 font-['Satoshi']"
           >
             <Rocket size={16} />
             Review Term Sheet
           </button>
           <button
             onClick={() => document.getElementById("products")?.scrollIntoView({ behavior: "smooth" })}
-            className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/20 text-white rounded-xl hover:border-[#00FFB2]/50 hover:bg-[#00FFB2]/5 transition-all font-['Satoshi']"
+            className="cta-glow-pulse-outline inline-flex items-center gap-2 px-7 py-3.5 border border-white/20 text-white rounded-xl hover:border-[#00FFB2]/50 hover:bg-[#00FFB2]/5 transition-all font-['Satoshi']"
           >
             <Layers size={16} />
             Explore Products
@@ -921,11 +940,11 @@ function CompanySection() {
     {
       name: "Matt Bravo",
       role: "Co-Founder & General Partner",
-      subtitle: "Fortune 500 Sales · CMO ClinixAI",
+      subtitle: "Design & Technology · GenUI Creator",
       color: "#00D4FF",
       bg: "from-[#00D4FF]/10 to-transparent",
       initials: "MB",
-      bio: "Brings Fortune 500 enterprise sales execution and CMO-level market strategy. The commercial engine driving $4M+ ClinixAI pipeline.",
+      bio: "Design-driven technologist bridging UX and AI. Creator of GenUI concept and ATOM's visual intelligence layer.",
     },
 
   ];
@@ -940,7 +959,7 @@ function CompanySection() {
     { label: "Client Satisfaction", value: "99%+" },
     { label: "External Capital", value: "$0" },
     { label: "Vendor Score", value: "25/25 (Perfect)" },
-    { label: "Products", value: "13 in Production" },
+    { label: "Products", value: "10 in Portfolio" },
   ];
 
   return (
@@ -957,7 +976,7 @@ function CompanySection() {
         </RevealDiv>
 
         {/* Leadership */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
           {team.map((member, i) => (
             <RevealDiv key={member.name} delay={i * 0.1}>
               <div className={`p-6 rounded-2xl border border-white/10 bg-gradient-to-br ${member.bg} hover:border-opacity-50 transition-all h-full`}
@@ -1043,7 +1062,7 @@ function VendorMatrixSection() {
         </RevealDiv>
 
         {/* Score cards */}
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-4 mb-12">
+        <div className="grid grid-cols-4 md:grid-cols-7 gap-4 mb-12">
           {vendors.map((v, i) => (
             <RevealDiv key={v} delay={i * 0.07}>
               <div className={`p-4 rounded-xl text-center border ${v === "ATOM" ? "border-[#00FFB2]/40 bg-[#00FFB2]/8" : "border-white/10 bg-white/3"}`}>
@@ -1170,7 +1189,7 @@ function ProductsSection() {
             Product <span className="text-[#00FFB2]">Portfolio</span>
           </h2>
           <p className="text-white/50 text-lg max-w-2xl mx-auto font-['Satoshi']">
-            13 products. 10 in production. One integrated nervous system. $13.95M–$22.5M total cost-to-duplicate.
+            10 products. 7 core ATOM + 3 verticals. One integrated nervous system. $45M–$77M total IP replication cost.
           </p>
         </RevealDiv>
 
@@ -1189,8 +1208,8 @@ function ProductsSection() {
                   }
                 }}
               >
-                <div className="p-5 rounded-2xl border border-white/10 bg-[#0a0a0a] h-full flex flex-col transition-all group-hover:border-opacity-50"
-                  style={{ borderColor: `${product.color}20` }}>
+                <div className="p-5 rounded-2xl border border-white/10 bg-[#0a0a0a]/80 backdrop-blur-sm h-full flex flex-col transition-all group-hover:border-opacity-50 product-glow-card"
+                  style={{ borderColor: `${product.color}20`, ['--glow-color' as any]: `${product.color}20` }}>
                   <div className="flex items-start justify-between mb-4">
                     <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
                       style={{ backgroundColor: `${product.color}15`, border: `1px solid ${product.color}30` }}>
@@ -1530,7 +1549,7 @@ function GTMSection() {
         {/* Partners */}
         <RevealDiv delay={0.3} className="mt-14">
           <h3 className="font-['Clash_Display'] font-bold text-white text-2xl mb-6">Partnership Ecosystem</h3>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {PARTNERS.map((p, i) => (
               <div key={p.name} className="p-4 rounded-xl border border-white/10 bg-white/3 text-center hover:border-[#00FFB2]/30 transition-all">
                 <p.icon className="mx-auto mb-2 text-[#00FFB2]/60" size={20} />
@@ -1911,7 +1930,7 @@ function ValuationSection() {
       midpoint: "$48.6M",
       color: "#00FFB2",
       icon: Layers,
-      desc: "Direct cost to rebuild 13 production products, post-quantum crypto stack, 99+ enterprise deployments, and accumulated know-how.",
+      desc: "Direct cost to rebuild 10 production products, post-quantum crypto stack, 99+ enterprise deployments, and accumulated know-how.",
       items: [
         { label: "ATOM Enterprise Platform", value: "$8–12M" },
         { label: "ATOM Voice + IntentIQ", value: "$5–8M" },
@@ -1929,13 +1948,13 @@ function ValuationSection() {
       midpoint: "$66.7M (conservative)",
       color: "#8587e3",
       icon: BarChart3,
-      desc: "Based on comparable single-product raises. Sierra ($4.5B, 1 product), Cognigy ($178M, 1 product), Kore.ai ($150M, 1 product). AntimatterAI has 13.",
+      desc: "Based on comparable single-product raises. Sierra ($10B, 1 product), ElevenLabs ($11B, 1 product), Cognigy ($955M, 1 product). AntimatterAI has 10.",
       items: [
         { label: "Sierra AI (1 product)", value: "$10B valuation" },
         { label: "Cognigy (1 product)", value: "$178M raised" },
         { label: "Kore.ai (1 product)", value: "$150M raised" },
         { label: "ElevenLabs (1 product)", value: "$11B valuation" },
-        { label: "AntimatterAI (13 products)", value: "$50M ask" },
+        { label: "AntimatterAI (10 products)", value: "$60M pitch" },
         { label: "Discount applied", value: "Pre-revenue" },
       ],
     },
@@ -2011,8 +2030,8 @@ function ValuationSection() {
               <div className="w-8 h-px bg-white/20" />
               <span className="text-white/50 text-sm font-['Satoshi']">Market Comps</span>
             </div>
-            <div className="text-6xl font-bold font-['Clash_Display'] text-[#00FFB2] mb-2">$50M</div>
-            <p className="text-white/50 text-sm font-['Satoshi']">Pre-money valuation — the mathematical center of three independent analyses</p>
+            <div className="text-6xl font-bold font-['Clash_Display'] text-[#00FFB2] mb-2">$60M</div>
+            <p className="text-white/50 text-sm font-['Satoshi']">Pitch valuation — $50M formal term sheet, $60M investor positioning. Three independent analyses converge on $40M–$75M.</p>
           </div>
         </RevealDiv>
 
@@ -2046,7 +2065,7 @@ function ValuationSection() {
           </div>
           <div className="mt-4 p-4 rounded-xl border border-[#00FFB2]/15 bg-[#00FFB2]/3">
             <p className="text-[#00FFB2] text-sm font-bold font-['Satoshi']">The asymmetric opportunity:</p>
-            <p className="text-white/60 text-sm font-['Satoshi'] mt-1">Sierra raised at $10B with 1 product. AntimatterAI is asking $50M with 13 products and the only perfect vendor score. That's 0.5% of Sierra's valuation for 13x the product breadth.</p>
+            <p className="text-white/60 text-sm font-['Satoshi'] mt-1">Sierra raised at $10B with 1 product. AntimatterAI is asking $60M with 10 products and the only perfect vendor score. That's 0.6% of Sierra's valuation for 10x the product breadth.</p>
           </div>
         </RevealDiv>
       </div>
@@ -2083,7 +2102,7 @@ function TermSheetWrapper() {
     <div>
       {!open ? (
         <div className="p-6 rounded-2xl border border-[#00FFB2]/20 bg-[#00FFB2]/4 text-center">
-          <p className="text-white/60 text-sm font-['Satoshi'] mb-4">Series A Preferred Equity — $50M Pre-Money Valuation</p>
+          <p className="text-white/60 text-sm font-['Satoshi'] mb-4">Series A Preferred Equity — $60M Pre-Money Valuation</p>
           <button
             onClick={() => setOpen(true)}
             className="inline-flex items-center gap-2 px-6 py-3 bg-[#00FFB2] text-black font-bold rounded-xl hover:bg-[#00FFB2]/90 transition-all font-['Satoshi']"
@@ -2115,7 +2134,7 @@ function InvestmentSection() {
             Investment <span className="text-[#00FFB2]">Opportunity</span>
           </h2>
           <p className="text-white/50 text-lg max-w-2xl mx-auto font-['Satoshi']">
-            $10M–$20M Series A at $50M pre-money. Clean cap table. Institutional-grade terms.
+            $10M–$20M Series A. $50M formal pre-money / $60M pitch valuation. Clean cap table.
           </p>
         </RevealDiv>
 
@@ -2343,7 +2362,7 @@ function EthicsSection() {
               Invest in the Nervous System<br />of <span className="text-[#00FFB2]">Enterprise AI</span>
             </h3>
             <p className="text-white/50 text-lg font-['Satoshi'] max-w-2xl mx-auto mb-8">
-              Series A | $10M–$20M | $50M Pre-Money | 7 Products | 25/25 Score | $0 External Capital to Date
+              Series A | $10M–$20M | $60M Pre-Money | 10 Products | 25/25 Score | $0 External Capital to Date
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
               <a
@@ -2360,16 +2379,17 @@ function EthicsSection() {
                 className="inline-flex items-center gap-2 px-8 py-4 border border-[#00FFB2]/40 text-[#00FFB2] rounded-xl hover:bg-[#00FFB2]/10 transition-all font-['Satoshi']"
               >
                 <Download size={16} />
-                Full Pitch Document
+                Investor Deep Dive (66 pages)
               </a>
             </div>
 
             {/* Document downloads */}
             <div className="flex flex-wrap items-center justify-center gap-3">
               {[
-                { label: "Mega Document", file: "/antimatterai_mega_document.pdf" },
-                { label: "Valuation Report", file: "/antimatterai_valuation_v2.pdf" },
-                { label: "Market Research", file: "/antimatterai_market_research.pdf" },
+                { label: "Investor Deep Dive", file: "/antimatterai_mega_document.pdf" },
+                { label: "State of Disruption", file: "/antimatterai_state_of_disruption.pdf" },
+                { label: "Investor Hype Deck", file: "/antimatterai_investor_hype.pdf" },
+                { label: "Pitch Deck (PPTX)", file: "/antimatterai_pitch_deck.pptx" },
               ].map((doc) => (
                 <a
                   key={doc.label}
@@ -2437,9 +2457,10 @@ function Footer() {
             <h4 className="text-white/60 text-xs font-semibold uppercase tracking-widest font-['Satoshi'] mb-4">Documents</h4>
             <div className="space-y-2">
               {[
-                { label: "Investor Mega Document", file: "/antimatterai_mega_document.pdf" },
-                { label: "Valuation Analysis", file: "/antimatterai_valuation_v2.pdf" },
-                { label: "Market Research", file: "/antimatterai_market_research.pdf" },
+                { label: "Investor Deep Dive", file: "/antimatterai_mega_document.pdf" },
+                { label: "State of Disruption", file: "/antimatterai_state_of_disruption.pdf" },
+                { label: "Investor Hype Deck", file: "/antimatterai_investor_hype.pdf" },
+                { label: "Pitch Deck (PPTX)", file: "/antimatterai_pitch_deck.pptx" },
               ].map((doc) => (
                 <a
                   key={doc.label}
@@ -2476,7 +2497,7 @@ function Footer() {
 
         <div className="border-t border-white/5 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-white/20 text-xs font-['Satoshi']">
-            Self-Funded · Pre-Revenue · March 2026 · Series A $10M–$20M · $50M Pre-Money
+            Self-Funded · Pre-Revenue · March 2026 · Series A $10M–$20M · $60M Pre-Money
           </p>
           <PerplexityAttribution />
         </div>
@@ -2516,7 +2537,7 @@ export default function Home() {
       <StickyNav />
       <CursorGlow />
 
-      {/* All 13 sections */}
+      {/* All sections */}
       <HeroSection />
       <QuantumSection />
       <CompanySection />

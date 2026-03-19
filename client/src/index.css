@@ -706,6 +706,116 @@
   padding: 6px 10px;
 }
 
+/* ═══ ANIMATED GRADIENT MESH HERO BACKGROUND ═══ */
+@keyframes mesh-gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: hue-rotate(15deg);
+  }
+  75% {
+    background-position: 50% 100%;
+  }
+}
+
+.hero-gradient-mesh {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(0, 255, 178, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 60% at 80% 60%, rgba(133, 135, 227, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 80% at 50% 20%, rgba(0, 212, 255, 0.04) 0%, transparent 60%);
+  background-size: 200% 200%;
+  animation: mesh-gradient 12s ease-in-out infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ═══ TYPING CURSOR ANIMATION ═══ */
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: #00FFB2;
+  margin-left: 2px;
+  animation: blink-cursor 0.8s step-end infinite;
+  vertical-align: text-bottom;
+}
+
+/* ═══ PULSING GLOW CTA BUTTONS ═══ */
+@keyframes cta-pulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(0, 255, 178, 0.3), 0 0 40px rgba(0, 255, 178, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(0, 255, 178, 0.5), 0 0 60px rgba(0, 255, 178, 0.2);
+  }
+}
+
+.cta-glow-pulse {
+  animation: cta-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes cta-pulse-outline {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(0, 255, 178, 0.1), inset 0 0 10px rgba(0, 255, 178, 0.03);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 255, 178, 0.2), inset 0 0 15px rgba(0, 255, 178, 0.06);
+  }
+}
+
+.cta-glow-pulse-outline {
+  animation: cta-pulse-outline 2.5s ease-in-out infinite;
+}
+
+/* ═══ COUNTER PULSE ANIMATION ═══ */
+@keyframes counter-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.counter-done-pulse {
+  animation: counter-pulse 0.4s ease-out;
+}
+
+/* ═══ PRODUCT CARD GLOW ON HOVER ═══ */
+.product-glow-card {
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.product-glow-card:hover {
+  box-shadow: 0 0 30px var(--glow-color, rgba(0, 255, 178, 0.15)), 0 0 60px var(--glow-color, rgba(0, 255, 178, 0.05));
+}
+
+/* ═══ GLASSMORPHISM ENHANCED ═══ */
+.glass-card-enhanced {
+  background: rgba(10, 10, 20, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.glass-card-enhanced:hover {
+  background: rgba(10, 10, 20, 0.7);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
 /* ═══ Thesys C1 GenUI Chat Overrides ═══ */
 .c1-chat-container {
   height: 100%;
