@@ -205,6 +205,7 @@ const PRODUCTS = [
     tagline: "The Governance Backbone",
     icon: Shield,
     color: "#00FFB2",
+    maturity: "SHIPPING",
     description: "5-layer enterprise intelligence framework with SOC2, HIPAA, post-quantum cryptography, VPC deployment. The infrastructure Fortune 500 CISOs require.",
     cost: "$5M–$8M",
     comparable: "Sierra AI — $635M raised",
@@ -216,6 +217,7 @@ const PRODUCTS = [
     tagline: "Empathic Voice Intelligence",
     icon: Mic,
     color: "#8587e3",
+    maturity: "SHIPPING",
     description: "Hume EVI empathic voice, OpenAI Realtime, ElevenLabs multi-provider. Real-time sentiment analysis with human-level nuance across enterprise workflows.",
     cost: "$1.5M–$2.5M",
     comparable: "ElevenLabs — $500M at $11B",
@@ -227,6 +229,7 @@ const PRODUCTS = [
     tagline: "Autonomous Digital Workers",
     icon: Cpu,
     color: "#E040FB",
+    maturity: "LIMITED BETA",
     description: "Brain-Spine-Digital Worker framework. HIPAA-ready autonomous agents executing multi-step enterprise workflows end-to-end without human intervention.",
     cost: "$2M–$3.5M",
     comparable: "Hippocratic AI — $370M raised",
@@ -238,6 +241,7 @@ const PRODUCTS = [
     tagline: "6-Step Intent Discovery",
     icon: Search,
     color: "#7B61FF",
+    maturity: "SHIPPING",
     description: "Buyer intent scoring and behavioral prediction. 6-Step Discovery Framework that understands what customers need before they articulate it.",
     cost: "$1M–$1.5M",
     comparable: "Gong — $7.2B valuation",
@@ -249,6 +253,7 @@ const PRODUCTS = [
     tagline: "Global Infrastructure Intelligence",
     icon: MapPin,
     color: "#00D4FF",
+    maturity: "LIMITED BETA",
     description: "Global data center intelligence using PeeringDB, TeleGeography, Wikidata. Bridges virtual AI with physical space optimization.",
     cost: "$0.8M–$1.2M",
     comparable: "Nearmap — $1.1B acquisition",
@@ -260,6 +265,7 @@ const PRODUCTS = [
     tagline: "AI-Native Quantum Browser",
     icon: Globe,
     color: "#00D4FF",
+    maturity: "R&D",
     description: "AI-native, quantum-forward browser with post-quantum cryptography. Not a browser with AI bolted on — AI that happens to render the web.",
     cost: "$3M–$5M",
     comparable: "Arc Browser — $550M pre-revenue",
@@ -272,6 +278,7 @@ const PRODUCTS = [
     tagline: "Interactive Vendor Intelligence",
     icon: Grid3X3,
     color: "#FFD700",
+    maturity: "SHIPPING",
     description: "Dynamic interactive vendor comparison engine that powers transparent, verifiable competitive intelligence at enterprise scale.",
     cost: "$0.3M–$0.5M",
     comparable: "Gartner — Proprietary data moat",
@@ -283,6 +290,7 @@ const PRODUCTS = [
     tagline: "Ambient Scribe + Full RCM",
     icon: HeartPulse,
     color: "#FF6B9D",
+    maturity: "SHIPPING",
     description: "78% documentation time reduction. Full X12 RCM claims processing. $4M+ pipeline in 180 days. HIPAA-native with ML denial prediction.",
     cost: "$3.5M–$5.5M",
     comparable: "Abridge — $758M raised; Ambience — $313M",
@@ -294,6 +302,7 @@ const PRODUCTS = [
     tagline: "Quantum Drug Discovery",
     icon: FlaskConical,
     color: "#A855F7",
+    maturity: "R&D",
     description: "Quantum-classical hybrid drug discovery using SMILES notation, XGBoost, and VQE. TAM: $85B+. Democratizing pharmaceutical R&D.",
     cost: "$2.5M–$4M",
     comparable: "XtalPi — $1.6B; Xaira — $1.0B",
@@ -305,6 +314,7 @@ const PRODUCTS = [
     tagline: "AI Real Estate Intelligence",
     icon: Video,
     color: "#F59E0B",
+    maturity: "LIMITED BETA",
     description: "AI-powered real estate intelligence tool designed to facilitate fast property sales through intelligent matching, visual AI analysis, and automated workflows.",
     cost: "$0.5M–$1M",
     comparable: "Matterport — $1.6B acquisition",
@@ -339,7 +349,7 @@ const VENDOR_SCORES: Record<string, number> = {
 };
 
 const MOAT_LAYERS = [
-  { name: "Technical IP", level: "Very High", time: "18–36 months", icon: Code, color: "#00FFB2", desc: "25/25 score, GenUI exclusivity, quantum drug discovery, post-quantum cryptography stack." },
+  { name: "Technical IP", level: "Very High", time: "18–36 months", icon: Code, color: "#00FFB2", desc: "Full coverage on our 25-point enterprise framework, GenUI exclusivity, quantum drug discovery, post-quantum cryptography stack." },
   { name: "Data Network Effects", level: "High", time: "12–24 months", icon: Database, color: "#8587e3", desc: "Customer deployments enrich agent performance. More data → smarter agents → more customers." },
   { name: "Switching Costs", level: "Very High", time: "6–12 months", icon: Lock, color: "#00FFB2", desc: "Deep integrations, custom configurations, trained domain models, and workflow dependencies." },
   { name: "Partnership Lock-in", level: "High", time: "12–18 months", icon: Briefcase, color: "#8587e3", desc: "Akamai, Stedi, Hume AI, Thesys.dev (GenUI), arXiv (Research) exclusive channels." },
@@ -356,25 +366,25 @@ const TAM_MARKETS = [
 ];
 
 const ATOM_TIERS = [
-  { name: "Starter", price: "$8,500/mo", gm: "85%", desc: "Mid-market, 3 agents, cloud", color: "#8587e3" },
-  { name: "Professional", price: "$25,000/mo", gm: "80%", desc: "Enterprise, 15 agents, VPC, GenUI", color: "#00FFB2" },
-  { name: "Enterprise", price: "$65,000/mo", gm: "75%", desc: "F500, unlimited agents, full hybrid, IP ownership", color: "#00D4FF" },
-  { name: "Sovereign", price: "$150,000/mo", gm: "70%", desc: "Defense/Gov, air-gapped, FedRAMP, quantum-ready", color: "#FFD700" },
+  { name: "Starter", price: "$5K–$10K/mo", gm: "Target ~85%", desc: "Mid-market, 3 agents, cloud", color: "#8587e3" },
+  { name: "Professional", price: "$20K–$40K/mo", gm: "Target ~80%", desc: "Enterprise, 15 agents, VPC, GenUI", color: "#00FFB2" },
+  { name: "Enterprise", price: "$50K–$80K/mo", gm: "Target ~75%", desc: "F500, unlimited agents, full hybrid, IP ownership", color: "#00D4FF" },
+  { name: "Sovereign", price: "$120K–$180K/mo", gm: "Target ~70%", desc: "Defense/Gov, air-gapped, FedRAMP, quantum-ready", color: "#FFD700" },
 ];
 
 const CLINIX_TIERS = [
-  { name: "Scribe", price: "$1,200/mo", gm: "88%", desc: "Solo/small practice, per provider", color: "#FF6B9D" },
-  { name: "Practice", price: "$3,500/mo", gm: "82%", desc: "Group practice, 5–20 providers", color: "#8587e3" },
-  { name: "Enterprise", price: "$15,000/mo", gm: "78%", desc: "Multi-location, full X12 RCM", color: "#00FFB2" },
-  { name: "Health System", price: "$45,000/mo", gm: "75%", desc: "Hospital system, ML denial prediction", color: "#A855F7" },
+  { name: "Scribe", price: "$800–$1,500/mo", gm: "Target ~85–90%", desc: "Solo/small practice, per provider", color: "#FF6B9D" },
+  { name: "Practice", price: "$3K–$6K/mo", gm: "Target ~80–85%", desc: "Group practice, 5–20 providers", color: "#8587e3" },
+  { name: "Enterprise", price: "$10K–$20K/mo", gm: "Target ~78–82%", desc: "Multi-location, full X12 RCM", color: "#00FFB2" },
+  { name: "Health System", price: "$30K–$60K/mo", gm: "Target ~75–80%", desc: "Hospital system, ML denial prediction", color: "#A855F7" },
 ];
 
 const FINANCIAL_PROJECTIONS = [
-  { year: "Y1", revenue: 36.0, ebitda: 4.1, arr: 31.2, gm: 78, cagr: 0 },
-  { year: "Y2", revenue: 78.6, ebitda: 24.9, arr: 72.4, gm: 80, cagr: 118 },
-  { year: "Y3", revenue: 136.1, ebitda: 57.6, arr: 128.6, gm: 82, cagr: 94 },
-  { year: "Y4", revenue: 204.3, ebitda: 97.6, arr: 196.2, gm: 83, cagr: 78 },
-  { year: "Y5", revenue: 276.3, ebitda: 146.9, arr: 267.8, gm: 85, cagr: 66 },
+  { year: "Y1", revLow: 8, revHigh: 12, ebitdaNote: "Negative", gmRange: "75–80%" },
+  { year: "Y2", revLow: 20, revHigh: 35, ebitdaNote: "Improving", gmRange: "77–82%" },
+  { year: "Y3", revLow: 40, revHigh: 60, ebitdaNote: "~Breakeven", gmRange: "78–83%" },
+  { year: "Y4", revLow: 70, revHigh: 110, ebitdaNote: "Mid-teens %", gmRange: "80–84%" },
+  { year: "Y5", revLow: 120, revHigh: 180, ebitdaNote: "20–30%", gmRange: "80–85%" },
 ];
 
 const RADAR_DATA = [
@@ -405,19 +415,17 @@ const FUNDS_ALLOCATION = [
 ];
 
 const MILESTONES = [
-  { month: "Month 6", target: "$1M MRR", icon: Rocket, color: "#00FFB2" },
-  { month: "Month 10", target: "$3M MRR", icon: TrendingUp, color: "#8587e3" },
-  { month: "Month 15", target: "$8M MRR / $96M ARR run rate", icon: Crown, color: "#00D4FF" },
-  { month: "Month 18", target: "Series B at $500M+ valuation", icon: Star, color: "#FFD700" },
-  { month: "2028", target: "$200M+ ARR", icon: Zap, color: "#A855F7" },
-  { month: "2030", target: "IPO / Exit at $4–8B", icon: Trophy, color: "#FF6B9D" },
+  { month: "Phase 1: Months 0–6", target: "Build GTM, convert design partners, target 3–5 paying customers, initial ARR in low-to-mid single-digit millions", icon: Rocket, color: "#00FFB2" },
+  { month: "Phase 2: Months 6–12", target: "Scale FDE model, 10–20 customers, ARR $10M–$20M range, analyst recognition", icon: TrendingUp, color: "#8587e3" },
+  { month: "Phase 3: Months 12–24", target: "Multi-product expansion, ARR $30M–$60M range, 25–40 customers, Series B readiness", icon: Crown, color: "#00D4FF" },
+  { month: "Longer-Term", target: "Move toward $100M+ ARR with improving EBITDA margins and expanding product portfolio", icon: Star, color: "#FFD700" },
 ];
 
 const ETHICS_PILLARS = [
   { title: "Customer Owns All IP", desc: "Contractual guarantee. Your data, your models, your intellectual property. Zero ambiguity.", icon: Lock },
   { title: "Zero-Training Guarantee", desc: "We never train on customer data. Your competitive advantage stays competitive.", icon: Shield },
   { title: "Human-in-the-Loop", desc: "All agentic systems include human governance checkpoints. AI augments, never replaces judgment.", icon: Users },
-  { title: "Transparent Vendor Matrix", desc: "Every claim is verifiable. We publish the score. Others can't match it.", icon: Eye },
+  { title: "Transparent Vendor Matrix", desc: "Every claim is verifiable. We publish the 25-dimension framework for transparency and welcome head-to-head comparison.", icon: Eye },
   { title: "Data Sovereignty", desc: "Customer controls where data lives — cloud, VPC, on-prem, or air-gapped.", icon: Globe },
   { title: "Compliance-Native", desc: "HIPAA, SOC2, FedRAMP built into architecture. Not bolted on afterward.", icon: CheckCircle2 },
   { title: "Emotional AI Intelligence", desc: "Hume EVI empathic voice. AI that understands human emotional context.", icon: Heart },
@@ -439,7 +447,7 @@ const GTM_PHASES = [
     icon: Activity,
     color: "#8587e3",
     desc: "Outcome-based deployment. Measurable ROI within 90 days. Every POV becomes a reference customer and expansion anchor.",
-    channels: ["Discovery → $125K", "Rapid Deploy → $175K", "MRR → $25K–$65K/mo"],
+    channels: ["Discovery → $100K–$150K", "Rapid Deploy → $150K–$250K", "MRR → $25K–$65K/mo"],
   },
   {
     phase: "Phase 3",
@@ -447,7 +455,7 @@ const GTM_PHASES = [
     icon: Rocket,
     color: "#00D4FF",
     desc: "130% NRR target. Land on one product, expand to the full nervous system. Every enterprise customer becomes a multi-product account.",
-    channels: ["Expansion → $65K–$150K/mo", "Strategic Partner → $150K+/mo", "3-Year LTV → $2.64M"],
+    channels: ["Expansion → $65K–$150K/mo", "Strategic Partner → $150K+/mo", "Target NRR: 120–130%+"],
   },
 ];
 
@@ -760,7 +768,7 @@ function HeroSection() {
           <div className="w-px h-8 bg-white/10 hidden md:block" />
           <StatCounter value={99} suffix="+" label="Projects Delivered" />
           <div className="w-px h-8 bg-white/10 hidden md:block" />
-          <StatCounter value={25} suffix="/25" label="Vendor Score" />
+          <StatCounter value={25} suffix="/25" label="Vendor Score (Internal)" />
           <div className="w-px h-8 bg-white/10 hidden md:block" />
           <div className="text-center">
             <div className="text-3xl md:text-4xl font-bold text-[#00FFB2] font-['Clash_Display']">$0</div>
@@ -822,20 +830,13 @@ function HeroSection() {
    ══════════════════════════════════════════════════════════════════ */
 
 function QuantumSection() {
-  const themes = [
-    { icon: Brain, label: "Human + AI Symbiosis", color: "#00FFB2", quote: "The fusion of AI and human emotional intelligence unlocks near-infinite possibilities by harmonizing human creativity and machine intelligence dynamically." },
-    { icon: Heart, label: "Emotional Intelligence", color: "#8587e3", quote: "Emotional intelligence enables humans to navigate this interconnected world with empathy, adaptability, and resilience." },
-    { icon: Scale, label: "Ethical Philosophy", color: "#00D4FF", quote: "Philosophy provides the moral compass necessary to steer technological advancements toward justice, fairness, and human-centered values." },
-    { icon: Lightbulb, label: "Technosocialism", color: "#FFD700", quote: "Technology should democratically empower all individuals with equitable access to resources, innovation, and governance." },
-  ];
-
   return (
     <div id="quantum" className="bg-black py-32 px-4 relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-[#8587e3]/3 blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative">
-        <RevealDiv className="text-center mb-20">
+        <RevealDiv className="text-center mb-16">
           <SectionLabel>The Founder's Vision</SectionLabel>
           <h2 className="font-['Clash_Display'] font-bold text-white text-5xl md:text-6xl mb-6">
             Quantum <span className="text-[#00FFB2]">Awakening</span>
@@ -845,67 +846,72 @@ function QuantumSection() {
           </p>
         </RevealDiv>
 
-        {/* Main quote block */}
-        <RevealDiv delay={0.1} className="relative mb-20">
-          <div className="relative p-8 md:p-12 rounded-2xl border border-[#00FFB2]/20 bg-gradient-to-br from-[#00FFB2]/5 to-transparent">
-            <Quote className="absolute top-6 left-6 text-[#00FFB2]/20" size={48} />
-            <blockquote className="text-white/80 text-lg md:text-xl font-['Satoshi'] leading-relaxed pl-8 md:pl-12 italic">
-              "The paradigm-shifting new quantum world represents a holistic and interconnected perspective of reality inspired by quantum principles such as entanglement, probability, and fluidity. This worldview emphasizes that all elements — individuals, communities, political systems, technologies, and environments — are interconnected and influence each other dynamically."
+        {/* Core mandate */}
+        <RevealDiv delay={0.1} className="mb-12">
+          <div className="relative p-8 md:p-10 rounded-2xl border border-[#00FFB2]/20 bg-gradient-to-br from-[#00FFB2]/5 to-transparent">
+            <Quote className="absolute top-6 left-6 text-[#00FFB2]/20" size={40} />
+            <blockquote className="text-white/80 text-lg font-['Satoshi'] leading-relaxed pl-8 md:pl-12 italic mb-4">
+              "We see AI through a quantum lens — everything is interconnected and dynamic. Our mandate is simple: align AI with human values, preserve human agency, and ensure the benefits reach the many, not just the few."
             </blockquote>
-            <div className="mt-6 pl-8 md:pl-12">
+            <div className="pl-8 md:pl-12">
               <div className="text-[#00FFB2] font-semibold font-['Satoshi']">AntimatterAI Founders</div>
             </div>
           </div>
         </RevealDiv>
 
-        {/* 4 theme cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
-          {themes.map((t, i) => (
-            <RevealDiv key={t.label} delay={i * 0.1}>
-              <div className="p-6 rounded-xl border border-white/10 bg-white/3 hover:border-opacity-40 transition-all group h-full"
-                style={{ borderColor: `${t.color}20` }}>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-lg flex items-center justify-center"
-                    style={{ backgroundColor: `${t.color}15`, border: `1px solid ${t.color}30` }}>
-                    <t.icon size={20} style={{ color: t.color }} />
-                  </div>
-                  <span className="font-['Clash_Display'] font-semibold text-white text-base">{t.label}</span>
-                </div>
-                <p className="text-white/60 text-sm font-['Satoshi'] leading-relaxed italic">"{t.quote}"</p>
-              </div>
-            </RevealDiv>
-          ))}
-        </div>
-
-        {/* Closing statement */}
-        <RevealDiv delay={0.4}>
-          <div className="text-center p-8 rounded-2xl border border-[#8587e3]/30 bg-[#8587e3]/5">
-            <p className="text-white/70 text-lg md:text-xl font-['Satoshi'] leading-relaxed mb-4">
-              "This quantum-inspired symbiosis of technology, emotion, and ethics is fundamental for humanity to adapt and keep pace with the exponential changes brought by human+AI collaboration — unlocking near-infinite possibilities."
-            </p>
-            <p className="text-2xl font-['Clash_Display'] font-bold text-[#00FFB2]">
-              Humans are the indispensable piece.
+        {/* Human+AI Symbiosis */}
+        <RevealDiv delay={0.15} className="mb-12">
+          <div className="p-6 rounded-2xl border border-[#8587e3]/20 bg-[#8587e3]/4">
+            <div className="flex items-center gap-3 mb-3">
+              <Brain size={20} className="text-[#00FFB2]" />
+              <h3 className="font-['Clash_Display'] font-bold text-white text-lg">Human + AI Symbiosis</h3>
+            </div>
+            <p className="text-white/60 text-sm font-['Satoshi'] leading-relaxed">
+              AI augments human creativity and judgment — it does not replace them. Every agentic system we build includes human governance checkpoints. The fusion of emotional intelligence and machine capability is what makes ATOM different from pure automation plays.
             </p>
           </div>
         </RevealDiv>
 
         {/* Technosocialism vs Technofeudalism */}
-        <RevealDiv delay={0.2} className="mt-12">
+        <RevealDiv delay={0.2} className="mb-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="p-6 rounded-xl border border-red-500/20 bg-red-500/3">
               <div className="flex items-center gap-2 mb-3">
                 <XCircle className="text-red-400" size={20} />
                 <span className="font-['Clash_Display'] font-bold text-red-400">Technofeudalism</span>
               </div>
-              <p className="text-white/50 text-sm font-['Satoshi']">Technology concentrates power. AI amplifies inequality. Data becomes the new serfdom. A few companies own the intelligence that runs civilization.</p>
+              <p className="text-white/50 text-sm font-['Satoshi']">A few companies own the intelligence that runs civilization. Data becomes the new serfdom. AI amplifies inequality.</p>
             </div>
             <div className="p-6 rounded-xl border border-[#00FFB2]/20 bg-[#00FFB2]/3">
               <div className="flex items-center gap-2 mb-3">
                 <CheckCircle2 className="text-[#00FFB2]" size={20} />
                 <span className="font-['Clash_Display'] font-bold text-[#00FFB2]">Technosocialism</span>
               </div>
-              <p className="text-white/50 text-sm font-['Satoshi']">Technology democratically empowers all individuals. Equitable access to AI. Guided by transparency, ethics, and collective responsibility. This is AntimatterAI's mandate.</p>
+              <p className="text-white/50 text-sm font-['Satoshi']">Technology democratically empowers all individuals. Equitable access to AI, guided by transparency, ethics, and collective responsibility.</p>
             </div>
+          </div>
+        </RevealDiv>
+
+        {/* Concrete implementations */}
+        <RevealDiv delay={0.25}>
+          <div className="p-6 rounded-2xl border border-[#00FFB2]/20 bg-[#00FFB2]/4">
+            <h3 className="font-['Clash_Display'] font-bold text-white text-lg mb-4">How This Shows Up In Practice</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                { icon: Lock, title: "Customer Owns 100% IP", desc: "Contractual guarantee in every agreement. No exceptions, no fine print." },
+                { icon: Shield, title: "No Training on Customer Data", desc: "Zero-training guarantee. Your competitive advantage stays yours." },
+                { icon: Users, title: "Human-in-the-Loop Governance", desc: "Every agentic system includes human oversight checkpoints by design." },
+              ].map((item) => (
+                <div key={item.title} className="p-4 rounded-xl border border-white/5 bg-white/2">
+                  <item.icon size={18} className="text-[#00FFB2] mb-2" />
+                  <div className="font-['Clash_Display'] font-bold text-white text-sm mb-1">{item.title}</div>
+                  <p className="text-white/50 text-xs font-['Satoshi'] leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-white/60 text-sm font-['Satoshi'] mt-4 italic">
+              This is not marketing language. It is encoded in our contracts, our architecture, and our product roadmap.
+            </p>
           </div>
         </RevealDiv>
       </div>
@@ -926,7 +932,8 @@ function CompanySection() {
       color: "#00FFB2",
       bg: "from-[#00FFB2]/10 to-transparent",
       initials: "BO",
-      bio: "An Autistic Savant Visionary & Visionary behind the quantum philosophy. Architect of AntimatterAI's ethical AI covenant.",
+      bio: "Autistic systems thinker and architect of AntimatterAI's quantum philosophy and ethical AI covenant. Designed ATOM's 5-layer governance architecture, the 25-dimension vendor framework, and the IP ownership model that differentiates every product. Leads product vision, covenant design, and long-horizon strategy.",
+      shipped: ["ATOM platform architecture (10 products)", "ClinixAI ($4M+ pipeline in 180 days)", "Ethical AI covenant", "99+ enterprise projects"],
     },
     {
       name: "Paul Wallace",
@@ -935,7 +942,8 @@ function CompanySection() {
       color: "#8587e3",
       bg: "from-[#8587e3]/10 to-transparent",
       initials: "PW",
-      bio: "Enterprise AI veteran with deep Cognizant roots and prior CEO experience at Hannibal AI. Leads all technical architecture and platform delivery.",
+      bio: "Enterprise AI veteran who has architected and delivered large-scale systems for Fortune 500 clients across Cognizant and as CEO of Hannibal AI. Owns end-to-end technical architecture, platform reliability, security posture, and execution of complex deployments in regulated environments.",
+      shipped: ["Enterprise AI delivery at Cognizant", "Hannibal AI platform", "ATOM deployment fabric", "Post-quantum crypto layer"],
     },
     {
       name: "Matt Bravo",
@@ -944,7 +952,8 @@ function CompanySection() {
       color: "#00D4FF",
       bg: "from-[#00D4FF]/10 to-transparent",
       initials: "MB",
-      bio: "Design-driven technologist bridging UX and AI. Creator of GenUI concept and ATOM's visual intelligence layer.",
+      bio: "Design-led technologist who created the Generative UI (GenUI) concept — AI systems that generate their own interfaces in real time. Bridges enterprise UX, interaction design, and AI to turn complex agentic systems into intuitive, deployable products.",
+      shipped: ["GenUI concept (no competitor has this)", "ATOM visual intelligence layer", "ClinixAI UX", "Dynamic Matrices"],
     },
 
   ];
@@ -958,7 +967,7 @@ function CompanySection() {
     { label: "Projects Delivered", value: "99+" },
     { label: "Client Satisfaction", value: "99%+" },
     { label: "External Capital", value: "$0" },
-    { label: "Vendor Score", value: "25/25 (Perfect)" },
+    { label: "Vendor Score", value: "25/25 (Internal Framework)" },
     { label: "Products", value: "10 in Portfolio" },
   ];
 
@@ -988,11 +997,64 @@ function CompanySection() {
                 <h3 className="font-['Clash_Display'] font-bold text-white text-lg mb-1">{member.name}</h3>
                 <p className="text-sm font-semibold mb-1 font-['Satoshi']" style={{ color: member.color }}>{member.role}</p>
                 <p className="text-white/40 text-xs mb-3 font-['Satoshi']">{member.subtitle}</p>
-                <p className="text-white/60 text-sm font-['Satoshi'] leading-relaxed">{member.bio}</p>
+                <p className="text-white/60 text-sm font-['Satoshi'] leading-relaxed mb-3">{member.bio}</p>
+                {(member as any).shipped && (
+                  <div className="mt-2 mb-1">
+                    <p className="text-xs font-bold font-['Satoshi'] mb-1.5" style={{ color: member.color }}>What {member.name.split(' ')[0]} shipped:</p>
+                    <div className="space-y-1">
+                      {((member as any).shipped as string[]).map((item: string) => (
+                        <div key={item} className="flex items-start gap-1.5">
+                          <Check size={10} className="mt-0.5 flex-shrink-0" style={{ color: member.color }} />
+                          <span className="text-white/50 text-xs font-['Satoshi']">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             </RevealDiv>
           ))}
         </div>
+
+        {/* Complementary Skills */}
+        <RevealDiv delay={0.3} className="mb-12">
+          <div className="p-6 rounded-2xl border border-[#8587e3]/20 bg-[#8587e3]/5">
+            <h3 className="font-['Clash_Display'] font-bold text-white text-xl mb-4 text-center">Complementary Skills</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                { name: "Ben O'Leary", skill: "Vision / Architecture / Ethics", color: "#00FFB2" },
+                { name: "Paul Wallace", skill: "Enterprise Delivery / Infra / Security", color: "#8587e3" },
+                { name: "Matt Bravo", skill: "Design / UX / GenUI", color: "#00D4FF" },
+              ].map((f) => (
+                <div key={f.name} className="text-center p-4 rounded-xl border border-white/5 bg-white/2">
+                  <div className="font-['Clash_Display'] font-bold text-white text-sm mb-1">{f.name}</div>
+                  <div className="text-xs font-['Satoshi']" style={{ color: f.color }}>{f.skill}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </RevealDiv>
+
+        {/* Extended Team & Advisors */}
+        <RevealDiv delay={0.35} className="mb-12">
+          <h3 className="font-['Clash_Display'] font-bold text-white text-xl mb-4">Extended Team & Advisors</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {[
+              { title: "Head of Engineering", desc: "Seasoned engineering leader to scale platform architecture and manage distributed team execution across ATOM and vertical products.", color: "#00FFB2" },
+              { title: "Clinical / Healthcare Advisor", desc: "Physician or health system executive to guide ClinixAI product-market fit, clinical validation, and regulatory pathway.", color: "#FF6B9D" },
+              { title: "Security / Compliance Advisor", desc: "Enterprise security specialist with SOC2/HIPAA/FedRAMP experience to strengthen compliance posture for regulated deployments.", color: "#8587e3" },
+            ].map((a) => (
+              <div key={a.title} className="p-5 rounded-xl border border-white/10 bg-white/3">
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: `${a.color}15`, border: `1px solid ${a.color}30` }}>
+                  <Users size={18} style={{ color: a.color }} />
+                </div>
+                <div className="font-['Clash_Display'] font-bold text-white text-sm mb-1">{a.title}</div>
+                <span className="text-[10px] font-['Satoshi'] font-semibold px-2 py-0.5 rounded-full border mb-2 inline-block" style={{ borderColor: `${a.color}40`, color: a.color }}>Recruiting</span>
+                <p className="text-white/50 text-xs font-['Satoshi'] leading-relaxed mt-2">{a.desc}</p>
+              </div>
+            ))}
+          </div>
+        </RevealDiv>
 
         {/* Core Identity Table + Clients */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
@@ -1019,7 +1081,7 @@ function CompanySection() {
             </div>
             <div className="p-5 rounded-xl border border-[#00FFB2]/20 bg-[#00FFB2]/5">
               <p className="text-[#00FFB2] font-bold text-sm font-['Satoshi'] mb-1">Fortune 500 Ready</p>
-              <p className="text-white/60 text-sm font-['Satoshi']">99+ enterprise projects delivered with 99%+ satisfaction rate. The deployment knowledge and trust that cannot be replicated.</p>
+              <p className="text-white/60 text-sm font-['Satoshi']">99+ enterprise projects delivered with consistently high satisfaction. The deployment knowledge, referenceability, and trust we now encode directly into the ATOM platform.</p>
             </div>
           </RevealDiv>
         </div>
@@ -1054,10 +1116,10 @@ function VendorMatrixSection() {
         <RevealDiv className="text-center mb-16">
           <SectionLabel>Competitive Intelligence</SectionLabel>
           <h2 className="font-['Clash_Display'] font-bold text-white text-5xl md:text-6xl mb-6">
-            The <span className="text-[#00FFB2]">25/25</span> Argument
+            The <span className="text-[#00FFB2]">25/25</span> Framework
           </h2>
           <p className="text-white/50 text-lg max-w-2xl mx-auto font-['Satoshi']">
-            Every critical enterprise AI capability. One perfect score. Every competitor falls short.
+            Every critical enterprise AI capability, transparently scored. We developed a 25-dimension framework to evaluate enterprise AI platforms. Atom currently achieves full support across all 25 dimensions. We encourage enterprises to adapt or extend this framework to their own needs.
           </p>
         </RevealDiv>
 
@@ -1215,13 +1277,13 @@ function ProductsSection() {
                       style={{ backgroundColor: `${product.color}15`, border: `1px solid ${product.color}30` }}>
                       <product.icon size={18} style={{ color: product.color }} />
                     </div>
-                    {product.url ? (
-                      <ExternalLink size={14} className="text-white/30 group-hover:text-[#00FFB2] transition-colors" />
-                    ) : (
-                      <span className="text-[10px] font-['Satoshi'] font-semibold px-2 py-0.5 rounded-full border border-[#00FFB2]/30 text-[#00FFB2]/70">
-                        {(product as any).ctaLabel || "Coming Soon"}
-                      </span>
-                    )}
+                    <span className={`text-[10px] font-['Satoshi'] font-semibold px-2 py-0.5 rounded-full border ${
+                      (product as any).maturity === "SHIPPING" ? "border-[#00FFB2]/30 text-[#00FFB2]/80 bg-[#00FFB2]/10" :
+                      (product as any).maturity === "LIMITED BETA" ? "border-[#FFD700]/30 text-[#FFD700]/80 bg-[#FFD700]/10" :
+                      "border-[#8587e3]/30 text-[#8587e3]/80 bg-[#8587e3]/10"
+                    }`}>
+                      {(product as any).maturity || "SHIPPING"}
+                    </span>
                   </div>
 
                   <h3 className="font-['Clash_Display'] font-bold text-white text-sm mb-1 leading-tight">{product.name}</h3>
@@ -1300,6 +1362,35 @@ function MoatSection() {
           <p className="text-white/50 text-lg max-w-2xl mx-auto font-['Satoshi']">
             Not one moat. Five reinforcing layers that compound. Total IP replication: $45M–$77M.
           </p>
+        </RevealDiv>
+
+        {/* What We Built vs What We Wrap */}
+        <RevealDiv delay={0.1} className="mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-6 rounded-2xl border border-[#00FFB2]/20 bg-[#00FFB2]/4">
+              <h3 className="font-['Clash_Display'] font-bold text-[#00FFB2] text-lg mb-4">Proprietary IP (We Built)</h3>
+              <div className="space-y-2">
+                {["GenUI engine — AI generates its own interfaces", "5-layer governance fabric (SOC2, HIPAA, FedRAMP)", "Deploy-anywhere runtime (cloud, VPC, on-prem, edge, air-gap)", "Agent orchestration spine (Brain-Spine-Worker)", "ClinixAI clinical stack (ambient scribe + full X12 RCM)", "Post-quantum cryptography layer"].map((item) => (
+                  <div key={item} className="flex items-start gap-2">
+                    <Check className="text-[#00FFB2] mt-0.5 flex-shrink-0" size={14} />
+                    <span className="text-white/70 text-sm font-['Satoshi']">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="p-6 rounded-2xl border border-[#8587e3]/20 bg-[#8587e3]/4">
+              <h3 className="font-['Clash_Display'] font-bold text-[#8587e3] text-lg mb-4">Ecosystem Leverage (We Wrap)</h3>
+              <div className="space-y-2">
+                {["Foundation models (GPT, Claude, Gemini, Llama — model-agnostic)", "Voice providers (Hume EVI, OpenAI Realtime, ElevenLabs)", "Cloud infrastructure (AWS, Azure, GCP, Akamai/Linode)"].map((item) => (
+                  <div key={item} className="flex items-start gap-2">
+                    <CircleDot className="text-[#8587e3] mt-0.5 flex-shrink-0" size={14} />
+                    <span className="text-white/60 text-sm font-['Satoshi']">{item}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="text-[#00FFB2] text-sm font-bold font-['Satoshi'] mt-4">Being model-agnostic is the moat, not a weakness.</p>
+            </div>
+          </div>
         </RevealDiv>
 
         {/* Visual moat diagram */}
@@ -1391,6 +1482,26 @@ function MarketSection() {
           ))}
         </div>
 
+        {/* Why winnable now */}
+        <RevealDiv delay={0.15} className="mb-16">
+          <div className="p-6 rounded-2xl border border-[#00FFB2]/20 bg-[#00FFB2]/4">
+            <h3 className="font-['Clash_Display'] font-bold text-white text-xl mb-4">Why These Markets Are Winnable Now</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                { num: "01", title: "No dominant platform player", desc: "Enterprise AI remains fragmented. No single vendor owns the full-stack integration layer. The window for a platform play is open." },
+                { num: "02", title: "AI structurally shifts margin and speed", desc: "AI is not incremental improvement — it fundamentally changes unit economics, enabling 10x faster deployment and dramatically lower marginal cost." },
+                { num: "03", title: "Not winner-take-all yet", desc: "Enterprise AI competes on deployment flexibility, compliance, and trust — not network effects. Multiple large players can coexist, and differentiated platforms win specific verticals." },
+              ].map((p) => (
+                <div key={p.num} className="p-4 rounded-xl border border-white/5 bg-white/2">
+                  <span className="text-[#00FFB2] font-bold text-xs font-['Satoshi']">{p.num}</span>
+                  <div className="font-['Clash_Display'] font-bold text-white text-sm mt-1 mb-2">{p.title}</div>
+                  <p className="text-white/50 text-xs font-['Satoshi'] leading-relaxed">{p.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </RevealDiv>
+
         {/* Market cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
           {TAM_MARKETS.map((market, i) => (
@@ -1458,6 +1569,16 @@ function MarketSection() {
             </div>
           </div>
         </RevealDiv>
+
+        {/* Why not winner take all */}
+        <RevealDiv delay={0.3} className="mt-12">
+          <div className="p-6 rounded-2xl border border-[#8587e3]/20 bg-[#8587e3]/5">
+            <h3 className="font-['Clash_Display'] font-bold text-white text-xl mb-3">Why Not Winner-Take-All?</h3>
+            <p className="text-white/60 text-sm font-['Satoshi'] leading-relaxed">
+              Enterprise AI does not exhibit the network effects that create winner-take-all dynamics in consumer platforms. Instead, it competes on deployment flexibility, regulatory compliance, and customer trust. This means multiple large players can coexist — and a differentiated, governance-first platform like ATOM can capture meaningful share without needing to defeat Big Tech head-on.
+            </p>
+          </div>
+        </RevealDiv>
       </div>
     </div>
   );
@@ -1513,14 +1634,34 @@ function GTMSection() {
           ))}
         </div>
 
+        {/* Traction Signals */}
+        <RevealDiv delay={0.15} className="mb-16">
+          <div className="p-6 rounded-2xl border border-[#FFD700]/20 bg-[#FFD700]/4">
+            <h3 className="font-['Clash_Display'] font-bold text-white text-xl mb-4">Traction Signals <span className="text-white/40 text-sm font-['Satoshi'] font-normal">(Pre-Revenue, But Not Pre-Evidence)</span></h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {[
+                "99+ enterprise projects delivered across Fortune 500 clients",
+                "ClinixAI $4M+ qualified pipeline built in just 180 days",
+                "GenUI — unique capability no competitor has replicated",
+                "25/25 vendor framework being used as a procurement evaluation tool",
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-2 p-3 rounded-lg bg-white/3">
+                  <Zap className="text-[#FFD700] mt-0.5 flex-shrink-0" size={14} />
+                  <span className="text-white/70 text-sm font-['Satoshi']">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </RevealDiv>
+
         {/* Customer journey */}
         <RevealDiv delay={0.2}>
           <h3 className="font-['Clash_Display'] font-bold text-white text-2xl mb-6">Enterprise Customer Journey</h3>
           <div className="overflow-x-auto">
             <div className="flex items-stretch gap-0 min-w-[700px]">
               {[
-                { stage: "Discovery", rev: "$125K", color: "#8587e3" },
-                { stage: "Rapid Deploy", rev: "$175K", color: "#00FFB2" },
+                { stage: "Discovery", rev: "$100K–$150K", color: "#8587e3" },
+                { stage: "Rapid Deploy", rev: "$150K–$250K", color: "#00FFB2" },
                 { stage: "MRR Begins", rev: "$25K–$65K/mo", color: "#00D4FF" },
                 { stage: "Expansion", rev: "$65K–$150K/mo", color: "#FFD700" },
                 { stage: "Strategic Partner", rev: "$150K+/mo", color: "#A855F7" },
@@ -1540,9 +1681,9 @@ function GTMSection() {
             </div>
           </div>
           <div className="mt-4 flex gap-6 flex-wrap">
-            <div className="text-sm font-['Satoshi']"><span className="text-[#00FFB2] font-bold">3-Year LTV:</span> <span className="text-white/60">$2.64M</span></div>
-            <div className="text-sm font-['Satoshi']"><span className="text-[#00FFB2] font-bold">LTV:CAC:</span> <span className="text-white/60">88:1</span></div>
-            <div className="text-sm font-['Satoshi']"><span className="text-[#00FFB2] font-bold">NRR Target:</span> <span className="text-white/60">130%</span></div>
+            <div className="text-sm font-['Satoshi']"><span className="text-[#00FFB2] font-bold">Target 3-Year LTV:</span> <span className="text-white/60">$2M–$3M (modeled)</span></div>
+            <div className="text-sm font-['Satoshi']"><span className="text-[#00FFB2] font-bold">Target LTV:CAC:</span> <span className="text-white/60">&gt;5:1 at scale</span></div>
+            <div className="text-sm font-['Satoshi']"><span className="text-[#00FFB2] font-bold">Target NRR:</span> <span className="text-white/60">120–130%+</span></div>
           </div>
         </RevealDiv>
 
@@ -1595,14 +1736,14 @@ function RevenueSection() {
               <p className="text-white/50 text-sm font-['Satoshi']">Not $120K. The 6.5x compounding multiplier that makes SaaS magical.</p>
             </div>
           </div>
-          <p className="text-white/50 text-lg font-['Satoshi']">Combined Year 1 Rule of 78: <span className="text-[#00FFB2] font-bold">$75.66M</span></p>
+          <p className="text-white/50 text-sm font-['Satoshi'] italic">Illustrating SaaS compounding — not current revenue. We are currently self-funded and pre-revenue at the platform level.</p>
         </RevealDiv>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
           {/* ATOM Tiers */}
           <RevealDiv>
             <h3 className="font-['Clash_Display'] font-bold text-white text-2xl mb-2">ATOM Platform</h3>
-            <p className="text-white/40 text-sm font-['Satoshi'] mb-5">Year 1 Rule of 78: <span className="text-[#00FFB2] font-bold">$43.29M</span></p>
+            <p className="text-white/40 text-xs font-['Satoshi'] mb-5 italic">Pricing reflects intended tiers and target margin profile. We are currently finalizing ATOM pricing with design partners.</p>
             <div className="space-y-3">
               {ATOM_TIERS.map((tier, i) => (
                 <motion.div
@@ -1636,7 +1777,7 @@ function RevenueSection() {
           {/* ClinixAI Tiers */}
           <RevealDiv delay={0.15}>
             <h3 className="font-['Clash_Display'] font-bold text-white text-2xl mb-2">ClinixAI Healthcare</h3>
-            <p className="text-white/40 text-sm font-['Satoshi'] mb-5">Year 1 Rule of 78: <span className="text-[#FF6B9D] font-bold">$32.37M</span></p>
+            <p className="text-white/40 text-xs font-['Satoshi'] mb-5 italic">ClinixAI pricing reflects target ranges for design partner discussions.</p>
             <div className="space-y-3">
               {CLINIX_TIERS.map((tier, i) => (
                 <div key={tier.name} className="flex items-center justify-between p-4 rounded-xl border border-white/8 bg-white/2 transition-all hover:border-[#FF6B9D]/30">
@@ -1667,19 +1808,13 @@ function RevenueSection() {
               <p className="text-white/60 text-sm font-['Satoshi'] leading-relaxed mb-4">
                 In SaaS, if you add $10K in new MRR every month for 12 months, you don't earn $120K — you earn $780K because each dollar compounds from the month it lands. The Rule of 78 is why SaaS businesses with consistent growth become exponentially valuable.
               </p>
-              <div className="space-y-2">
-                {[
-                  { label: "ATOM Year 1 Rule of 78", value: "$43.29M", color: "#00FFB2" },
-                  { label: "ClinixAI Year 1 Rule of 78", value: "$32.37M", color: "#FF6B9D" },
-                  { label: "Combined Year 1 Total", value: "$75.66M", color: "#8587e3" },
-                  { label: "Blended Gross Margin", value: "~79%", color: "#FFD700" },
-                ].map((item) => (
-                  <div key={item.label} className="flex items-center justify-between py-2 border-b border-white/5">
-                    <span className="text-white/50 text-sm font-['Satoshi']">{item.label}</span>
-                    <span className="font-bold font-['Satoshi']" style={{ color: item.color }}>{item.value}</span>
-                  </div>
-                ))}
+              <div className="p-4 rounded-xl border border-[#FFD700]/20 bg-[#FFD700]/5 mb-3">
+                <p className="text-[#FFD700] text-xs font-bold font-['Satoshi'] mb-1">Illustrative Example</p>
+                <p className="text-white/50 text-xs font-['Satoshi']">$10K/mo new MRR × 12 months = $780K recognized revenue (not $120K)</p>
               </div>
+              <p className="text-white/40 text-xs font-['Satoshi'] italic leading-relaxed">
+                All Rule-of-78 examples are forward-looking management tools based on hypothetical MRR ramps. They are not commitments or depictions of current revenue performance.
+              </p>
             </div>
             <div>
               <h4 className="font-['Clash_Display'] font-bold text-white text-xl mb-3 text-center">MRR Compounding Effect</h4>
@@ -1719,18 +1854,12 @@ function RevenueSection() {
 
 function FinancialsSection() {
   const unitEcon = [
-    { label: "ACV", value: "$240K", icon: DollarSign, color: "#00FFB2" },
-    { label: "CAC", value: "$31.5K", icon: Target, color: "#8587e3" },
-    { label: "LTV:CAC", value: "17.9x", icon: TrendingUp, color: "#00D4FF" },
-    { label: "NRR", value: "130%", icon: RefreshCw, color: "#FFD700" },
-    { label: "CAC Payback", value: "1.6 mo", icon: Clock, color: "#FF6B9D" },
-    { label: "Churn", value: "5%", icon: Activity, color: "#A855F7" },
-  ];
-
-  const comparables = [
-    { name: "AntimatterAI", y1: 31, y2: 72, y3: 129, raised: "$10-20M ask", color: "#00FFB2", bold: true },
-    { name: "Sierra AI", y1: 20, y2: 100, y3: 200, raised: "$635M raised", color: "#8587e3" },
-    { name: "Snowflake", y1: 12, y2: 42, y3: 97, raised: "$928M IPO", color: "#00D4FF" },
+    { label: "3-Year LTV (modeled)", value: "$2M–$3M", icon: DollarSign, color: "#00FFB2" },
+    { label: "Target LTV:CAC", value: ">5:1", icon: TrendingUp, color: "#8587e3" },
+    { label: "Target NRR", value: "120–130%+", icon: RefreshCw, color: "#00D4FF" },
+    { label: "Target CAC Payback", value: "<12 mo", icon: Clock, color: "#FFD700" },
+    { label: "Target ACV", value: "$250K–$500K", icon: Target, color: "#FF6B9D" },
+    { label: "Target Logo Churn", value: "5–10%", icon: Activity, color: "#A855F7" },
   ];
 
   return (
@@ -1742,110 +1871,77 @@ function FinancialsSection() {
             Financial <span className="text-[#00FFB2]">Projections</span>
           </h2>
           <p className="text-white/50 text-lg max-w-2xl mx-auto font-['Satoshi']">
-            From $36M Year 1 to $276.3M Year 5. 120% Rule of 40. Elite SaaS benchmarking.
+            Scenario-based financial projections. All figures are forward-looking management scenarios, not commitments.
           </p>
         </RevealDiv>
 
-        {/* Main revenue chart with EBITDA + CAGR toggle */}
-        <RevealDiv className="mb-10">
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <h3 className="font-['Clash_Display'] font-bold text-white text-2xl">5-Year Revenue & EBITDA</h3>
-          </div>
-          <ResponsiveContainer width="100%" height={340}>
-            <BarChart data={FINANCIAL_PROJECTIONS} margin={{ top: 10, right: 10, left: -10, bottom: 5 }}>
-              <defs>
-                <linearGradient id="revenueGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#00FFB2" stopOpacity={0.9} />
-                  <stop offset="95%" stopColor="#00FFB2" stopOpacity={0.5} />
-                </linearGradient>
-                <linearGradient id="ebitdaGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#8587e3" stopOpacity={0.9} />
-                  <stop offset="95%" stopColor="#8587e3" stopOpacity={0.5} />
-                </linearGradient>
-              </defs>
-              <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
-              <XAxis dataKey="year" tick={{ fill: "rgba(255,255,255,0.5)", fontSize: 12 }} axisLine={false} tickLine={false} />
-              <YAxis tick={{ fill: "rgba(255,255,255,0.4)", fontSize: 11 }} axisLine={false} tickLine={false} tickFormatter={(v) => `$${v}M`} />
-              <Tooltip
-                contentStyle={{ background: "#111", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 8, color: "#fff" }}
-                formatter={(v: any) => [`$${v}M`, ""]}
-                cursor={{ fill: "rgba(255,255,255,0.03)" }}
-              />
-              <Legend formatter={(v) => <span style={{ color: "rgba(255,255,255,0.6)", fontSize: 12 }}>{v}</span>} />
-              <Bar name="Total Revenue" dataKey="revenue" fill="url(#revenueGrad)" radius={[4, 4, 0, 0]} />
-              <Bar name="EBITDA" dataKey="ebitda" fill="url(#ebitdaGrad)" radius={[4, 4, 0, 0]} />
-            </BarChart>
-          </ResponsiveContainer>
-        </RevealDiv>
-
-        {/* CAGR Projections */}
-        <RevealDiv delay={0.05} className="mb-10">
-          <h3 className="font-['Clash_Display'] font-bold text-white text-2xl mb-6 text-center">YoY Revenue CAGR Projections</h3>
-          <ResponsiveContainer width="100%" height={260}>
-            <BarChart data={FINANCIAL_PROJECTIONS.filter(d => d.cagr > 0)} margin={{ top: 10, right: 10, left: -10, bottom: 5 }}>
-              <defs>
-                <linearGradient id="cagrGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#FFD700" stopOpacity={0.9} />
-                  <stop offset="95%" stopColor="#FFD700" stopOpacity={0.4} />
-                </linearGradient>
-              </defs>
-              <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
-              <XAxis dataKey="year" tick={{ fill: "rgba(255,255,255,0.5)", fontSize: 12 }} axisLine={false} tickLine={false} />
-              <YAxis tick={{ fill: "rgba(255,255,255,0.4)", fontSize: 11 }} axisLine={false} tickLine={false} tickFormatter={(v) => `${v}%`} />
-              <Tooltip
-                contentStyle={{ background: "#111", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 8, color: "#fff" }}
-                formatter={(v: any) => [`${v}%`, ""]}
-                cursor={{ fill: "rgba(255,255,255,0.03)" }}
-              />
-              <Legend formatter={(v) => <span style={{ color: "rgba(255,255,255,0.6)", fontSize: 12 }}>{v}</span>} />
-              <Bar name="YoY Revenue Growth (CAGR %)" dataKey="cagr" fill="url(#cagrGrad)" radius={[4, 4, 0, 0]}>
-                {FINANCIAL_PROJECTIONS.filter(d => d.cagr > 0).map((_, idx) => (
-                  <Cell key={idx} fill={idx === 0 ? "#FFD700" : idx === 1 ? "#00FFB2" : idx === 2 ? "#8587e3" : "#A855F7"} fillOpacity={0.8} />
+        {/* Scenario Table */}
+        <RevealDiv className="mb-12">
+          <h3 className="font-['Clash_Display'] font-bold text-white text-2xl mb-6 text-center">5-Year Revenue Scenario Ranges</h3>
+          <div className="rounded-2xl border border-white/10 overflow-hidden">
+            <table className="w-full">
+              <thead>
+                <tr className="border-b border-white/10 bg-white/3">
+                  <th className="text-left px-6 py-4 text-white/50 text-xs font-semibold font-['Satoshi'] uppercase tracking-wider">Year</th>
+                  <th className="text-right px-4 py-4 text-white/50 text-xs font-semibold font-['Satoshi'] uppercase tracking-wider">Revenue Range</th>
+                  <th className="text-right px-4 py-4 text-white/50 text-xs font-semibold font-['Satoshi'] uppercase tracking-wider">EBITDA Status</th>
+                  <th className="text-right px-6 py-4 text-white/50 text-xs font-semibold font-['Satoshi'] uppercase tracking-wider">GM Range</th>
+                </tr>
+              </thead>
+              <tbody>
+                {FINANCIAL_PROJECTIONS.map((row, i) => (
+                  <tr key={row.year} className={`border-b border-white/5 ${i % 2 === 0 ? "bg-transparent" : "bg-white/2"}`}>
+                    <td className="px-6 py-4 font-bold text-sm font-['Clash_Display'] text-[#00FFB2]">{row.year}</td>
+                    <td className="px-4 py-4 text-right text-white/70 text-sm font-['Satoshi']">${row.revLow}M – ${row.revHigh}M</td>
+                    <td className="px-4 py-4 text-right text-sm font-['Satoshi']">
+                      <span className={row.ebitdaNote === "Negative" ? "text-red-400" : row.ebitdaNote === "~Breakeven" ? "text-[#FFD700]" : "text-[#00FFB2]"}>{row.ebitdaNote}</span>
+                    </td>
+                    <td className="px-6 py-4 text-right text-white/60 text-sm font-['Satoshi']">{row.gmRange}</td>
+                  </tr>
                 ))}
-              </Bar>
-            </BarChart>
-          </ResponsiveContainer>
-          <div className="flex items-center justify-center gap-6 mt-4">
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-sm bg-[#FFD700]" />
-              <span className="text-white/40 text-xs font-['Satoshi']">Y1→Y2: 118% growth</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-sm bg-[#00FFB2]" />
-              <span className="text-white/40 text-xs font-['Satoshi']">Y2→Y3: 94% growth</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-sm bg-[#8587e3]" />
-              <span className="text-white/40 text-xs font-['Satoshi']">Y3→Y4: 78% growth</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-sm bg-[#A855F7]" />
-              <span className="text-white/40 text-xs font-['Satoshi']">Y4→Y5: 66% growth</span>
-            </div>
+              </tbody>
+            </table>
           </div>
+          <p className="text-white/30 text-xs font-['Satoshi'] mt-3 italic">All projections are management scenarios based on assumed customer acquisition and expansion rates. Not commitments.</p>
         </RevealDiv>
 
-        {/* ARR trajectory */}
+        {/* Key Assumptions */}
         <RevealDiv delay={0.1} className="mb-12">
-          <h3 className="font-['Clash_Display'] font-bold text-white text-2xl mb-6 text-center">ARR Trajectory</h3>
-          <ResponsiveContainer width="100%" height={260}>
-            <AreaChart data={FINANCIAL_PROJECTIONS} margin={{ top: 10, right: 10, left: -10, bottom: 5 }}>
-              <defs>
-                <linearGradient id="arrGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#00FFB2" stopOpacity={0.3} />
-                  <stop offset="95%" stopColor="#00FFB2" stopOpacity={0} />
-                </linearGradient>
-              </defs>
-              <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
-              <XAxis dataKey="year" tick={{ fill: "rgba(255,255,255,0.5)", fontSize: 12 }} axisLine={false} tickLine={false} />
-              <YAxis tick={{ fill: "rgba(255,255,255,0.4)", fontSize: 11 }} axisLine={false} tickLine={false} tickFormatter={(v) => `$${v}M`} />
-              <Tooltip
-                contentStyle={{ background: "#111", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 8, color: "#fff" }}
-                formatter={(v: any) => [`$${v}M ARR`, ""]}
-              />
-              <Area type="monotone" dataKey="arr" stroke="#00FFB2" strokeWidth={2.5} fill="url(#arrGrad)" name="Ending ARR" />
-            </AreaChart>
-          </ResponsiveContainer>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-6 rounded-2xl border border-[#00FFB2]/20 bg-[#00FFB2]/4">
+              <h3 className="font-['Clash_Display'] font-bold text-white text-lg mb-4">Key Assumptions</h3>
+              <div className="space-y-2">
+                {[
+                  "10–20 new enterprise customers per year",
+                  "Initial ACV of $250K–$500K",
+                  "NRR of 120–130%+ through expansion",
+                  "Gross margins improve with scale (75% → 85%)",
+                  "EBITDA breakeven targeted by Year 3",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-2">
+                    <Check className="text-[#00FFB2] mt-0.5 flex-shrink-0" size={14} />
+                    <span className="text-white/60 text-sm font-['Satoshi']">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="p-6 rounded-2xl border border-[#8587e3]/20 bg-[#8587e3]/4">
+              <h3 className="font-['Clash_Display'] font-bold text-white text-lg mb-4">Target Metrics</h3>
+              <div className="space-y-2">
+                {[
+                  { label: "ARR / FTE at Scale", value: "$200K–$300K+", color: "#00FFB2" },
+                  { label: "Burn Multiple", value: "<2x by Y2", color: "#8587e3" },
+                  { label: "Logo Churn Target", value: "5–10%", color: "#00D4FF" },
+                  { label: "CAC Payback", value: "<12 months", color: "#FFD700" },
+                ].map((item) => (
+                  <div key={item.label} className="flex justify-between items-center py-2 border-b border-white/5">
+                    <span className="text-white/50 text-sm font-['Satoshi']">{item.label}</span>
+                    <span className="font-bold text-sm font-['Satoshi']" style={{ color: item.color }}>{item.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </RevealDiv>
 
         {/* Unit economics */}
@@ -1862,56 +1958,8 @@ function FinancialsSection() {
           ))}
         </div>
 
-        {/* Comparable trajectories */}
-        <RevealDiv delay={0.2}>
-          <h3 className="font-['Clash_Display'] font-bold text-white text-2xl mb-6">Comparable Revenue Trajectories</h3>
-          <div className="rounded-2xl border border-white/10 overflow-hidden">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b border-white/10 bg-white/3">
-                  <th className="text-left px-6 py-4 text-white/50 text-xs font-semibold font-['Satoshi'] uppercase tracking-wider">Company</th>
-                  <th className="text-right px-4 py-4 text-white/50 text-xs font-semibold font-['Satoshi'] uppercase tracking-wider">Year 1</th>
-                  <th className="text-right px-4 py-4 text-white/50 text-xs font-semibold font-['Satoshi'] uppercase tracking-wider">Year 2</th>
-                  <th className="text-right px-4 py-4 text-white/50 text-xs font-semibold font-['Satoshi'] uppercase tracking-wider">Year 3</th>
-                  <th className="text-right px-6 py-4 text-white/50 text-xs font-semibold font-['Satoshi'] uppercase tracking-wider">Capital Raised</th>
-                </tr>
-              </thead>
-              <tbody>
-                {comparables.map((comp, i) => (
-                  <tr key={comp.name} className={`border-b border-white/5 ${comp.bold ? "bg-[#00FFB2]/4" : ""}`}>
-                    <td className="px-6 py-4">
-                      <span className={`font-bold text-sm font-['Satoshi'] ${comp.bold ? "text-[#00FFB2]" : "text-white/70"}`}>{comp.name}</span>
-                      {comp.bold && <span className="ml-2 text-xs text-[#00FFB2]/60 font-['Satoshi']">(projected)</span>}
-                    </td>
-                    <td className="px-4 py-4 text-right text-white/70 text-sm font-['Satoshi']">${comp.y1}M</td>
-                    <td className="px-4 py-4 text-right text-white/70 text-sm font-['Satoshi']">${comp.y2}M</td>
-                    <td className="px-4 py-4 text-right text-white/70 text-sm font-['Satoshi']">${comp.y3}M</td>
-                    <td className="px-6 py-4 text-right">
-                      <span className="text-sm font-bold font-['Satoshi']" style={{ color: comp.color }}>{comp.raised}</span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="text-white/30 text-xs font-['Satoshi'] mt-3">* AntimatterAI projections are management estimates. Sierra and Snowflake figures are reported.</p>
-        </RevealDiv>
-
-        {/* SaaS benchmarks */}
-        <RevealDiv delay={0.3} className="mt-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {[
-              { label: "Rule of 40", value: "120%", benchmark: "Elite (>40% = good)", color: "#00FFB2" },
-              { label: "EBITDA Margin Y3", value: "42%", benchmark: "Best-in-class", color: "#8587e3" },
-              { label: "ARR Growth Y2", value: "132%", benchmark: "Hypergrowth tier", color: "#00D4FF" },
-            ].map((b) => (
-              <div key={b.label} className="p-6 rounded-xl border text-center" style={{ borderColor: `${b.color}25`, background: `${b.color}06` }}>
-                <div className="text-4xl font-bold font-['Clash_Display'] mb-1" style={{ color: b.color }}>{b.value}</div>
-                <div className="text-white/60 text-sm font-bold font-['Satoshi'] mb-1">{b.label}</div>
-                <div className="text-white/30 text-xs font-['Satoshi']">{b.benchmark}</div>
-              </div>
-            ))}
-          </div>
+        <RevealDiv delay={0.15} className="mb-4">
+          <p className="text-white/30 text-xs font-['Satoshi'] italic text-center mt-4">Target Unit Economics (Modeled, Not Historical). Actual metrics will be reported once we have 12+ months of production cohort data.</p>
         </RevealDiv>
       </div>
     </div>
@@ -1966,7 +2014,7 @@ function ValuationSection() {
       icon: Globe,
       desc: "ClinixAI $4M+ pipeline at 10–15x forward revenue multiple, plus platform value of remaining 6 products and 3 vertical businesses.",
       items: [
-        { label: "ClinixAI pipeline", value: "$4M+ ARR" },
+        { label: "ClinixAI pipeline", value: "$4M+ qualified pipeline" },
         { label: "Forward multiple", value: "10–15x" },
         { label: "ClinixAI standalone", value: "$40–60M" },
         { label: "Platform premium (6 products)", value: "+$15–30M" },
@@ -1981,10 +2029,10 @@ function ValuationSection() {
         <RevealDiv className="text-center mb-20">
           <SectionLabel>Valuation Analysis</SectionLabel>
           <h2 className="font-['Clash_Display'] font-bold text-white text-5xl md:text-6xl mb-6">
-            Three Methodologies. <span className="text-[#00FFB2]">One Answer.</span>
+            Three Lenses. <span className="text-[#00FFB2]">One Reasonable Range.</span>
           </h2>
           <p className="text-white/50 text-lg max-w-2xl mx-auto font-['Satoshi']">
-            $40M–$75M convergence. Mathematical, not aspirational. Three independent approaches agree.
+            $40M–$75M convergence across multiple methods.
           </p>
         </RevealDiv>
 
@@ -2065,7 +2113,7 @@ function ValuationSection() {
           </div>
           <div className="mt-4 p-4 rounded-xl border border-[#00FFB2]/15 bg-[#00FFB2]/3">
             <p className="text-[#00FFB2] text-sm font-bold font-['Satoshi']">The asymmetric opportunity:</p>
-            <p className="text-white/60 text-sm font-['Satoshi'] mt-1">Sierra raised at $10B with 1 product. AntimatterAI is asking $60M with 10 products and the only perfect vendor score. That's 0.6% of Sierra's valuation for 10x the product breadth.</p>
+            <p className="text-white/60 text-sm font-['Satoshi'] mt-1">We intentionally price at a fraction of late-stage comps to align maximum upside with early investors. Entry at $60M with 10 products in portfolio vs. single-product companies at $1B–$10B+ represents asymmetric risk/reward.</p>
           </div>
         </RevealDiv>
       </div>
@@ -2231,18 +2279,18 @@ function InvestmentSection() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             <div className="p-6 rounded-xl border border-[#00FFB2]/20 bg-[#00FFB2]/4 text-center">
               <Calendar className="mx-auto mb-3 text-[#00FFB2]" size={24} />
-              <div className="text-2xl font-bold font-['Clash_Display'] text-[#00FFB2] mb-1">Month 18</div>
-              <div className="text-white/60 text-sm font-['Satoshi']">Series B at $500M+ valuation</div>
+              <div className="text-2xl font-bold font-['Clash_Display'] text-[#00FFB2] mb-1">12–18 Months</div>
+              <div className="text-white/60 text-sm font-['Satoshi']">Series B readiness with strong ARR traction</div>
             </div>
             <div className="p-6 rounded-xl border border-[#8587e3]/20 bg-[#8587e3]/4 text-center">
               <TrendingUp className="mx-auto mb-3 text-[#8587e3]" size={24} />
-              <div className="text-2xl font-bold font-['Clash_Display'] text-[#8587e3] mb-1">2028</div>
-              <div className="text-white/60 text-sm font-['Satoshi']">$200M+ ARR</div>
+              <div className="text-2xl font-bold font-['Clash_Display'] text-[#8587e3] mb-1">Year 3–4</div>
+              <div className="text-white/60 text-sm font-['Satoshi']">Path to $100M+ ARR</div>
             </div>
             <div className="p-6 rounded-xl border border-[#FFD700]/20 bg-[#FFD700]/4 text-center">
               <Crown className="mx-auto mb-3 text-[#FFD700]" size={24} />
-              <div className="text-2xl font-bold font-['Clash_Display'] text-[#FFD700] mb-1">2030</div>
-              <div className="text-white/60 text-sm font-['Satoshi']">IPO or exit at $4–8B</div>
+              <div className="text-2xl font-bold font-['Clash_Display'] text-[#FFD700] mb-1">Long-Term</div>
+              <div className="text-white/60 text-sm font-['Satoshi']">EBITDA-positive at scale with expanding margins</div>
             </div>
           </div>
         </RevealDiv>
