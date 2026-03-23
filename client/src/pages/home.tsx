@@ -20,6 +20,7 @@ import {
 } from "recharts";
 import TermSheet from "@/components/TermSheet";
 import MarketResearch from "@/components/MarketResearch";
+import StateOfDisruption from "@/components/StateOfDisruption";
 import C1Assistant from "@/components/C1Assistant";
 
 /* ══════════════════════════════════════════════════════════════════
@@ -194,6 +195,7 @@ const NAV_SECTIONS = [
   { id: "financials", label: "Financials" },
   { id: "valuation", label: "Valuation" },
   { id: "investment", label: "Investment" },
+  { id: "disruption", label: "Disruption" },
   { id: "ethics", label: "Ethics" },
 ];
 
@@ -2596,6 +2598,7 @@ export default function Home() {
       <FinancialsSection />
       <ValuationSection />
       <InvestmentSection />
+      <StateOfDisruption />
       <EthicsSection />
 
       {/* Footer */}
