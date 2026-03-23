@@ -18,7 +18,6 @@ import {
   LineChart as ReLineChart, Line, AreaChart, Area, CartesianGrid,
   PieChart as RePieChart, Pie, Legend
 } from "recharts";
-import { PerplexityAttribution } from "@/components/PerplexityAttribution";
 import TermSheet from "@/components/TermSheet";
 import MarketResearch from "@/components/MarketResearch";
 import C1Assistant from "@/components/C1Assistant";
@@ -2547,7 +2546,6 @@ function Footer() {
           <p className="text-white/20 text-xs font-['Satoshi']">
             Self-Funded · Pre-Revenue · March 2026 · Series A $10M–$20M · $60M Pre-Money
           </p>
-          <PerplexityAttribution />
         </div>
       </div>
     </footer>
