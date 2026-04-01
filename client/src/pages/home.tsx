@@ -78,7 +78,7 @@ function QuantumCanvas() {
         vx: (Math.random() - 0.5) * 0.4,
         vy: (Math.random() - 0.5) * 0.4,
         size: Math.random() * 2 + 0.5,
-        color: Math.random() > 0.5 ? "#00FFB2" : "#8587e3",
+        color: Math.random() > 0.5 ? "#8587e3" : "#8587e3",
         opacity: Math.random() * 0.6 + 0.2,
       });
     }
@@ -155,9 +155,9 @@ function Section({ id, children, className = "" }: { id?: string; children: Reac
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex items-center gap-3 mb-4">
-      <div className="w-6 h-px bg-[#00FFB2]" />
-      <span className="text-[#00FFB2] text-xs font-semibold tracking-[0.2em] uppercase font-['Satoshi']">{children}</span>
-      <div className="w-6 h-px bg-[#00FFB2]" />
+      <div className="w-6 h-px bg-[#8587e3]" />
+      <span className="text-[#8587e3] text-xs font-semibold tracking-[0.2em] uppercase font-['Plus_Jakarta_Sans']">{children}</span>
+      <div className="w-6 h-px bg-[#8587e3]" />
     </div>
   );
 }
@@ -205,7 +205,7 @@ const PRODUCTS = [
     slug: "enterprise-ai",
     tagline: "The Governance Backbone",
     icon: Shield,
-    color: "#00FFB2",
+    color: "#8587e3",
     maturity: "SHIPPING",
     description: "5-layer enterprise intelligence framework with SOC2, HIPAA, post-quantum cryptography, VPC deployment. The infrastructure Fortune 500 CISOs require.",
     cost: "$5M–$8M",
@@ -292,7 +292,7 @@ const PRODUCTS = [
     icon: HeartPulse,
     color: "#FF6B9D",
     maturity: "SHIPPING",
-    description: "78% documentation time reduction. Full X12 RCM claims processing. $4M+ pipeline in 180 days. HIPAA-native with ML denial prediction.",
+    description: "Billing Agent AI + Ambient Scribe. 78% documentation time reduction. Full X12 RCM claims processing. $4M+ pipeline in 180 days. HIPAA-native with ML denial prediction.",
     cost: "$3.5M–$5.5M",
     comparable: "Abridge — $758M raised; Ambience — $313M",
     url: "https://www.clinixagent.com",
@@ -319,7 +319,19 @@ const PRODUCTS = [
     description: "AI-powered real estate intelligence tool designed to facilitate fast property sales through intelligent matching, visual AI analysis, and automated workflows.",
     cost: "$0.5M–$1M",
     comparable: "Matterport — $1.6B acquisition",
-    url: "https://vidzee.vercel.app/",
+    url: "https://www.vidzee.ai",
+  },
+  {
+    name: "ATOM Red Team",
+    slug: "atom-red-team",
+    tagline: "AI Security Testing",
+    icon: Shield,
+    color: "#FF4444",
+    maturity: "SHIPPING",
+    description: "Automated AI red teaming and security assessment. Identifies vulnerabilities, tests prompt injection resistance, and validates enterprise AI deployments against attack vectors.",
+    cost: "$1M–$2M",
+    comparable: "HackerOne — $500M+ valuation",
+    url: "https://www.antimatterai.com/demos/atom-red-team",
   },
 ];
 
@@ -350,15 +362,15 @@ const VENDOR_SCORES: Record<string, number> = {
 };
 
 const MOAT_LAYERS = [
-  { name: "Technical IP", level: "Very High", time: "18–36 months", icon: Code, color: "#00FFB2", desc: "Full coverage on our 25-point enterprise framework, GenUI exclusivity, quantum drug discovery, post-quantum cryptography stack." },
+  { name: "Technical IP", level: "Very High", time: "18–36 months", icon: Code, color: "#8587e3", desc: "Full coverage on our 25-point enterprise framework, GenUI exclusivity, quantum drug discovery, post-quantum cryptography stack." },
   { name: "Data Network Effects", level: "High", time: "12–24 months", icon: Database, color: "#8587e3", desc: "Customer deployments enrich agent performance. More data → smarter agents → more customers." },
-  { name: "Switching Costs", level: "Very High", time: "6–12 months", icon: Lock, color: "#00FFB2", desc: "Deep integrations, custom configurations, trained domain models, and workflow dependencies." },
+  { name: "Switching Costs", level: "Very High", time: "6–12 months", icon: Lock, color: "#8587e3", desc: "Deep integrations, custom configurations, trained domain models, and workflow dependencies." },
   { name: "Partnership Lock-in", level: "High", time: "12–18 months", icon: Briefcase, color: "#8587e3", desc: "Akamai, Stedi, Hume AI, Thesys.dev (GenUI), arXiv (Research) exclusive channels." },
-  { name: "Talent Density", level: "Moderate-High", time: "Ongoing", icon: Brain, color: "#00FFB2", desc: "100+ years combined enterprise AI experience. Knowledge that cannot be easily replicated." },
+  { name: "Talent Density", level: "Moderate-High", time: "Ongoing", icon: Brain, color: "#8587e3", desc: "100+ years combined enterprise AI experience. Knowledge that cannot be easily replicated." },
 ];
 
 const TAM_MARKETS = [
-  { name: "Agentic AI", now: 7.8, future: 52.6, cagr: "46.3%", product: "ATOM Enterprise + Agentic", color: "#00FFB2" },
+  { name: "Agentic AI", now: 7.8, future: 52.6, cagr: "46.3%", product: "ATOM Enterprise + Agentic", color: "#8587e3" },
   { name: "Enterprise AI Platforms", now: 31.5, future: 155.2, cagr: "37.6%", product: "ATOM Framework", color: "#8587e3" },
   { name: "Healthcare RCM", now: 72.9, future: 195.9, cagr: "11.6%", product: "ClinixAI", color: "#FF6B9D" },
   { name: "Drug Discovery AI", now: 2.5, future: 12.0, cagr: "~30%", product: "MoleculeAI", color: "#A855F7" },
@@ -368,7 +380,7 @@ const TAM_MARKETS = [
 
 const ATOM_TIERS = [
   { name: "Starter", price: "$5K–$10K/mo", gm: "Target ~85%", desc: "Mid-market, 3 agents, cloud", color: "#8587e3" },
-  { name: "Professional", price: "$20K–$40K/mo", gm: "Target ~80%", desc: "Enterprise, 15 agents, VPC, GenUI", color: "#00FFB2" },
+  { name: "Professional", price: "$20K–$40K/mo", gm: "Target ~80%", desc: "Enterprise, 15 agents, VPC, GenUI", color: "#8587e3" },
   { name: "Enterprise", price: "$50K–$80K/mo", gm: "Target ~75%", desc: "F500, unlimited agents, full hybrid, IP ownership", color: "#00D4FF" },
   { name: "Sovereign", price: "$120K–$180K/mo", gm: "Target ~70%", desc: "Defense/Gov, air-gapped, FedRAMP, quantum-ready", color: "#FFD700" },
 ];
@@ -376,7 +388,7 @@ const ATOM_TIERS = [
 const CLINIX_TIERS = [
   { name: "Scribe", price: "$800–$1,500/mo", gm: "Target ~85–90%", desc: "Solo/small practice, per provider", color: "#FF6B9D" },
   { name: "Practice", price: "$3K–$6K/mo", gm: "Target ~80–85%", desc: "Group practice, 5–20 providers", color: "#8587e3" },
-  { name: "Enterprise", price: "$10K–$20K/mo", gm: "Target ~78–82%", desc: "Multi-location, full X12 RCM", color: "#00FFB2" },
+  { name: "Enterprise", price: "$10K–$20K/mo", gm: "Target ~78–82%", desc: "Multi-location, full X12 RCM", color: "#8587e3" },
   { name: "Health System", price: "$30K–$60K/mo", gm: "Target ~75–80%", desc: "Hospital system, ML denial prediction", color: "#A855F7" },
 ];
 
@@ -404,11 +416,11 @@ const COMP_TABLE = [
   { company: "ElevenLabs", raised: "$500M", valuation: "$11B", products: "1 product (voice)" },
   { company: "Abridge", raised: "$758M", valuation: "$2B+", products: "1 product (clinical docs)" },
   { company: "Cognigy", raised: "$165M", valuation: "$955M", products: "1 product (conversational)" },
-  { company: "AntimatterAI", raised: "$0", valuation: "$60M pitch", products: "10 products (full platform)" },
+  { company: "AntimatterAI", raised: "$0", valuation: "$60M pitch", products: "11 products (full platform)" },
 ];
 
 const FUNDS_ALLOCATION = [
-  { name: "Engineering", value: 35, amount: "$5.25M", color: "#00FFB2" },
+  { name: "Engineering", value: 35, amount: "$5.25M", color: "#8587e3" },
   { name: "Sales/GTM", value: 30, amount: "$4.50M", color: "#8587e3" },
   { name: "Infrastructure", value: 15, amount: "$2.25M", color: "#00D4FF" },
   { name: "Customer Success", value: 10, amount: "$1.50M", color: "#FFD700" },
@@ -416,7 +428,7 @@ const FUNDS_ALLOCATION = [
 ];
 
 const MILESTONES = [
-  { month: "Phase 1: Months 0–6", target: "Build GTM, convert design partners, target 3–5 paying customers, initial ARR in low-to-mid single-digit millions", icon: Rocket, color: "#00FFB2" },
+  { month: "Phase 1: Months 0–6", target: "Build GTM, convert design partners, target 3–5 paying customers, initial ARR in low-to-mid single-digit millions", icon: Rocket, color: "#8587e3" },
   { month: "Phase 2: Months 6–12", target: "Scale FDE model, 10–20 customers, ARR $10M–$20M range, analyst recognition", icon: TrendingUp, color: "#8587e3" },
   { month: "Phase 3: Months 12–24", target: "Multi-product expansion, ARR $30M–$60M range, 25–40 customers, Series B readiness", icon: Crown, color: "#00D4FF" },
   { month: "Longer-Term", target: "Move toward $100M+ ARR with improving EBITDA margins and expanding product portfolio", icon: Star, color: "#FFD700" },
@@ -438,7 +450,7 @@ const GTM_PHASES = [
     phase: "Phase 1",
     name: "Forward Deployed Engineering (FDE)",
     icon: Code,
-    color: "#00FFB2",
+    color: "#8587e3",
     desc: "Embed directly with enterprise clients. Deep technical integration that creates immediate value and deep switching costs.",
     channels: ["Direct Enterprise — 60%", "Partner/SI — 25%", "Cloud Marketplace — 10%", "Community/PLG — 5%"],
   },
@@ -517,10 +529,10 @@ function StatCounter({ value, prefix = "", suffix = "", label }: { value: number
 
   return (
     <div ref={ref} className="text-center">
-      <div className={`text-4xl md:text-5xl font-bold text-[#00FFB2] font-['Clash_Display'] transition-transform ${isDone ? 'counter-done-pulse' : ''}`}>
+      <div className={`text-4xl md:text-5xl font-bold text-[#8587e3] font-['Plus_Jakarta_Sans'] transition-transform ${isDone ? 'counter-done-pulse' : ''}`}>
         {prefix}{count}{suffix}
       </div>
-      <div className="text-xs text-white/50 mt-1.5 font-['Satoshi'] uppercase tracking-widest">{label}</div>
+      <div className="text-xs text-white/50 mt-1.5 font-['Plus_Jakarta_Sans'] uppercase tracking-widest">{label}</div>
     </div>
   );
 }
@@ -533,7 +545,7 @@ function VendorCell({ status, vendor }: { status: VendorStatus; vendor: string }
   if (vendor === "ATOM") {
     return (
       <div className="flex items-center justify-center">
-        <span className="inline-flex items-center gap-1 text-[#00FFB2] font-bold text-sm">
+        <span className="inline-flex items-center gap-1 text-[#8587e3] font-bold text-sm">
           <CheckCircle2 size={14} />Yes
         </span>
       </div>
@@ -618,9 +630,9 @@ function StickyNav() {
           <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
             <button
               onClick={() => scrollTo("hero")}
-              className="font-['Clash_Display'] font-bold text-white text-lg tracking-tight hover:text-[#00FFB2] transition-colors"
+              className="font-['Plus_Jakarta_Sans'] font-bold text-white text-lg tracking-tight hover:text-[#8587e3] transition-colors"
             >
-              Antimatter<span className="text-[#00FFB2]">AI</span>
+              Antimatter<span className="text-[#8587e3]">AI</span>
             </button>
 
             {/* Desktop nav */}
@@ -629,9 +641,9 @@ function StickyNav() {
                 <button
                   key={s.id}
                   onClick={() => scrollTo(s.id)}
-                  className={`px-3 py-1.5 rounded-md text-xs font-semibold transition-all font-['Satoshi'] tracking-wide ${
+                  className={`px-3 py-1.5 rounded-md text-xs font-semibold transition-all font-['Plus_Jakarta_Sans'] tracking-wide ${
                     active === s.id
-                      ? "text-[#00FFB2] bg-[#00FFB2]/10"
+                      ? "text-[#8587e3] bg-[#8587e3]/10"
                       : "text-white/60 hover:text-white hover:bg-white/5"
                   }`}
                 >
@@ -643,7 +655,7 @@ function StickyNav() {
             {/* CTA */}
             <a
               href="mailto:ben@antimatterai.com"
-              className="hidden lg:inline-flex items-center gap-2 px-4 py-2 bg-[#00FFB2] text-black text-xs font-bold rounded-lg hover:bg-[#00FFB2]/90 transition-colors font-['Satoshi']"
+              className="hidden lg:inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#8587e3] via-[#4c4dac] to-[#696aac] text-white shadow-[0_0_10px_#696aac] text-xs font-bold rounded-lg hover:shadow-[0_0_25px_#696aac] transition-colors font-['Plus_Jakarta_Sans']"
             >
               <Mail size={12} />
               Invest
@@ -671,7 +683,7 @@ function StickyNav() {
                   <button
                     key={s.id}
                     onClick={() => scrollTo(s.id)}
-                    className="text-white/70 hover:text-[#00FFB2] text-xs py-2 text-left transition-colors font-['Satoshi']"
+                    className="text-white/70 hover:text-[#8587e3] text-xs py-2 text-left transition-colors font-['Plus_Jakarta_Sans']"
                   >
                     {s.label}
                   </button>
@@ -703,11 +715,11 @@ function HeroSection() {
       <div className="hero-gradient-mesh" />
 
       {/* Radial gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-radial from-[#00FFB2]/5 via-transparent to-black/60" style={{ zIndex: 2 }} />
+      <div className="absolute inset-0 bg-gradient-radial from-[#8587e3]/5 via-transparent to-black/60" style={{ zIndex: 2 }} />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black" style={{ zIndex: 2 }} />
 
       {/* Decorative rings */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-[#00FFB2]/5" style={{ zIndex: 2 }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-[#8587e3]/5" style={{ zIndex: 2 }} />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full border border-[#8587e3]/3" style={{ zIndex: 2 }} />
 
       <motion.div
@@ -719,9 +731,9 @@ function HeroSection() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="inline-flex items-center gap-2 mb-8 px-4 py-1.5 rounded-full border border-[#00FFB2]/30 bg-[#00FFB2]/5 text-[#00FFB2] text-xs font-semibold tracking-widest uppercase font-['Satoshi']"
+          className="inline-flex items-center gap-2 mb-8 px-4 py-1.5 rounded-full border border-[#8587e3]/30 bg-[#8587e3]/5 text-[#8587e3] text-xs font-semibold tracking-widest uppercase font-['Plus_Jakarta_Sans']"
         >
-          <div className="w-1.5 h-1.5 rounded-full bg-[#00FFB2] animate-pulse" />
+          <div className="w-1.5 h-1.5 rounded-full bg-[#8587e3] animate-pulse" />
           Confidential — For Qualified Investors Only
         </motion.div>
 
@@ -730,10 +742,10 @@ function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="font-['Clash_Display'] font-bold text-white leading-none mb-4"
+          className="font-['Plus_Jakarta_Sans'] font-bold text-white leading-none mb-4"
           style={{ fontSize: "clamp(3rem, 8vw, 7rem)" }}
         >
-          Antimatter<span className="text-[#00FFB2]">AI</span>
+          Antimatter<span className="text-[#8587e3]">AI</span>
         </motion.h1>
 
         {/* Tagline */}
@@ -741,7 +753,7 @@ function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
-          className="text-white/70 text-xl md:text-2xl font-['Satoshi'] mb-2"
+          className="text-white/70 text-xl md:text-2xl font-['Plus_Jakarta_Sans'] mb-2"
         >
           <TypeWriter text="The Nervous System of Enterprise AI" delay={800} speed={45} />
         </motion.p>
@@ -751,7 +763,7 @@ function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.75 }}
-          className="text-[#8587e3] text-base md:text-lg font-['Satoshi'] font-semibold mb-10"
+          className="text-[#8587e3] text-base md:text-lg font-['Plus_Jakarta_Sans'] font-semibold mb-10"
         >
           Series A &nbsp;·&nbsp; $10M–$20M Raise &nbsp;·&nbsp; $60M Pre-Money Valuation
         </motion.p>
@@ -761,19 +773,19 @@ function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9 }}
-          className="inline-flex flex-wrap items-center justify-center gap-6 md:gap-10 px-6 md:px-12 py-8 rounded-2xl border border-[#00FFB2]/20 bg-black/50 backdrop-blur-md mb-10"
+          className="inline-flex flex-wrap items-center justify-center gap-6 md:gap-10 px-6 md:px-12 py-8 rounded-2xl border border-[#8587e3]/20 bg-black/50 backdrop-blur-md mb-10"
         >
           <StatCounter value={60} prefix="$" suffix="M" label="Valuation" />
           <div className="w-px h-8 bg-white/10 hidden md:block" />
-          <StatCounter value={10} label="Products in Portfolio" />
+          <StatCounter value={11} label="Products in Portfolio" />
           <div className="w-px h-8 bg-white/10 hidden md:block" />
           <StatCounter value={99} suffix="+" label="Projects Delivered" />
           <div className="w-px h-8 bg-white/10 hidden md:block" />
           <StatCounter value={25} suffix="/25" label="Vendor Score (Internal)" />
           <div className="w-px h-8 bg-white/10 hidden md:block" />
           <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-[#00FFB2] font-['Clash_Display']">$0</div>
-            <div className="text-xs text-white/50 mt-1 font-['Satoshi'] uppercase tracking-widest">External Capital</div>
+            <div className="text-3xl md:text-4xl font-bold text-[#8587e3] font-['Plus_Jakarta_Sans']">$0</div>
+            <div className="text-xs text-white/50 mt-1 font-['Plus_Jakarta_Sans'] uppercase tracking-widest">External Capital</div>
           </div>
         </motion.div>
 
@@ -782,7 +794,7 @@ function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.1 }}
-          className="text-white/40 text-sm font-['Satoshi'] mb-10"
+          className="text-white/40 text-sm font-['Plus_Jakarta_Sans'] mb-10"
         >
           Self-Funded &nbsp;·&nbsp; Pre-Revenue &nbsp;·&nbsp; Atlanta, GA &nbsp;·&nbsp; March 2026
         </motion.p>
@@ -796,14 +808,14 @@ function HeroSection() {
         >
           <button
             onClick={() => document.getElementById("investment")?.scrollIntoView({ behavior: "smooth" })}
-            className="cta-glow-pulse inline-flex items-center gap-2 px-7 py-3.5 bg-[#00FFB2] text-black font-bold rounded-xl hover:bg-[#00FFB2]/90 transition-all transform hover:scale-105 font-['Satoshi']"
+            className="cta-glow-pulse inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-[#8587e3] via-[#4c4dac] to-[#696aac] text-white shadow-[0_0_10px_#696aac] font-bold rounded-xl hover:shadow-[0_0_25px_#696aac] transition-all transform hover:scale-105 font-['Plus_Jakarta_Sans']"
           >
             <Rocket size={16} />
             Review Term Sheet
           </button>
           <button
             onClick={() => document.getElementById("products")?.scrollIntoView({ behavior: "smooth" })}
-            className="cta-glow-pulse-outline inline-flex items-center gap-2 px-7 py-3.5 border border-white/20 text-white rounded-xl hover:border-[#00FFB2]/50 hover:bg-[#00FFB2]/5 transition-all font-['Satoshi']"
+            className="cta-glow-pulse-outline inline-flex items-center gap-2 px-7 py-3.5 border border-white/20 text-white rounded-xl hover:border-[#8587e3]/50 hover:bg-[#8587e3]/5 transition-all font-['Plus_Jakarta_Sans']"
           >
             <Layers size={16} />
             Explore Products
@@ -819,8 +831,8 @@ function HeroSection() {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         style={{ zIndex: 3 }}
       >
-        <span className="text-white/30 text-xs font-['Satoshi'] tracking-widest uppercase">Scroll</span>
-        <ChevronDown className="text-[#00FFB2] animate-bounce-down" size={20} />
+        <span className="text-white/30 text-xs font-['Plus_Jakarta_Sans'] tracking-widest uppercase">Scroll</span>
+        <ChevronDown className="text-[#8587e3] animate-bounce-down" size={20} />
       </motion.div>
     </div>
   );
@@ -839,23 +851,23 @@ function QuantumSection() {
       <div className="max-w-6xl mx-auto relative">
         <RevealDiv className="text-center mb-16">
           <SectionLabel>The Founder's Vision</SectionLabel>
-          <h2 className="font-['Clash_Display'] font-bold text-white text-5xl md:text-6xl mb-6">
-            Quantum <span className="text-[#00FFB2]">Awakening</span>
+          <h2 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-5xl md:text-6xl mb-6">
+            Quantum <span className="text-[#8587e3]">Awakening</span>
           </h2>
-          <p className="text-white/50 text-lg max-w-2xl mx-auto font-['Satoshi']">
+          <p className="text-white/50 text-lg max-w-2xl mx-auto font-['Plus_Jakarta_Sans']">
             AntimatterAI's founding philosophical foundation for the future of human-AI civilization
           </p>
         </RevealDiv>
 
         {/* Core mandate */}
         <RevealDiv delay={0.1} className="mb-12">
-          <div className="relative p-8 md:p-10 rounded-2xl border border-[#00FFB2]/20 bg-gradient-to-br from-[#00FFB2]/5 to-transparent">
-            <Quote className="absolute top-6 left-6 text-[#00FFB2]/20" size={40} />
-            <blockquote className="text-white/80 text-lg font-['Satoshi'] leading-relaxed pl-8 md:pl-12 italic mb-4">
+          <div className="relative p-8 md:p-10 rounded-2xl border border-[#8587e3]/20 bg-gradient-to-br from-[#8587e3]/5 to-transparent">
+            <Quote className="absolute top-6 left-6 text-[#8587e3]/20" size={40} />
+            <blockquote className="text-white/80 text-lg font-['Plus_Jakarta_Sans'] leading-relaxed pl-8 md:pl-12 italic mb-4">
               "We see AI through a quantum lens — everything is interconnected and dynamic. Our mandate is simple: align AI with human values, preserve human agency, and ensure the benefits reach the many, not just the few."
             </blockquote>
             <div className="pl-8 md:pl-12">
-              <div className="text-[#00FFB2] font-semibold font-['Satoshi']">AntimatterAI Founders</div>
+              <div className="text-[#8587e3] font-semibold font-['Plus_Jakarta_Sans']">AntimatterAI Founders</div>
             </div>
           </div>
         </RevealDiv>
@@ -864,10 +876,10 @@ function QuantumSection() {
         <RevealDiv delay={0.15} className="mb-12">
           <div className="p-6 rounded-2xl border border-[#8587e3]/20 bg-[#8587e3]/4">
             <div className="flex items-center gap-3 mb-3">
-              <Brain size={20} className="text-[#00FFB2]" />
-              <h3 className="font-['Clash_Display'] font-bold text-white text-lg">Human + AI Symbiosis</h3>
+              <Brain size={20} className="text-[#8587e3]" />
+              <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-lg">Human + AI Symbiosis</h3>
             </div>
-            <p className="text-white/60 text-sm font-['Satoshi'] leading-relaxed">
+            <p className="text-white/60 text-sm font-['Plus_Jakarta_Sans'] leading-relaxed">
               AI augments human creativity and judgment — it does not replace them. Every agentic system we build includes human governance checkpoints. The fusion of emotional intelligence and machine capability is what makes ATOM different from pure automation plays.
             </p>
           </div>
@@ -879,24 +891,24 @@ function QuantumSection() {
             <div className="p-6 rounded-xl border border-red-500/20 bg-red-500/3">
               <div className="flex items-center gap-2 mb-3">
                 <XCircle className="text-red-400" size={20} />
-                <span className="font-['Clash_Display'] font-bold text-red-400">Technofeudalism</span>
+                <span className="font-['Plus_Jakarta_Sans'] font-bold text-red-400">Technofeudalism</span>
               </div>
-              <p className="text-white/50 text-sm font-['Satoshi']">A few companies own the intelligence that runs civilization. Data becomes the new serfdom. AI amplifies inequality.</p>
+              <p className="text-white/50 text-sm font-['Plus_Jakarta_Sans']">A few companies own the intelligence that runs civilization. Data becomes the new serfdom. AI amplifies inequality.</p>
             </div>
-            <div className="p-6 rounded-xl border border-[#00FFB2]/20 bg-[#00FFB2]/3">
+            <div className="p-6 rounded-xl border border-[#8587e3]/20 bg-[#8587e3]/3">
               <div className="flex items-center gap-2 mb-3">
-                <CheckCircle2 className="text-[#00FFB2]" size={20} />
-                <span className="font-['Clash_Display'] font-bold text-[#00FFB2]">Technosocialism</span>
+                <CheckCircle2 className="text-[#8587e3]" size={20} />
+                <span className="font-['Plus_Jakarta_Sans'] font-bold text-[#8587e3]">Technosocialism</span>
               </div>
-              <p className="text-white/50 text-sm font-['Satoshi']">Technology democratically empowers all individuals. Equitable access to AI, guided by transparency, ethics, and collective responsibility.</p>
+              <p className="text-white/50 text-sm font-['Plus_Jakarta_Sans']">Technology democratically empowers all individuals. Equitable access to AI, guided by transparency, ethics, and collective responsibility.</p>
             </div>
           </div>
         </RevealDiv>
 
         {/* Concrete implementations */}
         <RevealDiv delay={0.25}>
-          <div className="p-6 rounded-2xl border border-[#00FFB2]/20 bg-[#00FFB2]/4">
-            <h3 className="font-['Clash_Display'] font-bold text-white text-lg mb-4">How This Shows Up In Practice</h3>
+          <div className="p-6 rounded-2xl border border-[#8587e3]/20 bg-[#8587e3]/4">
+            <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-lg mb-4">How This Shows Up In Practice</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
                 { icon: Lock, title: "Customer Owns 100% IP", desc: "Contractual guarantee in every agreement. No exceptions, no fine print." },
@@ -904,13 +916,13 @@ function QuantumSection() {
                 { icon: Users, title: "Human-in-the-Loop Governance", desc: "Every agentic system includes human oversight checkpoints by design." },
               ].map((item) => (
                 <div key={item.title} className="p-4 rounded-xl border border-white/5 bg-white/2">
-                  <item.icon size={18} className="text-[#00FFB2] mb-2" />
-                  <div className="font-['Clash_Display'] font-bold text-white text-sm mb-1">{item.title}</div>
-                  <p className="text-white/50 text-xs font-['Satoshi'] leading-relaxed">{item.desc}</p>
+                  <item.icon size={18} className="text-[#8587e3] mb-2" />
+                  <div className="font-['Plus_Jakarta_Sans'] font-bold text-white text-sm mb-1">{item.title}</div>
+                  <p className="text-white/50 text-xs font-['Plus_Jakarta_Sans'] leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
-            <p className="text-white/60 text-sm font-['Satoshi'] mt-4 italic">
+            <p className="text-white/60 text-sm font-['Plus_Jakarta_Sans'] mt-4 italic">
               This is not marketing language. It is encoded in our contracts, our architecture, and our product roadmap.
             </p>
           </div>
@@ -930,11 +942,11 @@ function CompanySection() {
       name: "Ben O'Leary",
       role: "Co-Founder & Strategic Architect",
       subtitle: "Chief Quantum Officer",
-      color: "#00FFB2",
-      bg: "from-[#00FFB2]/10 to-transparent",
+      color: "#8587e3",
+      bg: "from-[#8587e3]/10 to-transparent",
       initials: "BO",
       bio: "Autistic systems thinker and architect of AntimatterAI's quantum philosophy and ethical AI covenant. Designed ATOM's 5-layer governance architecture, the 25-dimension vendor framework, and the IP ownership model that differentiates every product. Leads product vision, covenant design, and long-horizon strategy.",
-      shipped: ["ATOM platform architecture (10 products)", "ClinixAI ($4M+ pipeline in 180 days)", "Ethical AI covenant", "99+ enterprise projects"],
+      shipped: ["ATOM platform architecture (11 products)", "ClinixAI ($4M+ pipeline in 180 days)", "Ethical AI covenant", "99+ enterprise projects"],
     },
     {
       name: "Paul Wallace",
@@ -977,10 +989,10 @@ function CompanySection() {
       <div className="max-w-7xl mx-auto">
         <RevealDiv className="text-center mb-20">
           <SectionLabel>The Team</SectionLabel>
-          <h2 className="font-['Clash_Display'] font-bold text-white text-5xl md:text-6xl mb-6">
-            Company <span className="text-[#00FFB2]">Overview</span>
+          <h2 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-5xl md:text-6xl mb-6">
+            Company <span className="text-[#8587e3]">Overview</span>
           </h2>
-          <p className="text-white/50 text-lg max-w-2xl mx-auto font-['Satoshi']">
+          <p className="text-white/50 text-lg max-w-2xl mx-auto font-['Plus_Jakarta_Sans']">
             While GPT, Claude, and Grok are the brains — ATOM is the nervous system and spine.
           </p>
         </RevealDiv>
@@ -991,22 +1003,22 @@ function CompanySection() {
             <RevealDiv key={member.name} delay={i * 0.1}>
               <div className={`p-6 rounded-2xl border border-white/10 bg-gradient-to-br ${member.bg} hover:border-opacity-50 transition-all h-full`}
                 style={{ borderColor: `${member.color}20` }}>
-                <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 font-bold text-lg font-['Clash_Display']"
+                <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 font-bold text-lg font-['Plus_Jakarta_Sans']"
                   style={{ backgroundColor: `${member.color}20`, color: member.color, border: `1px solid ${member.color}30` }}>
                   {member.initials}
                 </div>
-                <h3 className="font-['Clash_Display'] font-bold text-white text-lg mb-1">{member.name}</h3>
-                <p className="text-sm font-semibold mb-1 font-['Satoshi']" style={{ color: member.color }}>{member.role}</p>
-                <p className="text-white/40 text-xs mb-3 font-['Satoshi']">{member.subtitle}</p>
-                <p className="text-white/60 text-sm font-['Satoshi'] leading-relaxed mb-3">{member.bio}</p>
+                <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-lg mb-1">{member.name}</h3>
+                <p className="text-sm font-semibold mb-1 font-['Plus_Jakarta_Sans']" style={{ color: member.color }}>{member.role}</p>
+                <p className="text-white/40 text-xs mb-3 font-['Plus_Jakarta_Sans']">{member.subtitle}</p>
+                <p className="text-white/60 text-sm font-['Plus_Jakarta_Sans'] leading-relaxed mb-3">{member.bio}</p>
                 {(member as any).shipped && (
                   <div className="mt-2 mb-1">
-                    <p className="text-xs font-bold font-['Satoshi'] mb-1.5" style={{ color: member.color }}>What {member.name.split(' ')[0]} shipped:</p>
+                    <p className="text-xs font-bold font-['Plus_Jakarta_Sans'] mb-1.5" style={{ color: member.color }}>What {member.name.split(' ')[0]} shipped:</p>
                     <div className="space-y-1">
                       {((member as any).shipped as string[]).map((item: string) => (
                         <div key={item} className="flex items-start gap-1.5">
                           <Check size={10} className="mt-0.5 flex-shrink-0" style={{ color: member.color }} />
-                          <span className="text-white/50 text-xs font-['Satoshi']">{item}</span>
+                          <span className="text-white/50 text-xs font-['Plus_Jakarta_Sans']">{item}</span>
                         </div>
                       ))}
                     </div>
@@ -1020,10 +1032,10 @@ function CompanySection() {
 
         {/* Extended Team & Advisors */}
         <RevealDiv delay={0.35} className="mb-12">
-          <h3 className="font-['Clash_Display'] font-bold text-white text-xl mb-4">Extended Team & Advisors</h3>
+          <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-xl mb-4">Extended Team & Advisors</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
-              { title: "Head of Engineering", desc: "Seasoned engineering leader to scale platform architecture and manage distributed team execution across ATOM and vertical products.", color: "#00FFB2" },
+              { title: "Head of Engineering", desc: "Seasoned engineering leader to scale platform architecture and manage distributed team execution across ATOM and vertical products.", color: "#8587e3" },
               { title: "Clinical / Healthcare Advisor", desc: "Physician or health system executive to guide ClinixAI product-market fit, clinical validation, and regulatory pathway.", color: "#FF6B9D" },
               { title: "Security / Compliance Advisor", desc: "Enterprise security specialist with SOC2/HIPAA/FedRAMP experience to strengthen compliance posture for regulated deployments.", color: "#8587e3" },
             ].map((a) => (
@@ -1031,9 +1043,9 @@ function CompanySection() {
                 <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: `${a.color}15`, border: `1px solid ${a.color}30` }}>
                   <Users size={18} style={{ color: a.color }} />
                 </div>
-                <div className="font-['Clash_Display'] font-bold text-white text-sm mb-1">{a.title}</div>
-                <span className="text-[10px] font-['Satoshi'] font-semibold px-2 py-0.5 rounded-full border mb-2 inline-block" style={{ borderColor: `${a.color}40`, color: a.color }}>Recruiting</span>
-                <p className="text-white/50 text-xs font-['Satoshi'] leading-relaxed mt-2">{a.desc}</p>
+                <div className="font-['Plus_Jakarta_Sans'] font-bold text-white text-sm mb-1">{a.title}</div>
+                <span className="text-[10px] font-['Plus_Jakarta_Sans'] font-semibold px-2 py-0.5 rounded-full border mb-2 inline-block" style={{ borderColor: `${a.color}40`, color: a.color }}>Recruiting</span>
+                <p className="text-white/50 text-xs font-['Plus_Jakarta_Sans'] leading-relaxed mt-2">{a.desc}</p>
               </div>
             ))}
           </div>
@@ -1042,40 +1054,40 @@ function CompanySection() {
         {/* Core Identity Table + Clients */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
           <RevealDiv>
-            <h3 className="font-['Clash_Display'] font-bold text-white text-2xl mb-6">Core Identity</h3>
+            <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-2xl mb-6">Core Identity</h3>
             <div className="rounded-2xl border border-white/10 overflow-hidden">
               {coreIdentity.map((item, i) => (
                 <div key={item.label} className={`flex justify-between items-center px-6 py-3.5 ${i % 2 === 0 ? "bg-white/3" : "bg-transparent"}`}>
-                  <span className="text-white/50 text-sm font-['Satoshi']">{item.label}</span>
-                  <span className="text-[#00FFB2] font-semibold text-sm font-['Satoshi']">{item.value}</span>
+                  <span className="text-white/50 text-sm font-['Plus_Jakarta_Sans']">{item.label}</span>
+                  <span className="text-[#8587e3] font-semibold text-sm font-['Plus_Jakarta_Sans']">{item.value}</span>
                 </div>
               ))}
             </div>
           </RevealDiv>
 
           <RevealDiv delay={0.15}>
-            <h3 className="font-['Clash_Display'] font-bold text-white text-2xl mb-6">Enterprise Clients</h3>
+            <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-2xl mb-6">Enterprise Clients</h3>
             <div className="grid grid-cols-3 sm:grid-cols-4 gap-3 mb-6">
               {clients.map((client) => (
-                <div key={client} className="flex items-center justify-center p-3 rounded-xl border border-white/10 bg-white/3 hover:border-[#00FFB2]/30 transition-all">
-                  <span className="text-white/70 text-xs font-semibold font-['Satoshi'] text-center">{client}</span>
+                <div key={client} className="flex items-center justify-center p-3 rounded-xl border border-white/10 bg-white/3 hover:border-[#8587e3]/30 transition-all">
+                  <span className="text-white/70 text-xs font-semibold font-['Plus_Jakarta_Sans'] text-center">{client}</span>
                 </div>
               ))}
             </div>
-            <div className="p-5 rounded-xl border border-[#00FFB2]/20 bg-[#00FFB2]/5">
-              <p className="text-[#00FFB2] font-bold text-sm font-['Satoshi'] mb-1">Fortune 500 Ready</p>
-              <p className="text-white/60 text-sm font-['Satoshi']">99+ enterprise projects delivered with consistently high satisfaction. The deployment knowledge, referenceability, and trust we now encode directly into the ATOM platform.</p>
+            <div className="p-5 rounded-xl border border-[#8587e3]/20 bg-[#8587e3]/5">
+              <p className="text-[#8587e3] font-bold text-sm font-['Plus_Jakarta_Sans'] mb-1">Fortune 500 Ready</p>
+              <p className="text-white/60 text-sm font-['Plus_Jakarta_Sans']">99+ enterprise projects delivered with consistently high satisfaction. The deployment knowledge, referenceability, and trust we now encode directly into the ATOM platform.</p>
             </div>
           </RevealDiv>
         </div>
 
         {/* Positioning statement */}
         <RevealDiv>
-          <div className="text-center p-8 md:p-12 rounded-2xl border border-[#00FFB2]/20 bg-gradient-to-br from-[#00FFB2]/5 to-[#8587e3]/5">
-            <p className="text-white/40 text-sm font-['Satoshi'] uppercase tracking-widest mb-4">Core Positioning</p>
-            <p className="font-['Clash_Display'] font-bold text-white text-2xl md:text-3xl leading-snug">
+          <div className="text-center p-8 md:p-12 rounded-2xl border border-[#8587e3]/20 bg-gradient-to-br from-[#8587e3]/5 to-[#8587e3]/5">
+            <p className="text-white/40 text-sm font-['Plus_Jakarta_Sans'] uppercase tracking-widest mb-4">Core Positioning</p>
+            <p className="font-['Plus_Jakarta_Sans'] font-bold text-white text-2xl md:text-3xl leading-snug">
               "While GPT, Claude, and Grok are the <span className="text-[#8587e3]">brains</span> —
-              <br />ATOM is the <span className="text-[#00FFB2]">nervous system</span> and spine."
+              <br />ATOM is the <span className="text-[#8587e3]">nervous system</span> and spine."
             </p>
           </div>
         </RevealDiv>
@@ -1098,10 +1110,10 @@ function VendorMatrixSection() {
       <div className="max-w-7xl mx-auto">
         <RevealDiv className="text-center mb-16">
           <SectionLabel>Competitive Intelligence</SectionLabel>
-          <h2 className="font-['Clash_Display'] font-bold text-white text-5xl md:text-6xl mb-6">
-            The <span className="text-[#00FFB2]">25/25</span> Framework
+          <h2 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-5xl md:text-6xl mb-6">
+            The <span className="text-[#8587e3]">25/25</span> Framework
           </h2>
-          <p className="text-white/50 text-lg max-w-2xl mx-auto font-['Satoshi']">
+          <p className="text-white/50 text-lg max-w-2xl mx-auto font-['Plus_Jakarta_Sans']">
             Every critical enterprise AI capability, transparently scored. We developed a 25-dimension framework to evaluate enterprise AI platforms. Atom currently achieves full support across all 25 dimensions. We encourage enterprises to adapt or extend this framework to their own needs.
           </p>
         </RevealDiv>
@@ -1110,8 +1122,8 @@ function VendorMatrixSection() {
         <div className="grid grid-cols-4 md:grid-cols-7 gap-4 mb-12">
           {vendors.map((v, i) => (
             <RevealDiv key={v} delay={i * 0.07}>
-              <div className={`p-4 rounded-xl text-center border ${v === "ATOM" ? "border-[#00FFB2]/40 bg-[#00FFB2]/8" : "border-white/10 bg-white/3"}`}>
-                <div className={`text-3xl font-bold font-['Clash_Display'] mb-1 ${v === "ATOM" ? "text-[#00FFB2]" : "text-white/60"}`}>
+              <div className={`p-4 rounded-xl text-center border ${v === "ATOM" ? "border-[#8587e3]/40 bg-[#8587e3]/8" : "border-white/10 bg-white/3"}`}>
+                <div className={`text-3xl font-bold font-['Plus_Jakarta_Sans'] mb-1 ${v === "ATOM" ? "text-[#8587e3]" : "text-white/60"}`}>
                   {v === "ATOM" && inView ? (
                     <motion.span initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.5, type: "spring" }}>
                       25
@@ -1120,8 +1132,8 @@ function VendorMatrixSection() {
                     VENDOR_SCORES[v]
                   )}
                 </div>
-                <div className={`text-xs font-['Satoshi'] ${v === "ATOM" ? "text-[#00FFB2]/70" : "text-white/40"}`}>{v}</div>
-                <div className={`text-xs font-['Satoshi'] ${v === "ATOM" ? "text-[#00FFB2]" : "text-white/30"}`}>/ 25</div>
+                <div className={`text-xs font-['Plus_Jakarta_Sans'] ${v === "ATOM" ? "text-[#8587e3]/70" : "text-white/40"}`}>{v}</div>
+                <div className={`text-xs font-['Plus_Jakarta_Sans'] ${v === "ATOM" ? "text-[#8587e3]" : "text-white/30"}`}>/ 25</div>
               </div>
             </RevealDiv>
           ))}
@@ -1134,9 +1146,9 @@ function VendorMatrixSection() {
             <table className="w-full min-w-[700px]">
               <thead>
                 <tr className="border-b border-white/10 bg-white/3">
-                  <th className="text-left px-5 py-4 text-white/50 text-xs font-semibold font-['Satoshi'] uppercase tracking-wider">Capability</th>
+                  <th className="text-left px-5 py-4 text-white/50 text-xs font-semibold font-['Plus_Jakarta_Sans'] uppercase tracking-wider">Capability</th>
                   {vendors.map((v) => (
-                    <th key={v} className={`text-center px-4 py-4 text-xs font-bold font-['Clash_Display'] ${v === "ATOM" ? "text-[#00FFB2]" : "text-white/50"}`}>
+                    <th key={v} className={`text-center px-4 py-4 text-xs font-bold font-['Plus_Jakarta_Sans'] ${v === "ATOM" ? "text-[#8587e3]" : "text-white/50"}`}>
                       {v}
                     </th>
                   ))}
@@ -1151,7 +1163,7 @@ function VendorMatrixSection() {
                     transition={{ delay: capIdx * 0.08 + 0.3 }}
                     className={`border-b border-white/5 ${capIdx % 2 === 0 ? "bg-transparent" : "bg-white/2"} hover:bg-white/4 transition-colors`}
                   >
-                    <td className="px-5 py-3.5 text-white/70 text-sm font-['Satoshi']">{cap}</td>
+                    <td className="px-5 py-3.5 text-white/70 text-sm font-['Plus_Jakarta_Sans']">{cap}</td>
                     {vendors.map((v) => (
                       <td key={v} className="px-4 py-3.5">
                         <VendorCell status={VENDOR_DATA[v][capIdx]} vendor={v} />
@@ -1168,13 +1180,13 @@ function VendorMatrixSection() {
         {/* Radar chart */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-14">
           <RevealDiv delay={0.1}>
-            <h3 className="font-['Clash_Display'] font-bold text-white text-2xl mb-6 text-center">Capability Radar</h3>
+            <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-2xl mb-6 text-center">Capability Radar</h3>
             <ResponsiveContainer width="100%" height={320}>
               <RadarChart data={RADAR_DATA}>
                 <PolarGrid stroke="rgba(255,255,255,0.07)" />
-                <PolarAngleAxis dataKey="subject" tick={{ fill: "rgba(255,255,255,0.5)", fontSize: 11, fontFamily: "Satoshi" }} />
+                <PolarAngleAxis dataKey="subject" tick={{ fill: "rgba(255,255,255,0.5)", fontSize: 11, fontFamily: "Plus Jakarta Sans" }} />
                 <PolarRadiusAxis tick={false} axisLine={false} />
-                <Radar name="ATOM" dataKey="ATOM" stroke="#00FFB2" fill="#00FFB2" fillOpacity={0.15} strokeWidth={2} />
+                <Radar name="ATOM" dataKey="ATOM" stroke="#8587e3" fill="#8587e3" fillOpacity={0.15} strokeWidth={2} />
                 <Radar name="Competitors (avg)" dataKey="Competitors" stroke="#8587e3" fill="#8587e3" fillOpacity={0.1} strokeWidth={1.5} strokeDasharray="4 4" />
                 <Legend formatter={(v) => <span style={{ color: "rgba(255,255,255,0.6)", fontSize: 12 }}>{v}</span>} />
               </RadarChart>
@@ -1182,7 +1194,7 @@ function VendorMatrixSection() {
           </RevealDiv>
 
           <RevealDiv delay={0.2}>
-            <h3 className="font-['Clash_Display'] font-bold text-white text-2xl mb-6 text-center">Score Comparison</h3>
+            <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-2xl mb-6 text-center">Score Comparison</h3>
             <ResponsiveContainer width="100%" height={320}>
               <BarChart data={vendors.map(v => ({ name: v, score: VENDOR_SCORES[v] }))} margin={{ top: 10, right: 10, left: -20, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
@@ -1194,7 +1206,7 @@ function VendorMatrixSection() {
                 />
                 <Bar dataKey="score" radius={[4, 4, 0, 0]}>
                   {vendors.map((v) => (
-                    <Cell key={v} fill={v === "ATOM" ? "#00FFB2" : "#8587e3"} fillOpacity={v === "ATOM" ? 1 : 0.5} />
+                    <Cell key={v} fill={v === "ATOM" ? "#8587e3" : "#8587e3"} fillOpacity={v === "ATOM" ? 1 : 0.5} />
                   ))}
                 </Bar>
               </BarChart>
@@ -1208,7 +1220,7 @@ function VendorMatrixSection() {
             href="https://www.antimatterai.com/resources/vendor-matrix"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[#00FFB2] text-sm font-semibold hover:gap-3 transition-all font-['Satoshi']"
+            className="inline-flex items-center gap-2 text-[#8587e3] text-sm font-semibold hover:gap-3 transition-all font-['Plus_Jakarta_Sans']"
           >
             View full vendor matrix at antimatterai.com <ExternalLink size={14} />
           </a>
@@ -1230,11 +1242,11 @@ function ProductsSection() {
       <div className="max-w-7xl mx-auto">
         <RevealDiv className="text-center mb-20">
           <SectionLabel>Platform Architecture</SectionLabel>
-          <h2 className="font-['Clash_Display'] font-bold text-white text-5xl md:text-6xl mb-6">
-            Product <span className="text-[#00FFB2]">Portfolio</span>
+          <h2 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-5xl md:text-6xl mb-6">
+            Product <span className="text-[#8587e3]">Portfolio</span>
           </h2>
-          <p className="text-white/50 text-lg max-w-2xl mx-auto font-['Satoshi']">
-            10 products. 7 core ATOM + 3 verticals. One integrated nervous system. $45M–$77M total IP replication cost.
+          <p className="text-white/50 text-lg max-w-2xl mx-auto font-['Plus_Jakarta_Sans']">
+            11 products. 8 core ATOM + 3 verticals. One integrated nervous system. $45M–$77M total IP replication cost.
           </p>
         </RevealDiv>
 
@@ -1260,8 +1272,8 @@ function ProductsSection() {
                       style={{ backgroundColor: `${product.color}15`, border: `1px solid ${product.color}30` }}>
                       <product.icon size={18} style={{ color: product.color }} />
                     </div>
-                    <span className={`text-[10px] font-['Satoshi'] font-semibold px-2 py-0.5 rounded-full border ${
-                      (product as any).maturity === "SHIPPING" ? "border-[#00FFB2]/30 text-[#00FFB2]/80 bg-[#00FFB2]/10" :
+                    <span className={`text-[10px] font-['Plus_Jakarta_Sans'] font-semibold px-2 py-0.5 rounded-full border ${
+                      (product as any).maturity === "SHIPPING" ? "border-[#8587e3]/30 text-[#8587e3]/80 bg-[#8587e3]/10" :
                       (product as any).maturity === "LIMITED BETA" ? "border-[#FFD700]/30 text-[#FFD700]/80 bg-[#FFD700]/10" :
                       "border-[#8587e3]/30 text-[#8587e3]/80 bg-[#8587e3]/10"
                     }`}>
@@ -1269,9 +1281,9 @@ function ProductsSection() {
                     </span>
                   </div>
 
-                  <h3 className="font-['Clash_Display'] font-bold text-white text-sm mb-1 leading-tight">{product.name}</h3>
-                  <p className="text-xs font-semibold mb-3 font-['Satoshi']" style={{ color: product.color }}>{product.tagline}</p>
-                  <p className="text-white/55 text-xs font-['Satoshi'] leading-relaxed flex-1 mb-4">{product.description}</p>
+                  <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-sm mb-1 leading-tight">{product.name}</h3>
+                  <p className="text-xs font-semibold mb-3 font-['Plus_Jakarta_Sans']" style={{ color: product.color }}>{product.tagline}</p>
+                  <p className="text-white/55 text-xs font-['Plus_Jakarta_Sans'] leading-relaxed flex-1 mb-4">{product.description}</p>
 
                   <AnimatePresence>
                     {selected === i && (
@@ -1283,18 +1295,18 @@ function ProductsSection() {
                       >
                         <div className="border-t border-white/5 pt-3 space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-white/40 text-xs font-['Satoshi']">Cost to duplicate</span>
-                            <span className="text-xs font-bold font-['Satoshi']" style={{ color: product.color }}>{product.cost}</span>
+                            <span className="text-white/40 text-xs font-['Plus_Jakarta_Sans']">Cost to duplicate</span>
+                            <span className="text-xs font-bold font-['Plus_Jakarta_Sans']" style={{ color: product.color }}>{product.cost}</span>
                           </div>
-                          <div className="text-xs text-white/40 font-['Satoshi'] leading-tight">{product.comparable}</div>
+                          <div className="text-xs text-white/40 font-['Plus_Jakarta_Sans'] leading-tight">{product.comparable}</div>
                         </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
 
                   <div className="flex items-center justify-between mt-auto pt-3 border-t border-white/5">
-                    <span className="text-white/30 text-xs font-['Satoshi']">Duplicate: {product.cost}</span>
-                    <ChevronRight size={12} className="text-white/20 group-hover:text-[#00FFB2] transition-colors" />
+                    <span className="text-white/30 text-xs font-['Plus_Jakarta_Sans']">Duplicate: {product.cost}</span>
+                    <ChevronRight size={12} className="text-white/20 group-hover:text-[#8587e3] transition-colors" />
                   </div>
                 </div>
               </motion.div>
@@ -1304,20 +1316,20 @@ function ProductsSection() {
 
         {/* Total */}
         <RevealDiv delay={0.3} className="mt-12 text-center">
-          <div className="inline-flex flex-wrap gap-8 px-10 py-6 rounded-2xl border border-[#00FFB2]/20 bg-[#00FFB2]/4">
+          <div className="inline-flex flex-wrap gap-8 px-10 py-6 rounded-2xl border border-[#8587e3]/20 bg-[#8587e3]/4">
             <div className="text-center">
-              <div className="text-3xl font-bold text-[#00FFB2] font-['Clash_Display']">$45M–$77M</div>
-              <div className="text-white/40 text-xs uppercase tracking-widest font-['Satoshi'] mt-1">Total IP Replication Cost</div>
+              <div className="text-3xl font-bold text-[#8587e3] font-['Plus_Jakarta_Sans']">$45M–$77M</div>
+              <div className="text-white/40 text-xs uppercase tracking-widest font-['Plus_Jakarta_Sans'] mt-1">Total IP Replication Cost</div>
             </div>
             <div className="w-px bg-white/10 hidden md:block" />
             <div className="text-center">
-              <div className="text-3xl font-bold text-[#8587e3] font-['Clash_Display']">10</div>
-              <div className="text-white/40 text-xs uppercase tracking-widest font-['Satoshi'] mt-1">Products in Portfolio</div>
+              <div className="text-3xl font-bold text-[#8587e3] font-['Plus_Jakarta_Sans']">11</div>
+              <div className="text-white/40 text-xs uppercase tracking-widest font-['Plus_Jakarta_Sans'] mt-1">Products in Portfolio</div>
             </div>
             <div className="w-px bg-white/10 hidden md:block" />
             <div className="text-center">
-              <div className="text-3xl font-bold text-[#00D4FF] font-['Clash_Display']">7</div>
-              <div className="text-white/40 text-xs uppercase tracking-widest font-['Satoshi'] mt-1">In Production Today</div>
+              <div className="text-3xl font-bold text-[#00D4FF] font-['Plus_Jakarta_Sans']">7</div>
+              <div className="text-white/40 text-xs uppercase tracking-widest font-['Plus_Jakarta_Sans'] mt-1">In Production Today</div>
             </div>
           </div>
         </RevealDiv>
@@ -1334,15 +1346,15 @@ function MoatSection() {
   return (
     <div id="moat" className="bg-black py-32 px-4 relative overflow-hidden">
       {/* Background glow */}
-      <div className="absolute right-0 top-1/4 w-96 h-96 bg-[#00FFB2]/4 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute right-0 top-1/4 w-96 h-96 bg-[#8587e3]/4 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative">
         <RevealDiv className="text-center mb-20">
           <SectionLabel>Competitive Moat</SectionLabel>
-          <h2 className="font-['Clash_Display'] font-bold text-white text-5xl md:text-6xl mb-6">
-            Five Layers of <span className="text-[#00FFB2]">Defensibility</span>
+          <h2 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-5xl md:text-6xl mb-6">
+            Five Layers of <span className="text-[#8587e3]">Defensibility</span>
           </h2>
-          <p className="text-white/50 text-lg max-w-2xl mx-auto font-['Satoshi']">
+          <p className="text-white/50 text-lg max-w-2xl mx-auto font-['Plus_Jakarta_Sans']">
             Not one moat. Five reinforcing layers that compound. Total IP replication: $45M–$77M.
           </p>
         </RevealDiv>
@@ -1350,28 +1362,28 @@ function MoatSection() {
         {/* What We Built vs What We Wrap */}
         <RevealDiv delay={0.1} className="mb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-2xl border border-[#00FFB2]/20 bg-[#00FFB2]/4">
-              <h3 className="font-['Clash_Display'] font-bold text-[#00FFB2] text-lg mb-4">Proprietary IP (We Built)</h3>
+            <div className="p-6 rounded-2xl border border-[#8587e3]/20 bg-[#8587e3]/4">
+              <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-[#8587e3] text-lg mb-4">Proprietary IP (We Built)</h3>
               <div className="space-y-2">
                 {["GenUI engine — AI generates its own interfaces", "5-layer governance fabric (SOC2, HIPAA, FedRAMP)", "Deploy-anywhere runtime (cloud, VPC, on-prem, edge, air-gap)", "Agent orchestration spine (Brain-Spine-Worker)", "ClinixAI clinical stack (ambient scribe + full X12 RCM)", "Post-quantum cryptography layer"].map((item) => (
                   <div key={item} className="flex items-start gap-2">
-                    <Check className="text-[#00FFB2] mt-0.5 flex-shrink-0" size={14} />
-                    <span className="text-white/70 text-sm font-['Satoshi']">{item}</span>
+                    <Check className="text-[#8587e3] mt-0.5 flex-shrink-0" size={14} />
+                    <span className="text-white/70 text-sm font-['Plus_Jakarta_Sans']">{item}</span>
                   </div>
                 ))}
               </div>
             </div>
             <div className="p-6 rounded-2xl border border-[#8587e3]/20 bg-[#8587e3]/4">
-              <h3 className="font-['Clash_Display'] font-bold text-[#8587e3] text-lg mb-4">Ecosystem Leverage (We Wrap)</h3>
+              <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-[#8587e3] text-lg mb-4">Ecosystem Leverage (We Wrap)</h3>
               <div className="space-y-2">
                 {["Foundation models (GPT, Claude, Gemini, Llama — model-agnostic)", "Voice providers (Hume EVI, OpenAI Realtime, ElevenLabs)", "Cloud infrastructure (AWS, Azure, GCP, Akamai/Linode)"].map((item) => (
                   <div key={item} className="flex items-start gap-2">
                     <CircleDot className="text-[#8587e3] mt-0.5 flex-shrink-0" size={14} />
-                    <span className="text-white/60 text-sm font-['Satoshi']">{item}</span>
+                    <span className="text-white/60 text-sm font-['Plus_Jakarta_Sans']">{item}</span>
                   </div>
                 ))}
               </div>
-              <p className="text-[#00FFB2] text-sm font-bold font-['Satoshi'] mt-4">Being model-agnostic is the moat, not a weakness.</p>
+              <p className="text-[#8587e3] text-sm font-bold font-['Plus_Jakarta_Sans'] mt-4">Being model-agnostic is the moat, not a weakness.</p>
             </div>
           </div>
         </RevealDiv>
@@ -1389,7 +1401,7 @@ function MoatSection() {
                 }}
               >
                 {/* Layer number */}
-                <div className="absolute -top-3 left-4 px-2 py-0.5 rounded-full text-xs font-bold font-['Satoshi']"
+                <div className="absolute -top-3 left-4 px-2 py-0.5 rounded-full text-xs font-bold font-['Plus_Jakarta_Sans']"
                   style={{ backgroundColor: layer.color, color: "#000" }}>
                   Layer {i + 1}
                 </div>
@@ -1399,17 +1411,17 @@ function MoatSection() {
                   <layer.icon size={18} style={{ color: layer.color }} />
                 </div>
 
-                <h3 className="font-['Clash_Display'] font-bold text-white text-sm mb-2">{layer.name}</h3>
-                <p className="text-white/55 text-xs font-['Satoshi'] leading-relaxed flex-1 mb-4">{layer.desc}</p>
+                <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-sm mb-2">{layer.name}</h3>
+                <p className="text-white/55 text-xs font-['Plus_Jakarta_Sans'] leading-relaxed flex-1 mb-4">{layer.desc}</p>
 
                 <div className="space-y-1">
                   <div className="flex items-center justify-between">
-                    <span className="text-white/30 text-xs font-['Satoshi']">Barrier</span>
-                    <span className="text-xs font-semibold font-['Satoshi']" style={{ color: layer.color }}>{layer.level}</span>
+                    <span className="text-white/30 text-xs font-['Plus_Jakarta_Sans']">Barrier</span>
+                    <span className="text-xs font-semibold font-['Plus_Jakarta_Sans']" style={{ color: layer.color }}>{layer.level}</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-white/30 text-xs font-['Satoshi']">Time to copy</span>
-                    <span className="text-white/60 text-xs font-['Satoshi']">{layer.time}</span>
+                    <span className="text-white/30 text-xs font-['Plus_Jakarta_Sans']">Time to copy</span>
+                    <span className="text-white/60 text-xs font-['Plus_Jakarta_Sans']">{layer.time}</span>
                   </div>
                 </div>
               </div>
@@ -1419,10 +1431,10 @@ function MoatSection() {
 
         {/* Total cost banner */}
         <RevealDiv delay={0.5}>
-          <div className="p-8 rounded-2xl border border-[#00FFB2]/20 bg-[#00FFB2]/4 text-center">
-            <p className="text-white/40 text-sm font-['Satoshi'] uppercase tracking-widest mb-2">Total IP Replication Cost</p>
-            <p className="font-['Clash_Display'] font-bold text-[#00FFB2] text-5xl mb-2">$45M – $77M</p>
-            <p className="text-white/50 text-sm font-['Satoshi']">Even a well-funded competitor would need 18–36 months and $45M+ to approximate what exists today.</p>
+          <div className="p-8 rounded-2xl border border-[#8587e3]/20 bg-[#8587e3]/4 text-center">
+            <p className="text-white/40 text-sm font-['Plus_Jakarta_Sans'] uppercase tracking-widest mb-2">Total IP Replication Cost</p>
+            <p className="font-['Plus_Jakarta_Sans'] font-bold text-[#8587e3] text-5xl mb-2">$45M – $77M</p>
+            <p className="text-white/50 text-sm font-['Plus_Jakarta_Sans']">Even a well-funded competitor would need 18–36 months and $45M+ to approximate what exists today.</p>
           </div>
         </RevealDiv>
       </div>
@@ -1440,10 +1452,10 @@ function MarketSection() {
       <div className="max-w-7xl mx-auto">
         <RevealDiv className="text-center mb-20">
           <SectionLabel>Total Addressable Market</SectionLabel>
-          <h2 className="font-['Clash_Display'] font-bold text-white text-5xl md:text-6xl mb-6">
-            Market <span className="text-[#00FFB2]">Opportunity</span>
+          <h2 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-5xl md:text-6xl mb-6">
+            Market <span className="text-[#8587e3]">Opportunity</span>
           </h2>
-          <p className="text-white/50 text-lg max-w-2xl mx-auto font-['Satoshi']">
+          <p className="text-white/50 text-lg max-w-2xl mx-auto font-['Plus_Jakarta_Sans']">
             $124B+ combined TAM today, expanding to $500B+ by 2030. Multiple massive markets, one integrated platform.
           </p>
         </RevealDiv>
@@ -1457,9 +1469,9 @@ function MarketSection() {
             { value: "62.7%", label: "Vertical AI CAGR" },
           ].map((stat, i) => (
             <RevealDiv key={stat.label} delay={i * 0.1}>
-              <div className="p-5 rounded-xl border border-[#00FFB2]/15 bg-[#00FFB2]/3 text-center">
-                <div className="text-3xl md:text-4xl font-bold text-[#00FFB2] font-['Clash_Display'] mb-1">{stat.value}</div>
-                <div className="text-white/50 text-xs font-['Satoshi'] uppercase tracking-wider">{stat.label}</div>
+              <div className="p-5 rounded-xl border border-[#8587e3]/15 bg-[#8587e3]/3 text-center">
+                <div className="text-3xl md:text-4xl font-bold text-[#8587e3] font-['Plus_Jakarta_Sans'] mb-1">{stat.value}</div>
+                <div className="text-white/50 text-xs font-['Plus_Jakarta_Sans'] uppercase tracking-wider">{stat.label}</div>
               </div>
             </RevealDiv>
           ))}
@@ -1467,8 +1479,8 @@ function MarketSection() {
 
         {/* Why winnable now */}
         <RevealDiv delay={0.15} className="mb-16">
-          <div className="p-6 rounded-2xl border border-[#00FFB2]/20 bg-[#00FFB2]/4">
-            <h3 className="font-['Clash_Display'] font-bold text-white text-xl mb-4">Why These Markets Are Winnable Now</h3>
+          <div className="p-6 rounded-2xl border border-[#8587e3]/20 bg-[#8587e3]/4">
+            <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-xl mb-4">Why These Markets Are Winnable Now</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
                 { num: "01", title: "No dominant platform player", desc: "Enterprise AI remains fragmented. No single vendor owns the full-stack integration layer. The window for a platform play is open." },
@@ -1476,9 +1488,9 @@ function MarketSection() {
                 { num: "03", title: "Not winner-take-all yet", desc: "Enterprise AI competes on deployment flexibility, compliance, and trust — not network effects. Multiple large players can coexist, and differentiated platforms win specific verticals." },
               ].map((p) => (
                 <div key={p.num} className="p-4 rounded-xl border border-white/5 bg-white/2">
-                  <span className="text-[#00FFB2] font-bold text-xs font-['Satoshi']">{p.num}</span>
-                  <div className="font-['Clash_Display'] font-bold text-white text-sm mt-1 mb-2">{p.title}</div>
-                  <p className="text-white/50 text-xs font-['Satoshi'] leading-relaxed">{p.desc}</p>
+                  <span className="text-[#8587e3] font-bold text-xs font-['Plus_Jakarta_Sans']">{p.num}</span>
+                  <div className="font-['Plus_Jakarta_Sans'] font-bold text-white text-sm mt-1 mb-2">{p.title}</div>
+                  <p className="text-white/50 text-xs font-['Plus_Jakarta_Sans'] leading-relaxed">{p.desc}</p>
                 </div>
               ))}
             </div>
@@ -1492,21 +1504,21 @@ function MarketSection() {
               <div className="p-6 rounded-2xl border border-white/10 bg-white/2 hover:border-opacity-40 transition-all h-full"
                 style={{ borderColor: `${market.color}20` }}>
                 <div className="flex items-start justify-between mb-4">
-                  <h3 className="font-['Clash_Display'] font-bold text-white text-base">{market.name}</h3>
-                  <span className="text-xs px-2 py-1 rounded-full font-semibold font-['Satoshi']"
+                  <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-base">{market.name}</h3>
+                  <span className="text-xs px-2 py-1 rounded-full font-semibold font-['Plus_Jakarta_Sans']"
                     style={{ backgroundColor: `${market.color}20`, color: market.color }}>
                     {market.cagr} CAGR
                   </span>
                 </div>
                 <div className="flex items-end gap-3 mb-3">
                   <div>
-                    <div className="text-white/40 text-xs font-['Satoshi'] mb-0.5">2025</div>
-                    <div className="text-2xl font-bold font-['Clash_Display'] text-white/70">${market.now}B</div>
+                    <div className="text-white/40 text-xs font-['Plus_Jakarta_Sans'] mb-0.5">2025</div>
+                    <div className="text-2xl font-bold font-['Plus_Jakarta_Sans'] text-white/70">${market.now}B</div>
                   </div>
-                  <ArrowRight className="text-[#00FFB2] mb-1" size={16} />
+                  <ArrowRight className="text-[#8587e3] mb-1" size={16} />
                   <div>
-                    <div className="text-white/40 text-xs font-['Satoshi'] mb-0.5">2030</div>
-                    <div className="text-2xl font-bold font-['Clash_Display']" style={{ color: market.color }}>${market.future}B</div>
+                    <div className="text-white/40 text-xs font-['Plus_Jakarta_Sans'] mb-0.5">2030</div>
+                    <div className="text-2xl font-bold font-['Plus_Jakarta_Sans']" style={{ color: market.color }}>${market.future}B</div>
                   </div>
                 </div>
                 {/* Growth bar */}
@@ -1519,7 +1531,7 @@ function MarketSection() {
                     transition={{ duration: 1.2, ease: "easeOut" }}
                   />
                 </div>
-                <p className="text-white/40 text-xs font-['Satoshi']">Product: {market.product}</p>
+                <p className="text-white/40 text-xs font-['Plus_Jakarta_Sans']">Product: {market.product}</p>
               </div>
             </RevealDiv>
           ))}
@@ -1527,24 +1539,24 @@ function MarketSection() {
 
         {/* Combined TAM visualization */}
         <RevealDiv delay={0.2}>
-          <div className="p-8 md:p-12 rounded-2xl border border-[#00FFB2]/20 bg-gradient-to-br from-[#00FFB2]/5 to-[#8587e3]/5">
+          <div className="p-8 md:p-12 rounded-2xl border border-[#8587e3]/20 bg-gradient-to-br from-[#8587e3]/5 to-[#8587e3]/5">
             <div className="text-center mb-8">
-              <p className="text-white/40 text-sm font-['Satoshi'] uppercase tracking-widest mb-2">Combined TAM</p>
-              <div className="font-['Clash_Display'] font-bold text-white">
-                <span className="text-5xl text-[#00FFB2]">$124B+</span>
+              <p className="text-white/40 text-sm font-['Plus_Jakarta_Sans'] uppercase tracking-widest mb-2">Combined TAM</p>
+              <div className="font-['Plus_Jakarta_Sans'] font-bold text-white">
+                <span className="text-5xl text-[#8587e3]">$124B+</span>
                 <span className="text-3xl text-white/30 mx-4">→</span>
                 <span className="text-5xl text-[#8587e3]">$500B+</span>
               </div>
               <div className="flex items-center justify-center gap-4 mt-2">
-                <span className="text-white/40 text-sm font-['Satoshi']">Today (2025)</span>
+                <span className="text-white/40 text-sm font-['Plus_Jakarta_Sans']">Today (2025)</span>
                 <ArrowRight className="text-white/20" size={14} />
-                <span className="text-white/40 text-sm font-['Satoshi']">By 2030</span>
+                <span className="text-white/40 text-sm font-['Plus_Jakarta_Sans']">By 2030</span>
               </div>
             </div>
             <div className="w-full h-2 bg-white/5 rounded-full overflow-hidden">
               <motion.div
                 className="h-full rounded-full"
-                style={{ background: "linear-gradient(90deg, #00FFB2, #8587e3)" }}
+                style={{ background: "linear-gradient(90deg, #8587e3, #8587e3)" }}
                 initial={{ width: 0 }}
                 whileInView={{ width: "100%" }}
                 transition={{ duration: 2, ease: "easeOut" }}
@@ -1556,8 +1568,8 @@ function MarketSection() {
         {/* Why not winner take all */}
         <RevealDiv delay={0.3} className="mt-12">
           <div className="p-6 rounded-2xl border border-[#8587e3]/20 bg-[#8587e3]/5">
-            <h3 className="font-['Clash_Display'] font-bold text-white text-xl mb-3">Why Not Winner-Take-All?</h3>
-            <p className="text-white/60 text-sm font-['Satoshi'] leading-relaxed">
+            <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-xl mb-3">Why Not Winner-Take-All?</h3>
+            <p className="text-white/60 text-sm font-['Plus_Jakarta_Sans'] leading-relaxed">
               Enterprise AI does not exhibit the network effects that create winner-take-all dynamics in consumer platforms. Instead, it competes on deployment flexibility, regulatory compliance, and customer trust. This means multiple large players can coexist — and a differentiated, governance-first platform like ATOM can capture meaningful share without needing to defeat Big Tech head-on.
             </p>
           </div>
@@ -1577,10 +1589,10 @@ function GTMSection() {
       <div className="max-w-7xl mx-auto">
         <RevealDiv className="text-center mb-20">
           <SectionLabel>Go-To-Market</SectionLabel>
-          <h2 className="font-['Clash_Display'] font-bold text-white text-5xl md:text-6xl mb-6">
-            Land, Prove, <span className="text-[#00FFB2]">Expand</span>
+          <h2 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-5xl md:text-6xl mb-6">
+            Land, Prove, <span className="text-[#8587e3]">Expand</span>
           </h2>
-          <p className="text-white/50 text-lg max-w-2xl mx-auto font-['Satoshi']">
+          <p className="text-white/50 text-lg max-w-2xl mx-auto font-['Plus_Jakarta_Sans']">
             The Sierra / Palantir / Databricks / Snowflake playbook. FDE → Proof of Value → Platform Expansion.
           </p>
         </RevealDiv>
@@ -1591,7 +1603,7 @@ function GTMSection() {
             <RevealDiv key={phase.phase} delay={i * 0.15}>
               <div className="relative p-7 rounded-2xl border h-full transition-all hover:scale-105"
                 style={{ borderColor: `${phase.color}25`, background: `linear-gradient(135deg, ${phase.color}06, transparent)` }}>
-                <div className="absolute -top-3 left-5 px-3 py-0.5 rounded-full text-xs font-bold font-['Satoshi']"
+                <div className="absolute -top-3 left-5 px-3 py-0.5 rounded-full text-xs font-bold font-['Plus_Jakarta_Sans']"
                   style={{ backgroundColor: phase.color, color: "#000" }}>
                   {phase.phase}
                 </div>
@@ -1601,14 +1613,14 @@ function GTMSection() {
                   <phase.icon size={22} style={{ color: phase.color }} />
                 </div>
 
-                <h3 className="font-['Clash_Display'] font-bold text-white text-lg mb-3">{phase.name}</h3>
-                <p className="text-white/55 text-sm font-['Satoshi'] leading-relaxed mb-5">{phase.desc}</p>
+                <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-lg mb-3">{phase.name}</h3>
+                <p className="text-white/55 text-sm font-['Plus_Jakarta_Sans'] leading-relaxed mb-5">{phase.desc}</p>
 
                 <div className="space-y-2">
                   {phase.channels.map((ch) => (
                     <div key={ch} className="flex items-center gap-2">
                       <div className="w-1 h-1 rounded-full" style={{ backgroundColor: phase.color }} />
-                      <span className="text-white/50 text-xs font-['Satoshi']">{ch}</span>
+                      <span className="text-white/50 text-xs font-['Plus_Jakarta_Sans']">{ch}</span>
                     </div>
                   ))}
                 </div>
@@ -1620,7 +1632,7 @@ function GTMSection() {
         {/* Traction Signals */}
         <RevealDiv delay={0.15} className="mb-16">
           <div className="p-6 rounded-2xl border border-[#FFD700]/20 bg-[#FFD700]/4">
-            <h3 className="font-['Clash_Display'] font-bold text-white text-xl mb-4">Traction Signals <span className="text-white/40 text-sm font-['Satoshi'] font-normal">(Pre-Revenue, But Not Pre-Evidence)</span></h3>
+            <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-xl mb-4">Traction Signals <span className="text-white/40 text-sm font-['Plus_Jakarta_Sans'] font-normal">(Pre-Revenue, But Not Pre-Evidence)</span></h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {[
                 "99+ enterprise projects delivered across Fortune 500 clients",
@@ -1630,7 +1642,7 @@ function GTMSection() {
               ].map((item) => (
                 <div key={item} className="flex items-start gap-2 p-3 rounded-lg bg-white/3">
                   <Zap className="text-[#FFD700] mt-0.5 flex-shrink-0" size={14} />
-                  <span className="text-white/70 text-sm font-['Satoshi']">{item}</span>
+                  <span className="text-white/70 text-sm font-['Plus_Jakarta_Sans']">{item}</span>
                 </div>
               ))}
             </div>
@@ -1639,20 +1651,20 @@ function GTMSection() {
 
         {/* Customer journey */}
         <RevealDiv delay={0.2}>
-          <h3 className="font-['Clash_Display'] font-bold text-white text-2xl mb-6">Enterprise Customer Journey</h3>
+          <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-2xl mb-6">Enterprise Customer Journey</h3>
           <div className="overflow-x-auto">
             <div className="flex items-stretch gap-0 min-w-[700px]">
               {[
                 { stage: "Discovery", rev: "$100K–$150K", color: "#8587e3" },
-                { stage: "Rapid Deploy", rev: "$150K–$250K", color: "#00FFB2" },
+                { stage: "Rapid Deploy", rev: "$150K–$250K", color: "#8587e3" },
                 { stage: "MRR Begins", rev: "$25K–$65K/mo", color: "#00D4FF" },
                 { stage: "Expansion", rev: "$65K–$150K/mo", color: "#FFD700" },
                 { stage: "Strategic Partner", rev: "$150K+/mo", color: "#A855F7" },
               ].map((step, i, arr) => (
                 <div key={step.stage} className="flex-1 relative">
                   <div className="p-4 rounded-none text-center" style={{ background: `${step.color}10`, borderTop: `2px solid ${step.color}` }}>
-                    <div className="text-xs font-bold font-['Clash_Display'] mb-1" style={{ color: step.color }}>{step.stage}</div>
-                    <div className="text-white/60 text-xs font-['Satoshi']">{step.rev}</div>
+                    <div className="text-xs font-bold font-['Plus_Jakarta_Sans'] mb-1" style={{ color: step.color }}>{step.stage}</div>
+                    <div className="text-white/60 text-xs font-['Plus_Jakarta_Sans']">{step.rev}</div>
                   </div>
                   {i < arr.length - 1 && (
                     <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10">
@@ -1664,21 +1676,21 @@ function GTMSection() {
             </div>
           </div>
           <div className="mt-4 flex gap-6 flex-wrap">
-            <div className="text-sm font-['Satoshi']"><span className="text-[#00FFB2] font-bold">Target 3-Year LTV:</span> <span className="text-white/60">$2M–$3M (modeled)</span></div>
-            <div className="text-sm font-['Satoshi']"><span className="text-[#00FFB2] font-bold">Target LTV:CAC:</span> <span className="text-white/60">&gt;5:1 at scale</span></div>
-            <div className="text-sm font-['Satoshi']"><span className="text-[#00FFB2] font-bold">Target NRR:</span> <span className="text-white/60">120–130%+</span></div>
+            <div className="text-sm font-['Plus_Jakarta_Sans']"><span className="text-[#8587e3] font-bold">Target 3-Year LTV:</span> <span className="text-white/60">$2M–$3M (modeled)</span></div>
+            <div className="text-sm font-['Plus_Jakarta_Sans']"><span className="text-[#8587e3] font-bold">Target LTV:CAC:</span> <span className="text-white/60">&gt;5:1 at scale</span></div>
+            <div className="text-sm font-['Plus_Jakarta_Sans']"><span className="text-[#8587e3] font-bold">Target NRR:</span> <span className="text-white/60">120–130%+</span></div>
           </div>
         </RevealDiv>
 
         {/* Partners */}
         <RevealDiv delay={0.3} className="mt-14">
-          <h3 className="font-['Clash_Display'] font-bold text-white text-2xl mb-6">Partnership Ecosystem</h3>
+          <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-2xl mb-6">Partnership Ecosystem</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {PARTNERS.map((p, i) => (
-              <div key={p.name} className="p-4 rounded-xl border border-white/10 bg-white/3 text-center hover:border-[#00FFB2]/30 transition-all">
-                <p.icon className="mx-auto mb-2 text-[#00FFB2]/60" size={20} />
-                <div className="text-white/80 text-sm font-bold font-['Satoshi']">{p.name}</div>
-                <div className="text-white/40 text-xs font-['Satoshi']">{p.role}</div>
+              <div key={p.name} className="p-4 rounded-xl border border-white/10 bg-white/3 text-center hover:border-[#8587e3]/30 transition-all">
+                <p.icon className="mx-auto mb-2 text-[#8587e3]/60" size={20} />
+                <div className="text-white/80 text-sm font-bold font-['Plus_Jakarta_Sans']">{p.name}</div>
+                <div className="text-white/40 text-xs font-['Plus_Jakarta_Sans']">{p.role}</div>
               </div>
             ))}
           </div>
@@ -1710,23 +1722,23 @@ function RevenueSection() {
       <div className="max-w-7xl mx-auto relative">
         <RevealDiv className="text-center mb-20">
           <SectionLabel>Revenue Architecture</SectionLabel>
-          <h2 className="font-['Clash_Display'] font-bold text-white text-5xl md:text-6xl mb-6">
-            The Rule of <span className="text-[#00FFB2]">78</span>
+          <h2 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-5xl md:text-6xl mb-6">
+            The Rule of <span className="text-[#8587e3]">78</span>
           </h2>
           <div className="max-w-2xl mx-auto mb-4">
-            <div className="p-5 rounded-xl border border-[#00FFB2]/20 bg-[#00FFB2]/5 text-center">
-              <p className="text-[#00FFB2] font-bold font-['Satoshi'] text-lg mb-1">$10K/mo new MRR = $780K Year 1</p>
-              <p className="text-white/50 text-sm font-['Satoshi']">Not $120K. The 6.5x compounding multiplier that makes SaaS magical.</p>
+            <div className="p-5 rounded-xl border border-[#8587e3]/20 bg-[#8587e3]/5 text-center">
+              <p className="text-[#8587e3] font-bold font-['Plus_Jakarta_Sans'] text-lg mb-1">$10K/mo new MRR = $780K Year 1</p>
+              <p className="text-white/50 text-sm font-['Plus_Jakarta_Sans']">Not $120K. The 6.5x compounding multiplier that makes SaaS magical.</p>
             </div>
           </div>
-          <p className="text-white/50 text-sm font-['Satoshi'] italic">Illustrating SaaS compounding — not current revenue. We are currently self-funded and pre-revenue at the platform level.</p>
+          <p className="text-white/50 text-sm font-['Plus_Jakarta_Sans'] italic">Illustrating SaaS compounding — not current revenue. We are currently self-funded and pre-revenue at the platform level.</p>
         </RevealDiv>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
           {/* ATOM Tiers */}
           <RevealDiv>
-            <h3 className="font-['Clash_Display'] font-bold text-white text-2xl mb-2">ATOM Platform</h3>
-            <p className="text-white/40 text-xs font-['Satoshi'] mb-5 italic">Pricing reflects intended tiers and target margin profile. We are currently finalizing ATOM pricing with design partners.</p>
+            <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-2xl mb-2">ATOM Platform</h3>
+            <p className="text-white/40 text-xs font-['Plus_Jakarta_Sans'] mb-5 italic">Pricing reflects intended tiers and target margin profile. We are currently finalizing ATOM pricing with design partners.</p>
             <div className="space-y-3">
               {ATOM_TIERS.map((tier, i) => (
                 <motion.div
@@ -1741,16 +1753,16 @@ function RevenueSection() {
                 >
                   <div>
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="font-['Clash_Display'] font-bold text-white text-sm">{tier.name}</span>
-                      <span className="text-xs px-2 py-0.5 rounded-full font-['Satoshi']"
+                      <span className="font-['Plus_Jakarta_Sans'] font-bold text-white text-sm">{tier.name}</span>
+                      <span className="text-xs px-2 py-0.5 rounded-full font-['Plus_Jakarta_Sans']"
                         style={{ backgroundColor: `${tier.color}20`, color: tier.color }}>
                         {tier.gm} GM
                       </span>
                     </div>
-                    <p className="text-white/40 text-xs font-['Satoshi']">{tier.desc}</p>
+                    <p className="text-white/40 text-xs font-['Plus_Jakarta_Sans']">{tier.desc}</p>
                   </div>
                   <div className="text-right">
-                    <div className="font-bold font-['Clash_Display']" style={{ color: tier.color }}>{tier.price}</div>
+                    <div className="font-bold font-['Plus_Jakarta_Sans']" style={{ color: tier.color }}>{tier.price}</div>
                   </div>
                 </motion.div>
               ))}
@@ -1759,23 +1771,23 @@ function RevenueSection() {
 
           {/* ClinixAI Tiers */}
           <RevealDiv delay={0.15}>
-            <h3 className="font-['Clash_Display'] font-bold text-white text-2xl mb-2">ClinixAI Healthcare</h3>
-            <p className="text-white/40 text-xs font-['Satoshi'] mb-5 italic">ClinixAI pricing reflects target ranges for design partner discussions.</p>
+            <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-2xl mb-2">ClinixAI Healthcare</h3>
+            <p className="text-white/40 text-xs font-['Plus_Jakarta_Sans'] mb-5 italic">ClinixAI pricing reflects target ranges for design partner discussions.</p>
             <div className="space-y-3">
               {CLINIX_TIERS.map((tier, i) => (
                 <div key={tier.name} className="flex items-center justify-between p-4 rounded-xl border border-white/8 bg-white/2 transition-all hover:border-[#FF6B9D]/30">
                   <div>
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="font-['Clash_Display'] font-bold text-white text-sm">{tier.name}</span>
-                      <span className="text-xs px-2 py-0.5 rounded-full font-['Satoshi']"
+                      <span className="font-['Plus_Jakarta_Sans'] font-bold text-white text-sm">{tier.name}</span>
+                      <span className="text-xs px-2 py-0.5 rounded-full font-['Plus_Jakarta_Sans']"
                         style={{ backgroundColor: `${tier.color}20`, color: tier.color }}>
                         {tier.gm} GM
                       </span>
                     </div>
-                    <p className="text-white/40 text-xs font-['Satoshi']">{tier.desc}</p>
+                    <p className="text-white/40 text-xs font-['Plus_Jakarta_Sans']">{tier.desc}</p>
                   </div>
                   <div className="text-right">
-                    <div className="font-bold font-['Clash_Display']" style={{ color: tier.color }}>{tier.price}</div>
+                    <div className="font-bold font-['Plus_Jakarta_Sans']" style={{ color: tier.color }}>{tier.price}</div>
                   </div>
                 </div>
               ))}
@@ -1787,20 +1799,20 @@ function RevenueSection() {
         <RevealDiv delay={0.2}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 rounded-2xl border border-[#8587e3]/20 bg-[#8587e3]/4">
             <div>
-              <h4 className="font-['Clash_Display'] font-bold text-white text-xl mb-3">Why Rule of 78?</h4>
-              <p className="text-white/60 text-sm font-['Satoshi'] leading-relaxed mb-4">
+              <h4 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-xl mb-3">Why Rule of 78?</h4>
+              <p className="text-white/60 text-sm font-['Plus_Jakarta_Sans'] leading-relaxed mb-4">
                 In SaaS, if you add $10K in new MRR every month for 12 months, you don't earn $120K — you earn $780K because each dollar compounds from the month it lands. The Rule of 78 is why SaaS businesses with consistent growth become exponentially valuable.
               </p>
               <div className="p-4 rounded-xl border border-[#FFD700]/20 bg-[#FFD700]/5 mb-3">
-                <p className="text-[#FFD700] text-xs font-bold font-['Satoshi'] mb-1">Illustrative Example</p>
-                <p className="text-white/50 text-xs font-['Satoshi']">$10K/mo new MRR × 12 months = $780K recognized revenue (not $120K)</p>
+                <p className="text-[#FFD700] text-xs font-bold font-['Plus_Jakarta_Sans'] mb-1">Illustrative Example</p>
+                <p className="text-white/50 text-xs font-['Plus_Jakarta_Sans']">$10K/mo new MRR × 12 months = $780K recognized revenue (not $120K)</p>
               </div>
-              <p className="text-white/40 text-xs font-['Satoshi'] italic leading-relaxed">
+              <p className="text-white/40 text-xs font-['Plus_Jakarta_Sans'] italic leading-relaxed">
                 All Rule-of-78 examples are forward-looking management tools based on hypothetical MRR ramps. They are not commitments or depictions of current revenue performance.
               </p>
             </div>
             <div>
-              <h4 className="font-['Clash_Display'] font-bold text-white text-xl mb-3 text-center">MRR Compounding Effect</h4>
+              <h4 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-xl mb-3 text-center">MRR Compounding Effect</h4>
               <ResponsiveContainer width="100%" height={200}>
                 <AreaChart data={[
                   { month: "M1", value: 8.5 },
@@ -1812,15 +1824,15 @@ function RevenueSection() {
                 ]}>
                   <defs>
                     <linearGradient id="ruleGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#00FFB2" stopOpacity={0.3} />
-                      <stop offset="95%" stopColor="#00FFB2" stopOpacity={0} />
+                      <stop offset="5%" stopColor="#8587e3" stopOpacity={0.3} />
+                      <stop offset="95%" stopColor="#8587e3" stopOpacity={0} />
                     </linearGradient>
                   </defs>
                   <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
                   <XAxis dataKey="month" tick={{ fill: "rgba(255,255,255,0.4)", fontSize: 10 }} axisLine={false} tickLine={false} />
                   <YAxis tick={{ fill: "rgba(255,255,255,0.4)", fontSize: 10 }} axisLine={false} tickLine={false} />
                   <Tooltip contentStyle={{ background: "#111", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 8, color: "#fff" }} />
-                  <Area type="monotone" dataKey="value" stroke="#00FFB2" strokeWidth={2} fill="url(#ruleGrad)" />
+                  <Area type="monotone" dataKey="value" stroke="#8587e3" strokeWidth={2} fill="url(#ruleGrad)" />
                 </AreaChart>
               </ResponsiveContainer>
             </div>
@@ -1837,7 +1849,7 @@ function RevenueSection() {
 
 function FinancialsSection() {
   const unitEcon = [
-    { label: "3-Year LTV (modeled)", value: "$2M–$3M", icon: DollarSign, color: "#00FFB2" },
+    { label: "3-Year LTV (modeled)", value: "$2M–$3M", icon: DollarSign, color: "#8587e3" },
     { label: "Target LTV:CAC", value: ">5:1", icon: TrendingUp, color: "#8587e3" },
     { label: "Target NRR", value: "120–130%+", icon: RefreshCw, color: "#00D4FF" },
     { label: "Target CAC Payback", value: "<12 mo", icon: Clock, color: "#FFD700" },
@@ -1850,49 +1862,49 @@ function FinancialsSection() {
       <div className="max-w-7xl mx-auto">
         <RevealDiv className="text-center mb-20">
           <SectionLabel>5-Year Model</SectionLabel>
-          <h2 className="font-['Clash_Display'] font-bold text-white text-5xl md:text-6xl mb-6">
-            Financial <span className="text-[#00FFB2]">Projections</span>
+          <h2 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-5xl md:text-6xl mb-6">
+            Financial <span className="text-[#8587e3]">Projections</span>
           </h2>
-          <p className="text-white/50 text-lg max-w-2xl mx-auto font-['Satoshi']">
+          <p className="text-white/50 text-lg max-w-2xl mx-auto font-['Plus_Jakarta_Sans']">
             Scenario-based financial projections. All figures are forward-looking management scenarios, not commitments.
           </p>
         </RevealDiv>
 
         {/* Scenario Table */}
         <RevealDiv className="mb-12">
-          <h3 className="font-['Clash_Display'] font-bold text-white text-2xl mb-6 text-center">5-Year Revenue Scenario Ranges</h3>
+          <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-2xl mb-6 text-center">5-Year Revenue Scenario Ranges</h3>
           <div className="rounded-2xl border border-white/10 overflow-hidden">
             <table className="w-full">
               <thead>
                 <tr className="border-b border-white/10 bg-white/3">
-                  <th className="text-left px-6 py-4 text-white/50 text-xs font-semibold font-['Satoshi'] uppercase tracking-wider">Year</th>
-                  <th className="text-right px-4 py-4 text-white/50 text-xs font-semibold font-['Satoshi'] uppercase tracking-wider">Revenue Range</th>
-                  <th className="text-right px-4 py-4 text-white/50 text-xs font-semibold font-['Satoshi'] uppercase tracking-wider">EBITDA Status</th>
-                  <th className="text-right px-6 py-4 text-white/50 text-xs font-semibold font-['Satoshi'] uppercase tracking-wider">GM Range</th>
+                  <th className="text-left px-6 py-4 text-white/50 text-xs font-semibold font-['Plus_Jakarta_Sans'] uppercase tracking-wider">Year</th>
+                  <th className="text-right px-4 py-4 text-white/50 text-xs font-semibold font-['Plus_Jakarta_Sans'] uppercase tracking-wider">Revenue Range</th>
+                  <th className="text-right px-4 py-4 text-white/50 text-xs font-semibold font-['Plus_Jakarta_Sans'] uppercase tracking-wider">EBITDA Status</th>
+                  <th className="text-right px-6 py-4 text-white/50 text-xs font-semibold font-['Plus_Jakarta_Sans'] uppercase tracking-wider">GM Range</th>
                 </tr>
               </thead>
               <tbody>
                 {FINANCIAL_PROJECTIONS.map((row, i) => (
                   <tr key={row.year} className={`border-b border-white/5 ${i % 2 === 0 ? "bg-transparent" : "bg-white/2"}`}>
-                    <td className="px-6 py-4 font-bold text-sm font-['Clash_Display'] text-[#00FFB2]">{row.year}</td>
-                    <td className="px-4 py-4 text-right text-white/70 text-sm font-['Satoshi']">${row.revLow}M – ${row.revHigh}M</td>
-                    <td className="px-4 py-4 text-right text-sm font-['Satoshi']">
-                      <span className={row.ebitdaNote === "Negative" ? "text-red-400" : row.ebitdaNote === "~Breakeven" ? "text-[#FFD700]" : "text-[#00FFB2]"}>{row.ebitdaNote}</span>
+                    <td className="px-6 py-4 font-bold text-sm font-['Plus_Jakarta_Sans'] text-[#8587e3]">{row.year}</td>
+                    <td className="px-4 py-4 text-right text-white/70 text-sm font-['Plus_Jakarta_Sans']">${row.revLow}M – ${row.revHigh}M</td>
+                    <td className="px-4 py-4 text-right text-sm font-['Plus_Jakarta_Sans']">
+                      <span className={row.ebitdaNote === "Negative" ? "text-red-400" : row.ebitdaNote === "~Breakeven" ? "text-[#FFD700]" : "text-[#8587e3]"}>{row.ebitdaNote}</span>
                     </td>
-                    <td className="px-6 py-4 text-right text-white/60 text-sm font-['Satoshi']">{row.gmRange}</td>
+                    <td className="px-6 py-4 text-right text-white/60 text-sm font-['Plus_Jakarta_Sans']">{row.gmRange}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="text-white/30 text-xs font-['Satoshi'] mt-3 italic">All projections are management scenarios based on assumed customer acquisition and expansion rates. Not commitments.</p>
+          <p className="text-white/30 text-xs font-['Plus_Jakarta_Sans'] mt-3 italic">All projections are management scenarios based on assumed customer acquisition and expansion rates. Not commitments.</p>
         </RevealDiv>
 
         {/* Key Assumptions */}
         <RevealDiv delay={0.1} className="mb-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-2xl border border-[#00FFB2]/20 bg-[#00FFB2]/4">
-              <h3 className="font-['Clash_Display'] font-bold text-white text-lg mb-4">Key Assumptions</h3>
+            <div className="p-6 rounded-2xl border border-[#8587e3]/20 bg-[#8587e3]/4">
+              <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-lg mb-4">Key Assumptions</h3>
               <div className="space-y-2">
                 {[
                   "10–20 new enterprise customers per year",
@@ -1902,24 +1914,24 @@ function FinancialsSection() {
                   "EBITDA breakeven targeted by Year 3",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-2">
-                    <Check className="text-[#00FFB2] mt-0.5 flex-shrink-0" size={14} />
-                    <span className="text-white/60 text-sm font-['Satoshi']">{item}</span>
+                    <Check className="text-[#8587e3] mt-0.5 flex-shrink-0" size={14} />
+                    <span className="text-white/60 text-sm font-['Plus_Jakarta_Sans']">{item}</span>
                   </div>
                 ))}
               </div>
             </div>
             <div className="p-6 rounded-2xl border border-[#8587e3]/20 bg-[#8587e3]/4">
-              <h3 className="font-['Clash_Display'] font-bold text-white text-lg mb-4">Target Metrics</h3>
+              <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-lg mb-4">Target Metrics</h3>
               <div className="space-y-2">
                 {[
-                  { label: "ARR / FTE at Scale", value: "$200K–$300K+", color: "#00FFB2" },
+                  { label: "ARR / FTE at Scale", value: "$200K–$300K+", color: "#8587e3" },
                   { label: "Burn Multiple", value: "<2x by Y2", color: "#8587e3" },
                   { label: "Logo Churn Target", value: "5–10%", color: "#00D4FF" },
                   { label: "CAC Payback", value: "<12 months", color: "#FFD700" },
                 ].map((item) => (
                   <div key={item.label} className="flex justify-between items-center py-2 border-b border-white/5">
-                    <span className="text-white/50 text-sm font-['Satoshi']">{item.label}</span>
-                    <span className="font-bold text-sm font-['Satoshi']" style={{ color: item.color }}>{item.value}</span>
+                    <span className="text-white/50 text-sm font-['Plus_Jakarta_Sans']">{item.label}</span>
+                    <span className="font-bold text-sm font-['Plus_Jakarta_Sans']" style={{ color: item.color }}>{item.value}</span>
                   </div>
                 ))}
               </div>
@@ -1934,15 +1946,15 @@ function FinancialsSection() {
               <div className="p-4 rounded-xl border border-white/10 bg-white/2 text-center hover:border-opacity-50 transition-all"
                 style={{ borderColor: `${metric.color}20` }}>
                 <metric.icon className="mx-auto mb-2" size={18} style={{ color: metric.color }} />
-                <div className="text-xl font-bold font-['Clash_Display'] mb-1" style={{ color: metric.color }}>{metric.value}</div>
-                <div className="text-white/40 text-xs font-['Satoshi'] uppercase tracking-wider">{metric.label}</div>
+                <div className="text-xl font-bold font-['Plus_Jakarta_Sans'] mb-1" style={{ color: metric.color }}>{metric.value}</div>
+                <div className="text-white/40 text-xs font-['Plus_Jakarta_Sans'] uppercase tracking-wider">{metric.label}</div>
               </div>
             </RevealDiv>
           ))}
         </div>
 
         <RevealDiv delay={0.15} className="mb-4">
-          <p className="text-white/30 text-xs font-['Satoshi'] italic text-center mt-4">Target Unit Economics (Modeled, Not Historical). Actual metrics will be reported once we have 12+ months of production cohort data.</p>
+          <p className="text-white/30 text-xs font-['Plus_Jakarta_Sans'] italic text-center mt-4">Target Unit Economics (Modeled, Not Historical). Actual metrics will be reported once we have 12+ months of production cohort data.</p>
         </RevealDiv>
       </div>
     </div>
@@ -1959,7 +1971,7 @@ function ValuationSection() {
       name: "Cost-to-Duplicate",
       range: "$33.7M – $63.5M",
       midpoint: "$48.6M",
-      color: "#00FFB2",
+      color: "#8587e3",
       icon: Layers,
       desc: "Direct cost to rebuild 10 production products, post-quantum crypto stack, 99+ enterprise deployments, and accumulated know-how.",
       items: [
@@ -1985,7 +1997,7 @@ function ValuationSection() {
         { label: "Cognigy (1 product)", value: "$178M raised" },
         { label: "Kore.ai (1 product)", value: "$150M raised" },
         { label: "ElevenLabs (1 product)", value: "$11B valuation" },
-        { label: "AntimatterAI (10 products)", value: "$60M pitch" },
+        { label: "AntimatterAI (11 products)", value: "$60M pitch" },
         { label: "Discount applied", value: "Pre-revenue" },
       ],
     },
@@ -2011,10 +2023,10 @@ function ValuationSection() {
       <div className="max-w-7xl mx-auto">
         <RevealDiv className="text-center mb-20">
           <SectionLabel>Valuation Analysis</SectionLabel>
-          <h2 className="font-['Clash_Display'] font-bold text-white text-5xl md:text-6xl mb-6">
-            Three Lenses. <span className="text-[#00FFB2]">One Reasonable Range.</span>
+          <h2 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-5xl md:text-6xl mb-6">
+            Three Lenses. <span className="text-[#8587e3]">One Reasonable Range.</span>
           </h2>
-          <p className="text-white/50 text-lg max-w-2xl mx-auto font-['Satoshi']">
+          <p className="text-white/50 text-lg max-w-2xl mx-auto font-['Plus_Jakarta_Sans']">
             $40M–$75M convergence across multiple methods.
           </p>
         </RevealDiv>
@@ -2030,18 +2042,18 @@ function ValuationSection() {
                     style={{ backgroundColor: `${m.color}15`, border: `1px solid ${m.color}30` }}>
                     <m.icon size={18} style={{ color: m.color }} />
                   </div>
-                  <span className="font-['Clash_Display'] font-bold text-white text-sm">{m.name}</span>
+                  <span className="font-['Plus_Jakarta_Sans'] font-bold text-white text-sm">{m.name}</span>
                 </div>
                 <div className="mb-2">
-                  <div className="text-2xl font-bold font-['Clash_Display']" style={{ color: m.color }}>{m.range}</div>
-                  <div className="text-white/40 text-xs font-['Satoshi']">Midpoint: {m.midpoint}</div>
+                  <div className="text-2xl font-bold font-['Plus_Jakarta_Sans']" style={{ color: m.color }}>{m.range}</div>
+                  <div className="text-white/40 text-xs font-['Plus_Jakarta_Sans']">Midpoint: {m.midpoint}</div>
                 </div>
-                <p className="text-white/55 text-sm font-['Satoshi'] leading-relaxed mb-5 flex-1">{m.desc}</p>
+                <p className="text-white/55 text-sm font-['Plus_Jakarta_Sans'] leading-relaxed mb-5 flex-1">{m.desc}</p>
                 <div className="space-y-1.5">
                   {m.items.map((item) => (
                     <div key={item.label} className="flex justify-between items-center text-xs">
-                      <span className="text-white/40 font-['Satoshi']">{item.label}</span>
-                      <span className="font-semibold font-['Satoshi']" style={{ color: m.color }}>{item.value}</span>
+                      <span className="text-white/40 font-['Plus_Jakarta_Sans']">{item.label}</span>
+                      <span className="font-semibold font-['Plus_Jakarta_Sans']" style={{ color: m.color }}>{item.value}</span>
                     </div>
                   ))}
                 </div>
@@ -2052,51 +2064,51 @@ function ValuationSection() {
 
         {/* Convergence visualization */}
         <RevealDiv delay={0.3}>
-          <div className="p-8 rounded-2xl border border-[#00FFB2]/20 bg-[#00FFB2]/4 text-center mb-12">
-            <p className="text-white/40 text-sm font-['Satoshi'] uppercase tracking-widest mb-4">Convergence Zone</p>
+          <div className="p-8 rounded-2xl border border-[#8587e3]/20 bg-[#8587e3]/4 text-center mb-12">
+            <p className="text-white/40 text-sm font-['Plus_Jakarta_Sans'] uppercase tracking-widest mb-4">Convergence Zone</p>
             <div className="flex items-center justify-center gap-6 flex-wrap mb-4">
-              <span className="text-white/50 text-sm font-['Satoshi']">Cost-to-Duplicate</span>
+              <span className="text-white/50 text-sm font-['Plus_Jakarta_Sans']">Cost-to-Duplicate</span>
               <div className="w-8 h-px bg-white/20" />
-              <span className="text-white/50 text-sm font-['Satoshi']">VC Method</span>
+              <span className="text-white/50 text-sm font-['Plus_Jakarta_Sans']">VC Method</span>
               <div className="w-8 h-px bg-white/20" />
-              <span className="text-white/50 text-sm font-['Satoshi']">Market Comps</span>
+              <span className="text-white/50 text-sm font-['Plus_Jakarta_Sans']">Market Comps</span>
             </div>
-            <div className="text-6xl font-bold font-['Clash_Display'] text-[#00FFB2] mb-2">$60M</div>
-            <p className="text-white/50 text-sm font-['Satoshi']">Pitch valuation — $50M formal term sheet, $60M investor positioning. Three independent analyses converge on $40M–$75M.</p>
+            <div className="text-6xl font-bold font-['Plus_Jakarta_Sans'] text-[#8587e3] mb-2">$60M</div>
+            <p className="text-white/50 text-sm font-['Plus_Jakarta_Sans']">Pitch valuation — $50M formal term sheet, $60M investor positioning. Three independent analyses converge on $40M–$75M.</p>
           </div>
         </RevealDiv>
 
         {/* Comparables table */}
         <RevealDiv delay={0.2}>
-          <h3 className="font-['Clash_Display'] font-bold text-white text-2xl mb-6">Market Comparables</h3>
+          <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-2xl mb-6">Market Comparables</h3>
           <div className="rounded-2xl border border-white/10 overflow-hidden">
             <table className="w-full">
               <thead>
                 <tr className="border-b border-white/10 bg-white/3">
-                  <th className="text-left px-6 py-4 text-white/50 text-xs font-semibold font-['Satoshi'] uppercase tracking-wider">Company</th>
-                  <th className="text-right px-4 py-4 text-white/50 text-xs font-semibold font-['Satoshi'] uppercase tracking-wider">Capital Raised</th>
-                  <th className="text-right px-4 py-4 text-white/50 text-xs font-semibold font-['Satoshi'] uppercase tracking-wider">Valuation</th>
-                  <th className="text-right px-6 py-4 text-white/50 text-xs font-semibold font-['Satoshi'] uppercase tracking-wider">Products</th>
+                  <th className="text-left px-6 py-4 text-white/50 text-xs font-semibold font-['Plus_Jakarta_Sans'] uppercase tracking-wider">Company</th>
+                  <th className="text-right px-4 py-4 text-white/50 text-xs font-semibold font-['Plus_Jakarta_Sans'] uppercase tracking-wider">Capital Raised</th>
+                  <th className="text-right px-4 py-4 text-white/50 text-xs font-semibold font-['Plus_Jakarta_Sans'] uppercase tracking-wider">Valuation</th>
+                  <th className="text-right px-6 py-4 text-white/50 text-xs font-semibold font-['Plus_Jakarta_Sans'] uppercase tracking-wider">Products</th>
                 </tr>
               </thead>
               <tbody>
                 {COMP_TABLE.map((row, i) => (
                   <tr key={row.company}
-                    className={`border-b border-white/5 ${row.company === "AntimatterAI" ? "bg-[#00FFB2]/5" : i % 2 === 0 ? "bg-transparent" : "bg-white/2"}`}>
-                    <td className={`px-6 py-4 font-bold text-sm font-['Satoshi'] ${row.company === "AntimatterAI" ? "text-[#00FFB2]" : "text-white/80"}`}>{row.company}</td>
-                    <td className="px-4 py-4 text-right text-white/60 text-sm font-['Satoshi']">{row.raised}</td>
+                    className={`border-b border-white/5 ${row.company === "AntimatterAI" ? "bg-[#8587e3]/5" : i % 2 === 0 ? "bg-transparent" : "bg-white/2"}`}>
+                    <td className={`px-6 py-4 font-bold text-sm font-['Plus_Jakarta_Sans'] ${row.company === "AntimatterAI" ? "text-[#8587e3]" : "text-white/80"}`}>{row.company}</td>
+                    <td className="px-4 py-4 text-right text-white/60 text-sm font-['Plus_Jakarta_Sans']">{row.raised}</td>
                     <td className="px-4 py-4 text-right">
-                      <span className={`text-sm font-bold font-['Satoshi'] ${row.company === "AntimatterAI" ? "text-[#00FFB2]" : "text-white/60"}`}>{row.valuation}</span>
+                      <span className={`text-sm font-bold font-['Plus_Jakarta_Sans'] ${row.company === "AntimatterAI" ? "text-[#8587e3]" : "text-white/60"}`}>{row.valuation}</span>
                     </td>
-                    <td className="px-6 py-4 text-right text-white/50 text-sm font-['Satoshi']">{row.products}</td>
+                    <td className="px-6 py-4 text-right text-white/50 text-sm font-['Plus_Jakarta_Sans']">{row.products}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <div className="mt-4 p-4 rounded-xl border border-[#00FFB2]/15 bg-[#00FFB2]/3">
-            <p className="text-[#00FFB2] text-sm font-bold font-['Satoshi']">The asymmetric opportunity:</p>
-            <p className="text-white/60 text-sm font-['Satoshi'] mt-1">We intentionally price at a fraction of late-stage comps to align maximum upside with early investors. Entry at $60M with 10 products in portfolio vs. single-product companies at $1B–$10B+ represents asymmetric risk/reward.</p>
+          <div className="mt-4 p-4 rounded-xl border border-[#8587e3]/15 bg-[#8587e3]/3">
+            <p className="text-[#8587e3] text-sm font-bold font-['Plus_Jakarta_Sans']">The asymmetric opportunity:</p>
+            <p className="text-white/60 text-sm font-['Plus_Jakarta_Sans'] mt-1">We intentionally price at a fraction of late-stage comps to align maximum upside with early investors. Entry at $60M with 11 products in portfolio vs. single-product companies at $1B–$10B+ represents asymmetric risk/reward.</p>
           </div>
         </RevealDiv>
       </div>
@@ -2124,7 +2136,7 @@ const EQUITY_VEHICLE = {
   riskLevel: "moderate",
   targetReturn: "10-50x",
   lockup: "5-7 years",
-  color: "#00FFB2",
+  color: "#8587e3",
 };
 
 function TermSheetWrapper() {
@@ -2132,11 +2144,11 @@ function TermSheetWrapper() {
   return (
     <div>
       {!open ? (
-        <div className="p-6 rounded-2xl border border-[#00FFB2]/20 bg-[#00FFB2]/4 text-center">
-          <p className="text-white/60 text-sm font-['Satoshi'] mb-4">Series A Preferred Equity — $60M Pre-Money Valuation</p>
+        <div className="p-6 rounded-2xl border border-[#8587e3]/20 bg-[#8587e3]/4 text-center">
+          <p className="text-white/60 text-sm font-['Plus_Jakarta_Sans'] mb-4">Series A Preferred Equity — $60M Pre-Money Valuation</p>
           <button
             onClick={() => setOpen(true)}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[#00FFB2] text-black font-bold rounded-xl hover:bg-[#00FFB2]/90 transition-all font-['Satoshi']"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#8587e3] via-[#4c4dac] to-[#696aac] text-white shadow-[0_0_10px_#696aac] font-bold rounded-xl hover:shadow-[0_0_25px_#696aac] transition-all font-['Plus_Jakarta_Sans']"
           >
             <FileText size={16} />
             Open Interactive Term Sheet
@@ -2156,15 +2168,15 @@ function TermSheetWrapper() {
 function InvestmentSection() {
   return (
     <div id="investment" className="bg-black py-32 px-4 relative overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-[#00FFB2]/3 blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-[#8587e3]/3 blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative">
         <RevealDiv className="text-center mb-20">
           <SectionLabel>Series A</SectionLabel>
-          <h2 className="font-['Clash_Display'] font-bold text-white text-5xl md:text-6xl mb-6">
-            Investment <span className="text-[#00FFB2]">Opportunity</span>
+          <h2 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-5xl md:text-6xl mb-6">
+            Investment <span className="text-[#8587e3]">Opportunity</span>
           </h2>
-          <p className="text-white/50 text-lg max-w-2xl mx-auto font-['Satoshi']">
+          <p className="text-white/50 text-lg max-w-2xl mx-auto font-['Plus_Jakarta_Sans']">
             $10M–$20M Series A. $50M formal pre-money / $60M pitch valuation. Clean cap table.
           </p>
         </RevealDiv>
@@ -2177,13 +2189,13 @@ function InvestmentSection() {
         {/* Use of Funds */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
           <RevealDiv delay={0.1}>
-            <h3 className="font-['Clash_Display'] font-bold text-white text-2xl mb-6">Use of Funds ($15M midpoint)</h3>
+            <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-2xl mb-6">Use of Funds ($15M midpoint)</h3>
             <div className="space-y-3 mb-6">
               {FUNDS_ALLOCATION.map((item, i) => (
                 <div key={item.name} className="space-y-1">
                   <div className="flex justify-between items-center">
-                    <span className="text-white/70 text-sm font-['Satoshi']">{item.name}</span>
-                    <span className="font-bold text-sm font-['Satoshi']" style={{ color: item.color }}>{item.amount} ({item.value}%)</span>
+                    <span className="text-white/70 text-sm font-['Plus_Jakarta_Sans']">{item.name}</span>
+                    <span className="font-bold text-sm font-['Plus_Jakarta_Sans']" style={{ color: item.color }}>{item.amount} ({item.value}%)</span>
                   </div>
                   <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
                     <motion.div
@@ -2200,7 +2212,7 @@ function InvestmentSection() {
           </RevealDiv>
 
           <RevealDiv delay={0.15}>
-            <h3 className="font-['Clash_Display'] font-bold text-white text-2xl mb-6">Funds Allocation</h3>
+            <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-2xl mb-6">Funds Allocation</h3>
             <ResponsiveContainer width="100%" height={240}>
               <RePieChart>
                 <Pie
@@ -2231,10 +2243,10 @@ function InvestmentSection() {
 
         {/* Milestone roadmap */}
         <RevealDiv delay={0.2}>
-          <h3 className="font-['Clash_Display'] font-bold text-white text-2xl mb-8">Strategic Milestone Roadmap</h3>
+          <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-2xl mb-8">Strategic Milestone Roadmap</h3>
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-[#00FFB2] via-[#8587e3] to-[#FF6B9D]" />
+            <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-[#8587e3] via-[#8587e3] to-[#FF6B9D]" />
             <div className="space-y-6">
               {MILESTONES.map((m, i) => (
                 <RevealDiv key={m.month} delay={i * 0.1}>
@@ -2245,9 +2257,9 @@ function InvestmentSection() {
                     </div>
                     <div className="flex-1 pb-2">
                       <div className="flex items-center gap-3 flex-wrap">
-                        <span className="text-white/40 text-xs font-bold uppercase tracking-widest font-['Satoshi']">{m.month}</span>
+                        <span className="text-white/40 text-xs font-bold uppercase tracking-widest font-['Plus_Jakarta_Sans']">{m.month}</span>
                         <m.icon size={14} style={{ color: m.color }} />
-                        <span className="font-['Satoshi'] font-bold text-white text-sm">{m.target}</span>
+                        <span className="font-['Plus_Jakarta_Sans'] font-bold text-white text-sm">{m.target}</span>
                       </div>
                     </div>
                   </div>
@@ -2260,20 +2272,20 @@ function InvestmentSection() {
         {/* Long-term vision */}
         <RevealDiv delay={0.4} className="mt-14">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            <div className="p-6 rounded-xl border border-[#00FFB2]/20 bg-[#00FFB2]/4 text-center">
-              <Calendar className="mx-auto mb-3 text-[#00FFB2]" size={24} />
-              <div className="text-2xl font-bold font-['Clash_Display'] text-[#00FFB2] mb-1">12–18 Months</div>
-              <div className="text-white/60 text-sm font-['Satoshi']">Series B readiness with strong ARR traction</div>
+            <div className="p-6 rounded-xl border border-[#8587e3]/20 bg-[#8587e3]/4 text-center">
+              <Calendar className="mx-auto mb-3 text-[#8587e3]" size={24} />
+              <div className="text-2xl font-bold font-['Plus_Jakarta_Sans'] text-[#8587e3] mb-1">12–18 Months</div>
+              <div className="text-white/60 text-sm font-['Plus_Jakarta_Sans']">Series B readiness with strong ARR traction</div>
             </div>
             <div className="p-6 rounded-xl border border-[#8587e3]/20 bg-[#8587e3]/4 text-center">
               <TrendingUp className="mx-auto mb-3 text-[#8587e3]" size={24} />
-              <div className="text-2xl font-bold font-['Clash_Display'] text-[#8587e3] mb-1">Year 3–4</div>
-              <div className="text-white/60 text-sm font-['Satoshi']">Path to $100M+ ARR</div>
+              <div className="text-2xl font-bold font-['Plus_Jakarta_Sans'] text-[#8587e3] mb-1">Year 3–4</div>
+              <div className="text-white/60 text-sm font-['Plus_Jakarta_Sans']">Path to $100M+ ARR</div>
             </div>
             <div className="p-6 rounded-xl border border-[#FFD700]/20 bg-[#FFD700]/4 text-center">
               <Crown className="mx-auto mb-3 text-[#FFD700]" size={24} />
-              <div className="text-2xl font-bold font-['Clash_Display'] text-[#FFD700] mb-1">Long-Term</div>
-              <div className="text-white/60 text-sm font-['Satoshi']">EBITDA-positive at scale with expanding margins</div>
+              <div className="text-2xl font-bold font-['Plus_Jakarta_Sans'] text-[#FFD700] mb-1">Long-Term</div>
+              <div className="text-white/60 text-sm font-['Plus_Jakarta_Sans']">EBITDA-positive at scale with expanding margins</div>
             </div>
           </div>
         </RevealDiv>
@@ -2281,10 +2293,10 @@ function InvestmentSection() {
         {/* Hiring plan */}
         <RevealDiv delay={0.3} className="mt-8">
           <div className="p-6 rounded-xl border border-white/10 bg-white/2 flex items-center gap-6 flex-wrap">
-            <Users className="text-[#00FFB2] flex-shrink-0" size={24} />
+            <Users className="text-[#8587e3] flex-shrink-0" size={24} />
             <div>
-              <div className="text-[#00FFB2] font-bold font-['Satoshi']">Hiring Plan</div>
-              <div className="text-white/50 text-sm font-['Satoshi']">4 → 45 people in 18 months. Engineering, Sales, Customer Success, and Infrastructure teams.</div>
+              <div className="text-[#8587e3] font-bold font-['Plus_Jakarta_Sans']">Hiring Plan</div>
+              <div className="text-white/50 text-sm font-['Plus_Jakarta_Sans']">4 → 45 people in 18 months. Engineering, Sales, Customer Success, and Infrastructure teams.</div>
             </div>
           </div>
         </RevealDiv>
@@ -2305,10 +2317,10 @@ function EthicsSection() {
       <div className="max-w-7xl mx-auto relative" style={{ zIndex: 2 }}>
         <RevealDiv className="text-center mb-20">
           <SectionLabel>Ethical AI Covenant</SectionLabel>
-          <h2 className="font-['Clash_Display'] font-bold text-white text-5xl md:text-6xl mb-6">
-            Ethics & <span className="text-[#00FFB2]">Principles</span>
+          <h2 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-5xl md:text-6xl mb-6">
+            Ethics & <span className="text-[#8587e3]">Principles</span>
           </h2>
-          <p className="text-white/50 text-lg max-w-2xl mx-auto font-['Satoshi']">
+          <p className="text-white/50 text-lg max-w-2xl mx-auto font-['Plus_Jakarta_Sans']">
             Not a pledge. A covenant. Philosophically engrained. Contractually enforced. Architecturally implemented.
           </p>
         </RevealDiv>
@@ -2319,7 +2331,7 @@ function EthicsSection() {
             <div className="p-6 rounded-2xl border border-red-500/20 bg-red-500/3 ethics-glow-red">
               <div className="flex items-center gap-2 mb-4">
                 <XCircle className="text-red-400" size={20} />
-                <span className="font-['Clash_Display'] font-bold text-red-400 text-lg">Companies That Violated Pledges</span>
+                <span className="font-['Plus_Jakarta_Sans'] font-bold text-red-400 text-lg">Companies That Violated Pledges</span>
               </div>
               <div className="space-y-3">
                 {[
@@ -2331,15 +2343,15 @@ function EthicsSection() {
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-2">
                     <div className="w-1 h-1 rounded-full bg-red-400 mt-2 flex-shrink-0" />
-                    <p className="text-white/50 text-sm font-['Satoshi']">{item}</p>
+                    <p className="text-white/50 text-sm font-['Plus_Jakarta_Sans']">{item}</p>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="p-6 rounded-2xl border border-[#00FFB2]/20 bg-[#00FFB2]/3 ethics-glow-teal">
+            <div className="p-6 rounded-2xl border border-[#8587e3]/20 bg-[#8587e3]/3 ethics-glow-teal">
               <div className="flex items-center gap-2 mb-4">
-                <CheckCircle2 className="text-[#00FFB2]" size={20} />
-                <span className="font-['Clash_Display'] font-bold text-[#00FFB2] text-lg">AntimatterAI Covenant</span>
+                <CheckCircle2 className="text-[#8587e3]" size={20} />
+                <span className="font-['Plus_Jakarta_Sans'] font-bold text-[#8587e3] text-lg">AntimatterAI Covenant</span>
               </div>
               <div className="space-y-3">
                 {[
@@ -2350,8 +2362,8 @@ function EthicsSection() {
                   "Data sovereignty — customer controls every byte, always",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-2">
-                    <Check className="text-[#00FFB2] mt-0.5 flex-shrink-0" size={14} />
-                    <p className="text-white/70 text-sm font-['Satoshi']">{item}</p>
+                    <Check className="text-[#8587e3] mt-0.5 flex-shrink-0" size={14} />
+                    <p className="text-white/70 text-sm font-['Plus_Jakarta_Sans']">{item}</p>
                   </div>
                 ))}
               </div>
@@ -2363,10 +2375,10 @@ function EthicsSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
           {ETHICS_PILLARS.map((pillar, i) => (
             <RevealDiv key={pillar.title} delay={i * 0.07}>
-              <div className="p-5 rounded-xl border border-[#00FFB2]/15 bg-[#00FFB2]/3 h-full">
-                <pillar.icon className="text-[#00FFB2] mb-3" size={20} />
-                <h4 className="font-['Clash_Display'] font-bold text-white text-sm mb-2">{pillar.title}</h4>
-                <p className="text-white/50 text-xs font-['Satoshi'] leading-relaxed">{pillar.desc}</p>
+              <div className="p-5 rounded-xl border border-[#8587e3]/15 bg-[#8587e3]/3 h-full">
+                <pillar.icon className="text-[#8587e3] mb-3" size={20} />
+                <h4 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-sm mb-2">{pillar.title}</h4>
+                <p className="text-white/50 text-xs font-['Plus_Jakarta_Sans'] leading-relaxed">{pillar.desc}</p>
               </div>
             </RevealDiv>
           ))}
@@ -2376,29 +2388,29 @@ function EthicsSection() {
         <RevealDiv delay={0.2} className="mb-16">
           <div className="relative p-8 md:p-12 rounded-2xl border border-[#8587e3]/30 bg-[#8587e3]/5">
             <Quote className="absolute top-6 left-6 text-[#8587e3]/20" size={48} />
-            <blockquote className="text-white/70 text-lg font-['Satoshi'] leading-relaxed pl-8 md:pl-12 italic mb-6">
+            <blockquote className="text-white/70 text-lg font-['Plus_Jakarta_Sans'] leading-relaxed pl-8 md:pl-12 italic mb-6">
               "This quantum-inspired symbiosis of technology, emotion, and ethics is fundamental for humanity to adapt and keep pace with the exponential changes brought by human+AI collaboration, unlocking near-infinite possibilities by harmonizing human creativity and machine intelligence dynamically. Regarding technosocialism versus technofeudalism — technology should democratically empower all individuals with equitable access to resources, innovation, and governance guided by transparency, ethics, and collective responsibility."
             </blockquote>
             <div className="pl-8 md:pl-12">
-              <div className="text-[#8587e3] font-semibold font-['Satoshi']">AntimatterAI Founders</div>
+              <div className="text-[#8587e3] font-semibold font-['Plus_Jakarta_Sans']">AntimatterAI Founders</div>
             </div>
           </div>
         </RevealDiv>
 
         {/* Final CTA */}
         <RevealDiv delay={0.3}>
-          <div className="text-center p-10 md:p-16 rounded-3xl border border-[#00FFB2]/20 bg-gradient-to-br from-[#00FFB2]/5 to-[#8587e3]/5">
-            <p className="text-[#00FFB2] text-sm font-semibold uppercase tracking-widest font-['Satoshi'] mb-4">The Opportunity</p>
-            <h3 className="font-['Clash_Display'] font-bold text-white text-3xl md:text-5xl mb-4 leading-tight">
-              Invest in the Nervous System<br />of <span className="text-[#00FFB2]">Enterprise AI</span>
+          <div className="text-center p-10 md:p-16 rounded-3xl border border-[#8587e3]/20 bg-gradient-to-br from-[#8587e3]/5 to-[#8587e3]/5">
+            <p className="text-[#8587e3] text-sm font-semibold uppercase tracking-widest font-['Plus_Jakarta_Sans'] mb-4">The Opportunity</p>
+            <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-white text-3xl md:text-5xl mb-4 leading-tight">
+              Invest in the Nervous System<br />of <span className="text-[#8587e3]">Enterprise AI</span>
             </h3>
-            <p className="text-white/50 text-lg font-['Satoshi'] max-w-2xl mx-auto mb-8">
-              Series A | $10M–$20M | $60M Pre-Money | 10 Products | 25/25 Score | $0 External Capital to Date
+            <p className="text-white/50 text-lg font-['Plus_Jakarta_Sans'] max-w-2xl mx-auto mb-8">
+              Series A | $10M–$20M | $60M Pre-Money | 11 Products | 25/25 Score | $0 External Capital to Date
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
               <a
                 href="mailto:ben@antimatterai.com"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[#00FFB2] text-black font-bold rounded-xl hover:bg-[#00FFB2]/90 transition-all transform hover:scale-105 font-['Satoshi'] text-lg"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#8587e3] via-[#4c4dac] to-[#696aac] text-white shadow-[0_0_10px_#696aac] font-bold rounded-xl hover:shadow-[0_0_25px_#696aac] transition-all transform hover:scale-105 font-['Plus_Jakarta_Sans'] text-lg"
               >
                 <Mail size={18} />
                 Schedule Investor Meeting
@@ -2407,7 +2419,7 @@ function EthicsSection() {
                 href="/antimatterai_mega_document.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 border border-[#00FFB2]/40 text-[#00FFB2] rounded-xl hover:bg-[#00FFB2]/10 transition-all font-['Satoshi']"
+                className="inline-flex items-center gap-2 px-8 py-4 border border-[#8587e3]/40 text-[#8587e3] rounded-xl hover:bg-[#8587e3]/10 transition-all font-['Plus_Jakarta_Sans']"
               >
                 <Download size={16} />
                 Investor Deep Dive (66 pages)
@@ -2427,7 +2439,7 @@ function EthicsSection() {
                   href={doc.file}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-white/10 text-white/50 hover:text-white/80 hover:border-white/20 transition-all text-sm font-['Satoshi']"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-white/10 text-white/50 hover:text-white/80 hover:border-white/20 transition-all text-sm font-['Plus_Jakarta_Sans']"
                 >
                   <FileText size={14} />
                   {doc.label}
@@ -2442,7 +2454,7 @@ function EthicsSection() {
           <div className="flex flex-col items-center gap-6">
             <button
               onClick={() => document.getElementById("market-research-section")?.scrollIntoView({ behavior: "smooth" })}
-              className="inline-flex items-center gap-3 px-10 py-5 bg-[#8587e3] text-white font-bold rounded-xl hover:bg-[#8587e3]/90 transition-all transform hover:scale-105 font-['Satoshi'] text-lg"
+              className="inline-flex items-center gap-3 px-10 py-5 bg-[#8587e3] text-white font-bold rounded-xl hover:shadow-[0_0_25px_#696aac] transition-all transform hover:scale-105 font-['Plus_Jakarta_Sans'] text-lg"
             >
               <BarChart3 size={22} />
               View Interactive Market Research
@@ -2472,20 +2484,20 @@ function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           <div className="md:col-span-2">
-            <div className="font-['Clash_Display'] font-bold text-white text-2xl mb-3">
-              Antimatter<span className="text-[#00FFB2]">AI</span>
+            <div className="font-['Plus_Jakarta_Sans'] font-bold text-white text-2xl mb-3">
+              Antimatter<span className="text-[#8587e3]">AI</span>
             </div>
-            <p className="text-white/40 text-sm font-['Satoshi'] max-w-xs leading-relaxed mb-5">
+            <p className="text-white/40 text-sm font-['Plus_Jakarta_Sans'] max-w-xs leading-relaxed mb-5">
               The nervous system of enterprise AI. Building the quantum future of human-machine symbiosis.
             </p>
-            <p className="text-white/20 text-xs font-['Satoshi']">
+            <p className="text-white/20 text-xs font-['Plus_Jakarta_Sans']">
               CONFIDENTIAL — FOR QUALIFIED INVESTORS ONLY<br />
               © 2026 AntimatterAI. All rights reserved.
             </p>
           </div>
 
           <div>
-            <h4 className="text-white/60 text-xs font-semibold uppercase tracking-widest font-['Satoshi'] mb-4">Documents</h4>
+            <h4 className="text-white/60 text-xs font-semibold uppercase tracking-widest font-['Plus_Jakarta_Sans'] mb-4">Documents</h4>
             <div className="space-y-2">
               {[
                 { label: "Investor Deep Dive", file: "/antimatterai_mega_document.pdf" },
@@ -2498,7 +2510,7 @@ function Footer() {
                   href={doc.file}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-white/50 hover:text-[#00FFB2] text-sm transition-colors font-['Satoshi']"
+                  className="flex items-center gap-2 text-white/50 hover:text-[#8587e3] text-sm transition-colors font-['Plus_Jakarta_Sans']"
                 >
                   <Download size={12} />
                   {doc.label}
@@ -2508,17 +2520,17 @@ function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white/60 text-xs font-semibold uppercase tracking-widest font-['Satoshi'] mb-4">Contact</h4>
+            <h4 className="text-white/60 text-xs font-semibold uppercase tracking-widest font-['Plus_Jakarta_Sans'] mb-4">Contact</h4>
             <div className="space-y-2">
-              <a href="mailto:ben@antimatterai.com" className="flex items-center gap-2 text-white/50 hover:text-[#00FFB2] text-sm transition-colors font-['Satoshi']">
+              <a href="mailto:ben@antimatterai.com" className="flex items-center gap-2 text-white/50 hover:text-[#8587e3] text-sm transition-colors font-['Plus_Jakarta_Sans']">
                 <Mail size={12} />
                 ben@antimatterai.com
               </a>
-              <a href="https://www.antimatterai.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/50 hover:text-[#00FFB2] text-sm transition-colors font-['Satoshi']">
+              <a href="https://www.antimatterai.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/50 hover:text-[#8587e3] text-sm transition-colors font-['Plus_Jakarta_Sans']">
                 <Globe size={12} />
                 www.antimatterai.com
               </a>
-              <div className="flex items-center gap-2 text-white/30 text-sm font-['Satoshi']">
+              <div className="flex items-center gap-2 text-white/30 text-sm font-['Plus_Jakarta_Sans']">
                 <MapPin size={12} />
                 Atlanta, GA 30326
               </div>
@@ -2527,7 +2539,7 @@ function Footer() {
         </div>
 
         <div className="border-t border-white/5 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-white/20 text-xs font-['Satoshi']">
+          <p className="text-white/20 text-xs font-['Plus_Jakarta_Sans']">
             Self-Funded · Pre-Revenue · March 2026 · Series A $10M–$20M · $60M Pre-Money
           </p>
         </div>

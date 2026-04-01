@@ -112,7 +112,7 @@ function CustomTooltip({
     <div className="rounded-lg border border-white/10 bg-black/90 backdrop-blur-md px-4 py-3 shadow-xl">
       <p className="text-sm font-medium text-white/70 mb-1">{label}</p>
       {payload.map((entry, i) => (
-        <p key={i} className="text-sm font-semibold" style={{ color: entry.color || "#00FFB2" }}>
+        <p key={i} className="text-sm font-semibold" style={{ color: entry.color || "#8587e3" }}>
           {entry.name}: {typeof entry.value === "number" ? `$${entry.value}B` : entry.value}
         </p>
       ))}
@@ -146,7 +146,7 @@ function Section({
 // ─── DATA ───
 
 const tamData = [
-  { market: "Healthcare AI", val2024: 21.66, val2030: 110.61, cagr: 48.0, color: "#00FFB2" },
+  { market: "Healthcare AI", val2024: 21.66, val2030: 110.61, cagr: 48.0, color: "#8587e3" },
   { market: "Enterprise AI", val2024: 18.22, val2030: 94.31, cagr: 38.9, color: "#00DDa0" },
   { market: "Agentic AI", val2024: 9.14, val2030: 139.19, cagr: 40.5, color: "#8587e3" },
   { market: "AI Browser", val2024: 4.5, val2030: 76.8, cagr: 32.8, color: "#6c6ebd" },
@@ -366,7 +366,7 @@ export default function MarketResearch() {
     >
       {/* Background glow effects */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-[#00FFB2]/[0.03] blur-[150px]" />
+        <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-[#8587e3]/[0.03] blur-[150px]" />
         <div className="absolute top-[60%] right-0 w-[600px] h-[600px] rounded-full bg-[#8587e3]/[0.04] blur-[120px]" />
       </div>
 
@@ -382,7 +382,7 @@ export default function MarketResearch() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             >
-              <Badge className="mb-6 bg-[#00FFB2]/10 text-[#00FFB2] border-[#00FFB2]/30 text-sm px-4 py-1.5">
+              <Badge className="mb-6 bg-[#8587e3]/10 text-[#8587e3] border-[#8587e3]/30 text-sm px-4 py-1.5">
                 <BarChart3 className="w-4 h-4 mr-2" />
                 Investor Intelligence
               </Badge>
@@ -397,7 +397,7 @@ export default function MarketResearch() {
               <a
                 href="/antimatterai_market_research.pdf"
                 download
-                className="inline-flex items-center gap-3 px-8 py-4 rounded-xl border border-[#00FFB2]/40 bg-[#00FFB2]/10 text-[#00FFB2] font-semibold text-base hover:bg-[#00FFB2]/20 hover:border-[#00FFB2]/60 transition-all duration-300 glow-teal-strong"
+                className="inline-flex items-center gap-3 px-8 py-4 rounded-xl border border-[#8587e3]/40 bg-[#8587e3]/10 text-[#8587e3] font-semibold text-base hover:bg-[#8587e3]/20 hover:border-[#8587e3]/60 transition-all duration-300 glow-teal-strong"
               >
                 <Download className="w-5 h-5" />
                 Download Full Report
@@ -414,7 +414,7 @@ export default function MarketResearch() {
             <h3 className="font-display text-3xl md:text-4xl font-bold text-white mb-3">
               Total Addressable Market
             </h3>
-            <p className="text-white/50 text-lg">Four converging markets → <span className="text-[#00FFB2] font-semibold">$310B+ by 2030</span></p>
+            <p className="text-white/50 text-lg">Four converging markets → <span className="text-[#8587e3] font-semibold">$310B+ by 2030</span></p>
           </div>
 
           {/* Market bars */}
@@ -463,7 +463,7 @@ export default function MarketResearch() {
                       <span className="text-white/60 text-xs font-medium">2030: ${m.val2030}B</span>
                     </div>
                   </div>
-                  <Badge className="shrink-0 bg-[#00FFB2]/10 text-[#00FFB2] border-[#00FFB2]/30 font-mono text-sm">
+                  <Badge className="shrink-0 bg-[#8587e3]/10 text-[#8587e3] border-[#8587e3]/30 font-mono text-sm">
                     {m.cagr}% CAGR
                   </Badge>
                 </div>
@@ -481,7 +481,7 @@ export default function MarketResearch() {
           >
             <div className="relative w-full max-w-2xl">
               {/* TAM ring */}
-              <div className="rounded-2xl border border-[#00FFB2]/20 bg-[#00FFB2]/[0.03] p-6 md:p-8">
+              <div className="rounded-2xl border border-[#8587e3]/20 bg-[#8587e3]/[0.03] p-6 md:p-8">
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-white/40 text-sm font-medium uppercase tracking-wider">TAM — Total Addressable Market</span>
                   <span className="font-display text-2xl md:text-3xl font-bold gradient-text">
@@ -497,9 +497,9 @@ export default function MarketResearch() {
                     </span>
                   </div>
                   {/* SOM ring */}
-                  <div className="rounded-lg border border-[#00FFB2]/30 bg-[#00FFB2]/[0.08] p-4 md:p-5 text-center glow-teal-strong">
+                  <div className="rounded-lg border border-[#8587e3]/30 bg-[#8587e3]/[0.08] p-4 md:p-5 text-center glow-teal-strong">
                     <span className="text-white/40 text-xs font-medium uppercase tracking-wider block mb-2">SOM — Serviceable Obtainable</span>
-                    <span className="font-display text-2xl md:text-3xl font-bold text-[#00FFB2]">
+                    <span className="font-display text-2xl md:text-3xl font-bold text-[#8587e3]">
                       $42–84M
                     </span>
                   </div>
@@ -528,9 +528,9 @@ export default function MarketResearch() {
             transition={{ duration: 0.6 }}
             className="flex justify-center mb-10"
           >
-            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-[#00FFB2]/30 bg-[#00FFB2]/10">
-              <Award className="w-5 h-5 text-[#00FFB2]" />
-              <span className="text-[#00FFB2] font-semibold">8-point lead</span>
+            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-[#8587e3]/30 bg-[#8587e3]/10">
+              <Award className="w-5 h-5 text-[#8587e3]" />
+              <span className="text-[#8587e3] font-semibold">8-point lead</span>
               <span className="text-white/50">over nearest competitor</span>
             </div>
           </motion.div>
@@ -563,10 +563,10 @@ export default function MarketResearch() {
                   {vendorScores.map((entry, index) => (
                     <Cell
                       key={index}
-                      fill={entry.isAtom ? "#00FFB2" : "#ffffff18"}
-                      stroke={entry.isAtom ? "#00FFB2" : "transparent"}
+                      fill={entry.isAtom ? "#8587e3" : "#ffffff18"}
+                      stroke={entry.isAtom ? "#8587e3" : "transparent"}
                       strokeWidth={entry.isAtom ? 1 : 0}
-                      style={entry.isAtom ? { filter: "drop-shadow(0 0 8px #00FFB280)" } : {}}
+                      style={entry.isAtom ? { filter: "drop-shadow(0 0 8px #8587e380)" } : {}}
                     />
                   ))}
                 </Bar>
@@ -601,11 +601,11 @@ export default function MarketResearch() {
                       key={row.vendor}
                       className={
                         row.vendor === "Atom"
-                          ? "border-[#00FFB2]/20 bg-[#00FFB2]/[0.05]"
+                          ? "border-[#8587e3]/20 bg-[#8587e3]/[0.05]"
                           : "border-white/5"
                       }
                     >
-                      <TableCell className={`font-semibold ${row.vendor === "Atom" ? "text-[#00FFB2]" : "text-white/80"}`}>
+                      <TableCell className={`font-semibold ${row.vendor === "Atom" ? "text-[#8587e3]" : "text-white/80"}`}>
                         {row.vendor}
                       </TableCell>
                       {(["ip", "deploy", "genui", "modelAgnostic", "postQuantum"] as const).map((key) => (
@@ -613,7 +613,7 @@ export default function MarketResearch() {
                           <CapabilityBadge status={row[key]} />
                         </TableCell>
                       ))}
-                      <TableCell className={`text-center font-mono font-bold ${row.vendor === "Atom" ? "text-[#00FFB2]" : "text-white/60"}`}>
+                      <TableCell className={`text-center font-mono font-bold ${row.vendor === "Atom" ? "text-[#8587e3]" : "text-white/60"}`}>
                         {row.total}
                       </TableCell>
                     </TableRow>
@@ -668,7 +668,7 @@ export default function MarketResearch() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <div className="inline-block px-10 py-6 rounded-2xl border border-[#00FFB2]/20 bg-[#00FFB2]/[0.03]">
+            <div className="inline-block px-10 py-6 rounded-2xl border border-[#8587e3]/20 bg-[#8587e3]/[0.03]">
               <p className="text-white/40 text-sm uppercase tracking-wider mb-2">Tech Megacap Planned AI Spending</p>
               <p className="font-display text-4xl md:text-5xl font-bold gradient-text">
                 <AnimatedCounter target={300} prefix="$" suffix="B+" decimals={0} />
@@ -685,17 +685,17 @@ export default function MarketResearch() {
             className="max-w-3xl mx-auto mb-16"
           >
             <div className="glass rounded-2xl p-8 md:p-10 relative">
-              <Quote className="absolute top-6 left-6 w-10 h-10 text-[#00FFB2]/20" />
-              <Quote className="absolute bottom-6 right-6 w-10 h-10 text-[#00FFB2]/20 rotate-180" />
+              <Quote className="absolute top-6 left-6 w-10 h-10 text-[#8587e3]/20" />
+              <Quote className="absolute bottom-6 right-6 w-10 h-10 text-[#8587e3]/20 rotate-180" />
               <blockquote className="text-center">
                 <p className="font-display text-xl md:text-2xl lg:text-3xl font-medium text-white/90 italic leading-relaxed mb-6">
                   "Institutional investors currently display no interest in ventures outside AI."
                 </p>
                 <footer className="flex items-center justify-center gap-3">
-                  <div className="h-px w-8 bg-[#00FFB2]/40" />
-                  <span className="text-[#00FFB2] font-semibold">Bill Gurley</span>
+                  <div className="h-px w-8 bg-[#8587e3]/40" />
+                  <span className="text-[#8587e3] font-semibold">Bill Gurley</span>
                   <span className="text-white/40">General Partner, Benchmark</span>
-                  <div className="h-px w-8 bg-[#00FFB2]/40" />
+                  <div className="h-px w-8 bg-[#8587e3]/40" />
                 </footer>
               </blockquote>
             </div>
@@ -710,13 +710,13 @@ export default function MarketResearch() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.12 }}
-                className="glass rounded-xl p-6 md:p-8 group hover:border-[#00FFB2]/30 transition-colors duration-300"
+                className="glass rounded-xl p-6 md:p-8 group hover:border-[#8587e3]/30 transition-colors duration-300"
               >
-                <div className="w-12 h-12 rounded-lg bg-[#00FFB2]/10 flex items-center justify-center mb-5 group-hover:bg-[#00FFB2]/20 transition-colors">
-                  <card.icon className="w-6 h-6 text-[#00FFB2]" />
+                <div className="w-12 h-12 rounded-lg bg-[#8587e3]/10 flex items-center justify-center mb-5 group-hover:bg-[#8587e3]/20 transition-colors">
+                  <card.icon className="w-6 h-6 text-[#8587e3]" />
                 </div>
                 <h4 className="text-white font-semibold text-lg mb-1">{card.title}</h4>
-                <p className="text-[#00FFB2]/70 text-sm font-medium mb-3">{card.year}</p>
+                <p className="text-[#8587e3]/70 text-sm font-medium mb-3">{card.year}</p>
                 <p className="text-white/50 text-sm leading-relaxed">{card.desc}</p>
               </motion.div>
             ))}
@@ -749,7 +749,7 @@ export default function MarketResearch() {
                 >
                   <AccordionTrigger className="text-left hover:no-underline py-5">
                     <div className="flex items-center gap-4">
-                      <span className="font-mono text-[#00FFB2] text-sm font-bold shrink-0">{reason.num}</span>
+                      <span className="font-mono text-[#8587e3] text-sm font-bold shrink-0">{reason.num}</span>
                       <span className="text-white font-semibold text-base">{reason.title}</span>
                     </div>
                   </AccordionTrigger>
@@ -805,8 +805,8 @@ export default function MarketResearch() {
                       )}
                     </div>
                     <div className="flex items-start gap-2 mt-3 pt-3 border-t border-white/5">
-                      <CheckCircle2 className="w-4 h-4 text-[#00FFB2] mt-0.5 shrink-0" />
-                      <p className="text-[#00FFB2]/80 text-sm">{gap.mitigation}</p>
+                      <CheckCircle2 className="w-4 h-4 text-[#8587e3] mt-0.5 shrink-0" />
+                      <p className="text-[#8587e3]/80 text-sm">{gap.mitigation}</p>
                     </div>
                   </div>
                 </div>
@@ -822,10 +822,10 @@ export default function MarketResearch() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <div className="inline-block glass rounded-xl px-8 py-5 border-[#00FFB2]/20">
+            <div className="inline-block glass rounded-xl px-8 py-5 border-[#8587e3]/20">
               <p className="text-white/50 text-sm mb-2">Total investment to close all gaps</p>
               <p className="font-display text-2xl md:text-3xl font-bold text-white">
-                <span className="text-[#00FFB2]">$50–150M</span>{" "}
+                <span className="text-[#8587e3]">$50–150M</span>{" "}
                 <span className="text-white/40 text-lg">over 18 months</span>{" "}
                 <span className="text-white/60 text-lg">→ capture</span>{" "}
                 <span className="gradient-text">$310B+ TAM</span>
@@ -847,7 +847,7 @@ export default function MarketResearch() {
 
           <div className="relative">
             {/* Connecting line */}
-            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00FFB2]/20 to-transparent -translate-y-1/2" />
+            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8587e3]/20 to-transparent -translate-y-1/2" />
 
             <div className="grid md:grid-cols-3 gap-6">
               {gtmTimeline.map((phase, idx) => (
@@ -861,10 +861,10 @@ export default function MarketResearch() {
                 >
                   {/* Phase node */}
                   <div className="flex justify-center mb-5">
-                    <div className="w-14 h-14 rounded-full bg-[#00FFB2]/10 border border-[#00FFB2]/30 flex items-center justify-center relative z-10"
-                      style={{ boxShadow: "0 0 20px rgba(0,255,178,0.15)" }}
+                    <div className="w-14 h-14 rounded-full bg-[#8587e3]/10 border border-[#8587e3]/30 flex items-center justify-center relative z-10"
+                      style={{ boxShadow: "0 0 20px rgba(133,135,227,0.15)" }}
                     >
-                      <phase.icon className="w-6 h-6 text-[#00FFB2]" />
+                      <phase.icon className="w-6 h-6 text-[#8587e3]" />
                     </div>
                   </div>
 
@@ -876,13 +876,13 @@ export default function MarketResearch() {
                     <ul className="space-y-2 mb-5">
                       {phase.actions.map((action) => (
                         <li key={action} className="text-white/50 text-sm flex items-center gap-2 justify-center">
-                          <ChevronRight className="w-3 h-3 text-[#00FFB2]" />
+                          <ChevronRight className="w-3 h-3 text-[#8587e3]" />
                           {action}
                         </li>
                       ))}
                     </ul>
                     <div className="pt-4 border-t border-white/5">
-                      <p className="text-[#00FFB2] text-sm font-semibold">{phase.milestones}</p>
+                      <p className="text-[#8587e3] text-sm font-semibold">{phase.milestones}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -913,7 +913,7 @@ export default function MarketResearch() {
                 transition={{ duration: 0.5, delay: idx * 0.08 }}
                 className={`glass rounded-xl p-6 ${
                   company.name === "AntimatterAI"
-                    ? "border-[#00FFB2]/20 bg-[#00FFB2]/[0.03] sm:col-span-2 lg:col-span-1"
+                    ? "border-[#8587e3]/20 bg-[#8587e3]/[0.03] sm:col-span-2 lg:col-span-1"
                     : ""
                 }`}
               >
@@ -921,21 +921,21 @@ export default function MarketResearch() {
                   <div
                     className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 ${
                       company.name === "AntimatterAI"
-                        ? "bg-[#00FFB2]/15"
+                        ? "bg-[#8587e3]/15"
                         : "bg-[#8587e3]/10"
                     }`}
                   >
                     <company.icon
                       className={`w-5 h-5 ${
                         company.name === "AntimatterAI"
-                          ? "text-[#00FFB2]"
+                          ? "text-[#8587e3]"
                           : "text-[#8587e3]"
                       }`}
                     />
                   </div>
                   <div>
                     <h4 className={`font-semibold text-base mb-1 ${
-                      company.name === "AntimatterAI" ? "text-[#00FFB2]" : "text-white"
+                      company.name === "AntimatterAI" ? "text-[#8587e3]" : "text-white"
                     }`}>
                       {company.name}
                     </h4>
@@ -964,9 +964,9 @@ export default function MarketResearch() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.3 + idx * 0.08 }}
-                  className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-[#00FFB2]/20 bg-[#00FFB2]/[0.05]"
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-[#8587e3]/20 bg-[#8587e3]/[0.05]"
                 >
-                  <div className="w-2 h-2 rounded-full bg-[#00FFB2]" />
+                  <div className="w-2 h-2 rounded-full bg-[#8587e3]" />
                   <span className="text-white/70 text-sm">{effect}</span>
                 </motion.div>
               ))}
@@ -993,7 +993,7 @@ export default function MarketResearch() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.08 }}
-                className="glass rounded-xl p-6 text-center group hover:border-[#00FFB2]/20 transition-colors duration-300"
+                className="glass rounded-xl p-6 text-center group hover:border-[#8587e3]/20 transition-colors duration-300"
               >
                 <p className="font-display text-3xl md:text-4xl lg:text-5xl font-bold gradient-text mb-2">
                   <AnimatedCounter
@@ -1017,8 +1017,8 @@ export default function MarketResearch() {
               transition={{ duration: 0.5 }}
               className="glass rounded-xl p-6 flex items-center gap-5"
             >
-              <div className="w-14 h-14 rounded-xl bg-[#00FFB2]/10 flex items-center justify-center shrink-0">
-                <DollarSign className="w-7 h-7 text-[#00FFB2]" />
+              <div className="w-14 h-14 rounded-xl bg-[#8587e3]/10 flex items-center justify-center shrink-0">
+                <DollarSign className="w-7 h-7 text-[#8587e3]" />
               </div>
               <div>
                 <p className="text-white font-semibold text-xl">Self-Funded</p>
@@ -1074,7 +1074,7 @@ export default function MarketResearch() {
             </h3>
             <p className="text-white/50 text-lg mb-6">
               Complete capability assessment — Atom achieves{" "}
-              <span className="text-[#00FFB2] font-semibold">full support on all 25 dimensions</span>
+              <span className="text-[#8587e3] font-semibold">full support on all 25 dimensions</span>
             </p>
 
             <motion.div
@@ -1082,7 +1082,7 @@ export default function MarketResearch() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="inline-block px-8 py-4 rounded-xl border border-[#00FFB2]/30 bg-[#00FFB2]/[0.05] glow-teal-strong mb-8"
+              className="inline-block px-8 py-4 rounded-xl border border-[#8587e3]/30 bg-[#8587e3]/[0.05] glow-teal-strong mb-8"
             >
               <p className="font-display text-3xl md:text-4xl font-bold gradient-text">
                 <AnimatedCounter target={25} suffix=" of 25" decimals={0} />
@@ -1132,7 +1132,7 @@ export default function MarketResearch() {
                       <TableCell className="text-white/30 font-mono text-sm">{String(idx + 1).padStart(2, "0")}</TableCell>
                       <TableCell className="text-white/80 text-sm">{cap}</TableCell>
                       <TableCell className="text-center">
-                        <span className="inline-flex items-center gap-1.5 text-[#00FFB2] text-sm font-medium">
+                        <span className="inline-flex items-center gap-1.5 text-[#8587e3] text-sm font-medium">
                           <CheckCircle2 className="w-4 h-4" />
                           Full Support
                         </span>
@@ -1155,7 +1155,7 @@ function CapabilityBadge({ status }: { status: string }) {
   switch (status) {
     case "full":
       return (
-        <span className="inline-flex items-center gap-1 text-[#00FFB2] text-sm">
+        <span className="inline-flex items-center gap-1 text-[#8587e3] text-sm">
           <CheckCircle2 className="w-4 h-4" />
         </span>
       );
@@ -1182,7 +1182,7 @@ function VendorTooltip({
   const d = payload[0].payload;
   return (
     <div className="rounded-lg border border-white/10 bg-black/90 backdrop-blur-md px-4 py-3 shadow-xl">
-      <p className={`text-sm font-semibold ${d.isAtom ? "text-[#00FFB2]" : "text-white"}`}>
+      <p className={`text-sm font-semibold ${d.isAtom ? "text-[#8587e3]" : "text-white"}`}>
         {d.vendor}
       </p>
       <p className="text-white/60 text-sm">

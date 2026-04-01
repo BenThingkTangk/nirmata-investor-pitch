@@ -59,7 +59,7 @@ const VC_DIMENSIONS = [
     weight: 25,
     icon: Users,
     detail: "3 complementary founders, 99+ shipped enterprise projects, 100+ years combined experience",
-    color: "#00FFB2",
+    color: "#8587e3",
   },
   {
     name: "Market & TAM",
@@ -74,7 +74,7 @@ const VC_DIMENSIONS = [
     score: 9,
     weight: 20,
     icon: Shield,
-    detail: "25/25 vendor framework, GenUI exclusivity, 10 products, $45-77M replication cost",
+    detail: "25/25 vendor framework, GenUI exclusivity, 11 products, $45-77M replication cost",
     color: "#8587e3",
   },
   {
@@ -117,7 +117,7 @@ const VEHICLES = [
     id: "equity",
     label: "Series A Preferred",
     recommended: true,
-    color: "#00FFB2",
+    color: "#8587e3",
     terms: [
       { label: "Pre-Money Valuation", value: "$40M–$75M range" },
       { label: "Security", value: "Series A Preferred Stock" },
@@ -168,7 +168,7 @@ const RETURN_SCENARIOS = [
   { label: "Bear (IP Floor)", valuation: 60, multiple: "1.2x", color: "#FF6B9D" },
   { label: "Base (18mo)", valuation: 100, multiple: "2x", color: "#FFD700" },
   { label: "Bull (24mo)", valuation: 250, multiple: "5x+", color: "#00D4FF" },
-  { label: "Moon (Series B)", valuation: 500, multiple: "10x+", color: "#00FFB2" },
+  { label: "Moon (Series B)", valuation: 500, multiple: "10x+", color: "#8587e3" },
 ];
 
 /* ─── FORTUNE 500 TRUST LOGOS ─── */
@@ -229,7 +229,7 @@ function CustomRadarTooltip({ active, payload }: { active?: boolean; payload?: A
   return (
     <div className="bg-black/90 backdrop-blur-md border border-white/10 rounded-lg p-3 shadow-xl max-w-[220px]">
       <p className="text-white font-semibold text-sm">{data.dimension}</p>
-      <p className="text-xs mt-1" style={{ color: dim?.color || "#00FFB2" }}>
+      <p className="text-xs mt-1" style={{ color: dim?.color || "#8587e3" }}>
         {data.score}/10 · {dim?.weight}% weight
       </p>
       <p className="text-gray-400 text-xs mt-1">{dim?.detail}</p>
@@ -301,22 +301,22 @@ export default function TermSheet({ vehicle, onClose }: TermSheetProps) {
         onClick={(e) => e.stopPropagation()}
       >
         {/* ── Top gradient bar ── */}
-        <div className="h-1 bg-gradient-to-r from-[#00FFB2] via-[#00D4FF] to-[#8587e3]" />
+        <div className="h-1 bg-gradient-to-r from-[#8587e3] via-[#00D4FF] to-[#8587e3]" />
 
         {/* ── Header ── */}
         <div className="px-6 md:px-10 pt-8 pb-6 border-b border-white/5">
           <div className="flex items-start justify-between">
             <div>
               <div className="flex items-center gap-3 mb-2">
-                <FileText className="w-5 h-5 text-[#00FFB2]" />
-                <span className="text-xs uppercase tracking-[0.2em] font-semibold text-[#00FFB2] font-['Satoshi']">
+                <FileText className="w-5 h-5 text-[#8587e3]" />
+                <span className="text-xs uppercase tracking-[0.2em] font-semibold text-[#8587e3] font-['Plus_Jakarta_Sans']">
                   Interactive Term Sheet
                 </span>
               </div>
-              <h2 className="font-['Clash_Display'] text-2xl md:text-3xl font-bold text-white mb-1">
+              <h2 className="font-['Plus_Jakarta_Sans'] text-2xl md:text-3xl font-bold text-white mb-1">
                 AntimatterAI — Series A
               </h2>
-              <p className="text-gray-400 text-sm font-['Satoshi']">Bloomberg-grade investment decision dashboard</p>
+              <p className="text-gray-400 text-sm font-['Plus_Jakarta_Sans']">Bloomberg-grade investment decision dashboard</p>
             </div>
             <button
               onClick={onClose}
@@ -334,8 +334,8 @@ export default function TermSheet({ vehicle, onClose }: TermSheetProps) {
               { label: "HQ", value: "Atlanta, GA" },
             ].map((s) => (
               <div key={s.label} className="p-3 rounded-lg bg-white/[0.03] border border-white/5">
-                <p className="text-gray-500 text-xs font-['Satoshi'] mb-1">{s.label}</p>
-                <p className={`text-sm font-semibold font-['Satoshi'] ${s.highlight ? "text-[#00FFB2]" : "text-white"}`}>
+                <p className="text-gray-500 text-xs font-['Plus_Jakarta_Sans'] mb-1">{s.label}</p>
+                <p className={`text-sm font-semibold font-['Plus_Jakarta_Sans'] ${s.highlight ? "text-[#8587e3]" : "text-white"}`}>
                   {s.value}
                 </p>
               </div>
@@ -350,9 +350,9 @@ export default function TermSheet({ vehicle, onClose }: TermSheetProps) {
           ═══════════════════════════════════════════ */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-1.5 h-6 rounded-full bg-[#00FFB2]" />
-              <h3 className="font-['Clash_Display'] text-xl font-bold text-white">VC Investment Score</h3>
-              <span className="ml-auto text-sm text-gray-500 font-['Satoshi']">6-Dimension Institutional Framework</span>
+              <div className="w-1.5 h-6 rounded-full bg-[#8587e3]" />
+              <h3 className="font-['Plus_Jakarta_Sans'] text-xl font-bold text-white">VC Investment Score</h3>
+              <span className="ml-auto text-sm text-gray-500 font-['Plus_Jakarta_Sans']">6-Dimension Institutional Framework</span>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -364,7 +364,7 @@ export default function TermSheet({ vehicle, onClose }: TermSheetProps) {
                       <PolarGrid stroke="rgba(255,255,255,0.06)" />
                       <PolarAngleAxis
                         dataKey="dimension"
-                        tick={{ fill: "rgba(255,255,255,0.5)", fontSize: 11, fontFamily: "Satoshi" }}
+                        tick={{ fill: "rgba(255,255,255,0.5)", fontSize: 11, fontFamily: "Plus Jakarta Sans" }}
                       />
                       <PolarRadiusAxis
                         angle={90}
@@ -375,8 +375,8 @@ export default function TermSheet({ vehicle, onClose }: TermSheetProps) {
                       <Radar
                         name="Score"
                         dataKey="score"
-                        stroke="#00FFB2"
-                        fill="#00FFB2"
+                        stroke="#8587e3"
+                        fill="#8587e3"
                         fillOpacity={0.15}
                         strokeWidth={2}
                       />
@@ -385,8 +385,8 @@ export default function TermSheet({ vehicle, onClose }: TermSheetProps) {
                   </ResponsiveContainer>
                 </div>
                 <div className="text-center mt-4">
-                  <p className="text-gray-500 text-xs uppercase tracking-wider font-['Satoshi'] mb-1">Weighted Composite</p>
-                  <p className="font-['Clash_Display'] text-4xl font-bold text-[#00FFB2]">
+                  <p className="text-gray-500 text-xs uppercase tracking-wider font-['Plus_Jakarta_Sans'] mb-1">Weighted Composite</p>
+                  <p className="font-['Plus_Jakarta_Sans'] text-4xl font-bold text-[#8587e3]">
                     {compositeAnimated.toFixed(1)}<span className="text-lg text-gray-500">/10</span>
                   </p>
                 </div>
@@ -410,8 +410,8 @@ export default function TermSheet({ vehicle, onClose }: TermSheetProps) {
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center justify-between mb-1">
-                            <span className="text-white text-sm font-semibold font-['Satoshi']">{dim.name}</span>
-                            <span className="text-xs font-['Satoshi']" style={{ color: dim.color }}>
+                            <span className="text-white text-sm font-semibold font-['Plus_Jakarta_Sans']">{dim.name}</span>
+                            <span className="text-xs font-['Plus_Jakarta_Sans']" style={{ color: dim.color }}>
                               {dim.score}/10 · {dim.weight}%
                             </span>
                           </div>
@@ -435,7 +435,7 @@ export default function TermSheet({ vehicle, onClose }: TermSheetProps) {
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: "auto", opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
-                            className="text-gray-400 text-xs font-['Satoshi'] mt-3 pl-[52px] overflow-hidden"
+                            className="text-gray-400 text-xs font-['Plus_Jakarta_Sans'] mt-3 pl-[52px] overflow-hidden"
                           >
                             {dim.detail}
                           </motion.p>
@@ -454,15 +454,15 @@ export default function TermSheet({ vehicle, onClose }: TermSheetProps) {
           <div>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-1.5 h-6 rounded-full bg-[#00D4FF]" />
-              <h3 className="font-['Clash_Display'] text-xl font-bold text-white">Investment Scenario Simulator</h3>
+              <h3 className="font-['Plus_Jakarta_Sans'] text-xl font-bold text-white">Investment Scenario Simulator</h3>
             </div>
 
             <div className="p-6 rounded-xl bg-white/[0.02] border border-white/5">
               {/* Slider */}
               <div className="mb-8">
                 <div className="flex items-baseline justify-between mb-3">
-                  <p className="text-gray-400 text-sm font-['Satoshi']">Investment Amount</p>
-                  <p className="font-['Clash_Display'] text-3xl font-bold text-white">
+                  <p className="text-gray-400 text-sm font-['Plus_Jakarta_Sans']">Investment Amount</p>
+                  <p className="font-['Plus_Jakarta_Sans'] text-3xl font-bold text-white">
                     {formatAmount(investAmount)}
                   </p>
                 </div>
@@ -478,7 +478,7 @@ export default function TermSheet({ vehicle, onClose }: TermSheetProps) {
                     background: `linear-gradient(to right, #00D4FF ${((investAmount - 250_000) / (20_000_000 - 250_000)) * 100}%, rgba(255,255,255,0.06) ${((investAmount - 250_000) / (20_000_000 - 250_000)) * 100}%)`,
                   }}
                 />
-                <div className="flex justify-between text-xs text-gray-600 mt-2 font-['Satoshi']">
+                <div className="flex justify-between text-xs text-gray-600 mt-2 font-['Plus_Jakarta_Sans']">
                   <span>$250K</span>
                   <span>$5M</span>
                   <span>$10M</span>
@@ -489,26 +489,26 @@ export default function TermSheet({ vehicle, onClose }: TermSheetProps) {
               {/* Ownership */}
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
                 <div className="p-4 rounded-lg bg-white/[0.03] border border-white/5">
-                  <p className="text-gray-500 text-xs font-['Satoshi'] mb-1">Ownership at $50M Pre-Money</p>
-                  <p className="text-[#00FFB2] font-['Clash_Display'] text-2xl font-bold">
+                  <p className="text-gray-500 text-xs font-['Plus_Jakarta_Sans'] mb-1">Ownership at $50M Pre-Money</p>
+                  <p className="text-[#8587e3] font-['Plus_Jakarta_Sans'] text-2xl font-bold">
                     {ownership.toFixed(2)}%
                   </p>
                 </div>
                 <div className="p-4 rounded-lg bg-white/[0.03] border border-white/5">
-                  <p className="text-gray-500 text-xs font-['Satoshi'] mb-1">Post-Money Valuation</p>
-                  <p className="text-white font-['Clash_Display'] text-2xl font-bold">
+                  <p className="text-gray-500 text-xs font-['Plus_Jakarta_Sans'] mb-1">Post-Money Valuation</p>
+                  <p className="text-white font-['Plus_Jakarta_Sans'] text-2xl font-bold">
                     ${((50_000_000 + investAmount) / 1_000_000).toFixed(1)}M
                   </p>
                 </div>
                 <div className="p-4 rounded-lg bg-white/[0.03] border border-white/5 col-span-2 md:col-span-1">
-                  <p className="text-gray-500 text-xs font-['Satoshi'] mb-1">Prior Dilution</p>
-                  <p className="text-[#00FFB2] font-['Clash_Display'] text-2xl font-bold">$0</p>
-                  <p className="text-gray-500 text-xs font-['Satoshi']">Clean cap table</p>
+                  <p className="text-gray-500 text-xs font-['Plus_Jakarta_Sans'] mb-1">Prior Dilution</p>
+                  <p className="text-[#8587e3] font-['Plus_Jakarta_Sans'] text-2xl font-bold">$0</p>
+                  <p className="text-gray-500 text-xs font-['Plus_Jakarta_Sans']">Clean cap table</p>
                 </div>
               </div>
 
               {/* Return Scenarios */}
-              <p className="text-gray-400 text-sm font-['Satoshi'] mb-4">Return Scenarios</p>
+              <p className="text-gray-400 text-sm font-['Plus_Jakarta_Sans'] mb-4">Return Scenarios</p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 {returnScenarios.map((s) => (
                   <motion.div
@@ -521,11 +521,11 @@ export default function TermSheet({ vehicle, onClose }: TermSheetProps) {
                     <div className="absolute inset-0 opacity-5" style={{
                       background: `radial-gradient(circle at bottom right, ${s.color}, transparent 70%)`,
                     }} />
-                    <p className="text-xs text-gray-500 font-['Satoshi'] mb-1 relative">{s.label}</p>
-                    <p className="text-lg font-bold font-['Clash_Display'] relative" style={{ color: s.color }}>
+                    <p className="text-xs text-gray-500 font-['Plus_Jakarta_Sans'] mb-1 relative">{s.label}</p>
+                    <p className="text-lg font-bold font-['Plus_Jakarta_Sans'] relative" style={{ color: s.color }}>
                       ${s.valuation}M
                     </p>
-                    <p className="text-xs text-gray-400 font-['Satoshi'] mt-1 relative">
+                    <p className="text-xs text-gray-400 font-['Plus_Jakarta_Sans'] mt-1 relative">
                       {s.returnMultiple.toFixed(1)}x → <span className="text-white font-semibold">
                         {formatAmount(s.investorReturn)}
                       </span>
@@ -552,7 +552,7 @@ export default function TermSheet({ vehicle, onClose }: TermSheetProps) {
           <div>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-1.5 h-6 rounded-full bg-[#8587e3]" />
-              <h3 className="font-['Clash_Display'] text-xl font-bold text-white">Investment Vehicles</h3>
+              <h3 className="font-['Plus_Jakarta_Sans'] text-xl font-bold text-white">Investment Vehicles</h3>
             </div>
 
             {/* Tabs */}
@@ -561,7 +561,7 @@ export default function TermSheet({ vehicle, onClose }: TermSheetProps) {
                 <button
                   key={v.id}
                   onClick={() => setActiveVehicle(v.id)}
-                  className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold font-['Satoshi'] transition-all whitespace-nowrap ${
+                  className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold font-['Plus_Jakarta_Sans'] transition-all whitespace-nowrap ${
                     activeVehicle === v.id
                       ? "text-black"
                       : "text-gray-400 bg-white/[0.03] border border-white/5 hover:border-white/10"
@@ -575,7 +575,7 @@ export default function TermSheet({ vehicle, onClose }: TermSheetProps) {
                   {v.label}
                   {v.recommended && (
                     <span className={`text-[10px] px-1.5 py-0.5 rounded-full ${
-                      activeVehicle === v.id ? "bg-black/20 text-black" : "bg-[#00FFB2]/10 text-[#00FFB2]"
+                      activeVehicle === v.id ? "bg-black/20 text-black" : "bg-[#8587e3]/10 text-[#8587e3]"
                     }`}>
                       Recommended
                     </span>
@@ -600,8 +600,8 @@ export default function TermSheet({ vehicle, onClose }: TermSheetProps) {
                     <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-white/[0.02]">
                       <div className="w-1 h-1 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: currentVehicle.color }} />
                       <div>
-                        <p className="text-xs text-gray-500 font-['Satoshi']">{t.label}</p>
-                        <p className="text-sm text-white font-['Satoshi'] font-medium">{t.value}</p>
+                        <p className="text-xs text-gray-500 font-['Plus_Jakarta_Sans']">{t.label}</p>
+                        <p className="text-sm text-white font-['Plus_Jakarta_Sans'] font-medium">{t.value}</p>
                       </div>
                     </div>
                   ))}
@@ -616,16 +616,16 @@ export default function TermSheet({ vehicle, onClose }: TermSheetProps) {
           <div>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-1.5 h-6 rounded-full bg-[#FFD700]" />
-              <h3 className="font-['Clash_Display'] text-xl font-bold text-white">Why Now</h3>
+              <h3 className="font-['Plus_Jakarta_Sans'] text-xl font-bold text-white">Why Now</h3>
             </div>
 
             <div className="p-6 rounded-xl bg-white/[0.02] border border-white/5">
               {/* Key statement */}
               <div className="text-center mb-8">
-                <p className="text-white font-['Clash_Display'] text-lg md:text-xl font-bold mb-3">
+                <p className="text-white font-['Plus_Jakarta_Sans'] text-lg md:text-xl font-bold mb-3">
                   Self-funded. Pre-revenue. Clean cap table. $0 prior dilution.
                 </p>
-                <p className="text-gray-400 text-sm font-['Satoshi'] max-w-2xl mx-auto">
+                <p className="text-gray-400 text-sm font-['Plus_Jakarta_Sans'] max-w-2xl mx-auto">
                   The window to invest at pre-revenue pricing closes the moment the first contract signs.
                 </p>
               </div>
@@ -633,9 +633,9 @@ export default function TermSheet({ vehicle, onClose }: TermSheetProps) {
               {/* Visual Timeline */}
               <div className="relative mb-8">
                 <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden">
-                  <div className="h-full w-[15%] bg-gradient-to-r from-[#FFD700] to-[#00FFB2] rounded-full" />
+                  <div className="h-full w-[15%] bg-gradient-to-r from-[#FFD700] to-[#8587e3] rounded-full" />
                 </div>
-                <div className="flex justify-between mt-3 text-xs font-['Satoshi']">
+                <div className="flex justify-between mt-3 text-xs font-['Plus_Jakarta_Sans']">
                   <span className="text-gray-500">Founded</span>
                   <div className="flex flex-col items-center -mt-7">
                     <motion.div
@@ -655,17 +655,17 @@ export default function TermSheet({ vehicle, onClose }: TermSheetProps) {
               {/* Stats grid */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 {[
-                  { icon: Rocket, label: "$4M+ Pipeline", sub: "Converting now", color: "#00FFB2" },
+                  { icon: Rocket, label: "$4M+ Pipeline", sub: "Converting now", color: "#8587e3" },
                   { icon: Clock, label: "90-Day Sprint", sub: "$1M pipeline velocity", color: "#00D4FF" },
                   { icon: Building2, label: "Fortune 500", sub: "Production clients", color: "#8587e3" },
-                  { icon: Zap, label: "10 Products", sub: "Shipped & live", color: "#FFD700" },
+                  { icon: Zap, label: "11 Products", sub: "Shipped & live", color: "#FFD700" },
                 ].map((item) => {
                   const Icon = item.icon;
                   return (
                     <div key={item.label} className="p-4 rounded-lg bg-white/[0.03] border border-white/5 text-center">
                       <Icon className="w-5 h-5 mx-auto mb-2" style={{ color: item.color }} />
-                      <p className="text-white text-sm font-semibold font-['Satoshi']">{item.label}</p>
-                      <p className="text-gray-500 text-xs font-['Satoshi']">{item.sub}</p>
+                      <p className="text-white text-sm font-semibold font-['Plus_Jakarta_Sans']">{item.label}</p>
+                      <p className="text-gray-500 text-xs font-['Plus_Jakarta_Sans']">{item.sub}</p>
                     </div>
                   );
                 })}
@@ -679,7 +679,7 @@ export default function TermSheet({ vehicle, onClose }: TermSheetProps) {
           <div>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-1.5 h-6 rounded-full bg-[#FF6B9D]" />
-              <h3 className="font-['Clash_Display'] text-xl font-bold text-white">Take Action</h3>
+              <h3 className="font-['Plus_Jakarta_Sans'] text-xl font-bold text-white">Take Action</h3>
             </div>
 
             <div className="p-6 rounded-xl bg-white/[0.02] border border-white/5">
@@ -687,14 +687,14 @@ export default function TermSheet({ vehicle, onClose }: TermSheetProps) {
               <div className="flex flex-col sm:flex-row gap-4 mb-6">
                 <button
                   onClick={handleExpress}
-                  className="flex-1 flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-semibold text-sm font-['Satoshi'] transition-all hover:brightness-110 bg-[#00FFB2] text-black"
+                  className="flex-1 flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-semibold text-sm font-['Plus_Jakarta_Sans'] transition-all hover:brightness-110 bg-gradient-to-r from-[#8587e3] via-[#4c4dac] to-[#696aac] text-white shadow-[0_0_10px_#696aac]"
                 >
                   <Send className="w-4 h-4" />
                   {sent ? "Sent! — Check Your Email Client" : "Express Interest"}
                 </button>
                 <button
                   onClick={handleSchedule}
-                  className="flex-1 flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-semibold text-sm font-['Satoshi'] transition-all border border-[#00D4FF]/30 text-[#00D4FF] hover:bg-[#00D4FF]/10"
+                  className="flex-1 flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-semibold text-sm font-['Plus_Jakarta_Sans'] transition-all border border-[#00D4FF]/30 text-[#00D4FF] hover:bg-[#00D4FF]/10"
                 >
                   <Calendar className="w-4 h-4" />
                   Schedule Meeting
@@ -714,7 +714,7 @@ export default function TermSheet({ vehicle, onClose }: TermSheetProps) {
                     href={doc.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/[0.03] border border-white/5 text-gray-400 text-xs font-['Satoshi'] hover:text-white hover:border-white/10 transition-all"
+                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/[0.03] border border-white/5 text-gray-400 text-xs font-['Plus_Jakarta_Sans'] hover:text-white hover:border-white/10 transition-all"
                   >
                     <Download className="w-3.5 h-3.5" />
                     {doc.label}
@@ -724,14 +724,14 @@ export default function TermSheet({ vehicle, onClose }: TermSheetProps) {
 
               {/* Trust: Fortune 500 Clients */}
               <div className="pt-4 border-t border-white/5">
-                <p className="text-gray-500 text-xs font-['Satoshi'] uppercase tracking-wider mb-3">
+                <p className="text-gray-500 text-xs font-['Plus_Jakarta_Sans'] uppercase tracking-wider mb-3">
                   Trusted by Fortune 500 — Production Systems
                 </p>
                 <div className="flex flex-wrap gap-3">
                   {TRUST_CLIENTS.map((name) => (
                     <div key={name} className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/[0.03] border border-white/5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#00FFB2]" />
-                      <span className="text-gray-300 text-xs font-['Satoshi'] font-medium">{name}</span>
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#8587e3]" />
+                      <span className="text-gray-300 text-xs font-['Plus_Jakarta_Sans'] font-medium">{name}</span>
                     </div>
                   ))}
                 </div>
@@ -740,9 +740,9 @@ export default function TermSheet({ vehicle, onClose }: TermSheetProps) {
           </div>
 
           {/* Footer */}
-          <p className="text-xs text-gray-600 text-center font-['Satoshi']">
+          <p className="text-xs text-gray-600 text-center font-['Plus_Jakarta_Sans']">
             All projections are forward-looking estimates. Investment involves risk. Contact{" "}
-            <span className="text-[#00FFB2]">invest@antimatterai.com</span> for complete offering documents.
+            <span className="text-[#8587e3]">invest@antimatterai.com</span> for complete offering documents.
           </p>
         </div>
       </motion.div>
